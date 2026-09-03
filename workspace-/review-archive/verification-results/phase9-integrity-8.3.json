@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "checks": {
+    "invalid_batch_has_no_partial_mutation": true,
+    "invalid_batch_reports_skipped_rows": true,
+    "deterministic_retry_reuses_identity": true,
+    "deterministic_retry_preserves_content": true,
+    "relationship_targets_are_consistent": true,
+    "dry_run_does_not_touch_operational_tables": true
+  },
+  "failed": [],
+  "environment": {
+    "php": "8.3.32",
+    "wordpress": "6.4.10",
+    "database": "SQLite"
+  },
+  "recovery_model": "Complete-plan preflight plus deterministic identity rerun; no durable process-death checkpoint exists in schema 004."
+}

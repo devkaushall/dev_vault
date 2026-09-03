@@ -1,0 +1,13 @@
+{
+    "status": "PASS",
+    "checks": {
+        "valid": true,
+        "timeout": true,
+        "redirects_disabled": true,
+        "size_arg": true,
+        "content_type": true,
+        "malformed_json": true,
+        "oversized": true,
+        "provider_error_sanitized": true
+    }
+}

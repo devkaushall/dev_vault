@@ -1,0 +1,68 @@
+
+WordPress Playground CLI
+
+PHP 8.2  WordPress 6.4
+Extensions intl
+Mount ./plugins/realestate-platform → /wordpress/wp-content/plugins/realestate-platform
+Mount ./scripts/phase6-runner.php → /workspace/runner.php
+
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+
+{
+    "status": "PASS",
+    "checks": {
+        "agency_create": true,
+        "agent_create": true,
+        "agency_assign": true,
+        "property_assign": true,
+        "relationships": true,
+        "agency_delete_blocked": true,
+        "lifecycle": true,
+        "public_allowlist": true,
+        "public_xss_safe": true,
+        "agent_idor_update": true,
+        "agent_idor_delete": true,
+        "agency_idor_update": true,
+        "agency_idor_delete": true,
+        "assignment_idor": true,
+        "idor_no_mutation": true,
+        "anonymous_public": true,
+        "anonymous_write_blocked": true,
+        "invalid_id": true,
+        "pagination_bound": true,
+        "rest_list": true,
+        "rest_create": true,
+        "rest_update": true,
+        "rest_delete": true,
+        "invalid_relationship": true,
+        "privacy_export": true,
+        "privacy_erase": true,
+        "relationship_remove": true,
+        "agency_delete_after_remove": true,
+        "service_singleton": true,
+        "privacy_user_delete": true,
+        "performance_smoke": true
+    },
+    "performance": {
+        "agent": {
+            "fixture_seconds": 1.7989997863769531,
+            "listing_seconds": 0.019999980926513672,
+            "listing_queries": 3,
+            "memory_delta": 687184,
+            "returned": 100
+        },
+        "agency": {
+            "fixture_seconds": 1.871000051498413,
+            "listing_seconds": 0.024000167846679688,
+            "listing_queries": 3,
+            "memory_delta": 322536,
+            "returned": 100
+        }
+    },
+    "environment": {
+        "php": "8.2.32",
+        "wordpress": "6.4.10",
+        "database": "SQLite"
+    }
+}

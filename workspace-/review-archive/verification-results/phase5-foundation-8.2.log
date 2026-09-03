@@ -1,0 +1,38 @@
+
+WordPress Playground CLI
+
+PHP 8.2  WordPress 6.4
+Extensions intl
+Mount ./plugins/realestate-platform → /wordpress/wp-content/plugins/realestate-platform
+
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+
+{
+    "status": "PASS",
+    "checks": {
+        "favorite_add": true,
+        "favorite_duplicate": true,
+        "favorite_unique": true,
+        "favorite_idor": true,
+        "favorite_private": true,
+        "favorite_list": true,
+        "favorite_toggle": true,
+        "favorite_preserved_unavailable": true,
+        "compare": true,
+        "compare_private": true,
+        "compare_limit": true,
+        "saved_create": true,
+        "saved_stable_duplicate": true,
+        "saved_idor": true,
+        "saved_update": true,
+        "saved_list": true,
+        "saved_invalid": true,
+        "saved_delete": true,
+        "property_cleanup": true,
+        "user_cleanup": true,
+        "table_rep_favorites": true,
+        "table_rep_saved_searches": true,
+        "table_rep_search_alerts": true
+    }
+}

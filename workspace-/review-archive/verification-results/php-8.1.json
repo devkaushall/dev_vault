@@ -1,0 +1,282 @@
+{
+  "active": {
+    "pass": true,
+    "detail": ""
+  },
+  "version": {
+    "pass": true,
+    "detail": ""
+  },
+  "schema_option": {
+    "pass": true,
+    "detail": "002"
+  },
+  "table": {
+    "pass": true,
+    "detail": "wp_rep_schema_migrations"
+  },
+  "migration_row": {
+    "pass": true,
+    "detail": "{\"migration_id\":\"002\",\"checksum\":\"654847a808524248630ff0484dc0e4f547bf72f654986d69b6876adaaa5d7ef8\",\"applied_at\":\"2026-08-31 09:55:14\"}"
+  },
+  "deactivate_preserves": {
+    "pass": true,
+    "detail": ""
+  },
+  "reactivate_idempotent": {
+    "pass": true,
+    "detail": ""
+  },
+  "admin_cap_manage_realestate": {
+    "pass": true,
+    "detail": ""
+  },
+  "editor_no_manage_realestate": {
+    "pass": true,
+    "detail": ""
+  },
+  "subscriber_no_manage_realestate": {
+    "pass": true,
+    "detail": ""
+  },
+  "admin_cap_manage_realestate_settings": {
+    "pass": true,
+    "detail": ""
+  },
+  "editor_no_manage_realestate_settings": {
+    "pass": true,
+    "detail": ""
+  },
+  "subscriber_no_manage_realestate_settings": {
+    "pass": true,
+    "detail": ""
+  },
+  "admin_cap_view_realestate_diagnostics": {
+    "pass": true,
+    "detail": ""
+  },
+  "editor_no_view_realestate_diagnostics": {
+    "pass": true,
+    "detail": ""
+  },
+  "subscriber_no_view_realestate_diagnostics": {
+    "pass": true,
+    "detail": ""
+  },
+  "admin_cap_manage_realestate_migrations": {
+    "pass": true,
+    "detail": ""
+  },
+  "editor_no_manage_realestate_migrations": {
+    "pass": true,
+    "detail": ""
+  },
+  "subscriber_no_manage_realestate_migrations": {
+    "pass": true,
+    "detail": ""
+  },
+  "unrelated_cap": {
+    "pass": true,
+    "detail": ""
+  },
+  "setting_default": {
+    "pass": true,
+    "detail": ""
+  },
+  "setting_valid": {
+    "pass": true,
+    "detail": ""
+  },
+  "phase2_cpt_property": {
+    "pass": true,
+    "detail": ""
+  },
+  "phase2_cpt_project": {
+    "pass": true,
+    "detail": ""
+  },
+  "phase2_cpt_insight": {
+    "pass": true,
+    "detail": ""
+  },
+  "phase2_tax_property_type": {
+    "pass": true,
+    "detail": ""
+  },
+  "phase2_tax_property_status": {
+    "pass": true,
+    "detail": ""
+  },
+  "phase2_tax_property_category": {
+    "pass": true,
+    "detail": ""
+  },
+  "phase2_tax_property_label": {
+    "pass": true,
+    "detail": ""
+  },
+  "phase2_tax_property_feature": {
+    "pass": true,
+    "detail": ""
+  },
+  "phase2_tax_property_amenity": {
+    "pass": true,
+    "detail": ""
+  },
+  "phase2_tax_location": {
+    "pass": true,
+    "detail": ""
+  },
+  "phase2_tax_project_type": {
+    "pass": true,
+    "detail": ""
+  },
+  "phase2_tax_insight_topic": {
+    "pass": true,
+    "detail": ""
+  },
+  "property_create": {
+    "pass": true,
+    "detail": ""
+  },
+  "property_read": {
+    "pass": true,
+    "detail": ""
+  },
+  "property_update": {
+    "pass": true,
+    "detail": ""
+  },
+  "media_association": {
+    "pass": true,
+    "detail": ""
+  },
+  "invalid_coordinate_rejected": {
+    "pass": true,
+    "detail": ""
+  },
+  "project_create": {
+    "pass": true,
+    "detail": ""
+  },
+  "insight_create": {
+    "pass": true,
+    "detail": ""
+  },
+  "taxonomy_assignment": {
+    "pass": true,
+    "detail": ""
+  },
+  "property_rest_read": {
+    "pass": true,
+    "detail": "200"
+  },
+  "duplicate_registration_prevented": {
+    "pass": true,
+    "detail": ""
+  },
+  "insight_delete": {
+    "pass": true,
+    "detail": ""
+  },
+  "setting_invalid": {
+    "pass": true,
+    "detail": ""
+  },
+  "setting_permission": {
+    "pass": true,
+    "detail": ""
+  },
+  "property_rest_write_denied": {
+    "pass": true,
+    "detail": ""
+  },
+  "diagnostics": {
+    "pass": true,
+    "detail": ""
+  },
+  "remediation": {
+    "pass": true,
+    "detail": ""
+  },
+  "rest_unauth": {
+    "pass": true,
+    "detail": "403"
+  },
+  "rest_unauthorized": {
+    "pass": true,
+    "detail": "403"
+  },
+  "rest_admin": {
+    "pass": true,
+    "detail": ""
+  },
+  "rest_schema": {
+    "pass": true,
+    "detail": ""
+  },
+  "detect_mayfair_core": {
+    "pass": true,
+    "detail": "{\"php\":\"8.1.34\",\"wordpress\":\"6.4.10\",\"mayfair_core\":true,\"mayfair_forms_leads\":true,\"acf\":true,\"elementor\":true,\"elementor_pro\":true,\"woocommerce\":true,\"post_types\":[\"property\",\"project\",\"insight\"],\"taxonomies\":[\"mpd_location\"],\"rest_namespaces\":[]}"
+  },
+  "detect_mayfair_forms_leads": {
+    "pass": true,
+    "detail": "{\"php\":\"8.1.34\",\"wordpress\":\"6.4.10\",\"mayfair_core\":true,\"mayfair_forms_leads\":true,\"acf\":true,\"elementor\":true,\"elementor_pro\":true,\"woocommerce\":true,\"post_types\":[\"property\",\"project\",\"insight\"],\"taxonomies\":[\"mpd_location\"],\"rest_namespaces\":[]}"
+  },
+  "detect_acf": {
+    "pass": true,
+    "detail": "{\"php\":\"8.1.34\",\"wordpress\":\"6.4.10\",\"mayfair_core\":true,\"mayfair_forms_leads\":true,\"acf\":true,\"elementor\":true,\"elementor_pro\":true,\"woocommerce\":true,\"post_types\":[\"property\",\"project\",\"insight\"],\"taxonomies\":[\"mpd_location\"],\"rest_namespaces\":[]}"
+  },
+  "detect_elementor": {
+    "pass": true,
+    "detail": "{\"php\":\"8.1.34\",\"wordpress\":\"6.4.10\",\"mayfair_core\":true,\"mayfair_forms_leads\":true,\"acf\":true,\"elementor\":true,\"elementor_pro\":true,\"woocommerce\":true,\"post_types\":[\"property\",\"project\",\"insight\"],\"taxonomies\":[\"mpd_location\"],\"rest_namespaces\":[]}"
+  },
+  "detect_elementor_pro": {
+    "pass": true,
+    "detail": "{\"php\":\"8.1.34\",\"wordpress\":\"6.4.10\",\"mayfair_core\":true,\"mayfair_forms_leads\":true,\"acf\":true,\"elementor\":true,\"elementor_pro\":true,\"woocommerce\":true,\"post_types\":[\"property\",\"project\",\"insight\"],\"taxonomies\":[\"mpd_location\"],\"rest_namespaces\":[]}"
+  },
+  "detect_woocommerce": {
+    "pass": true,
+    "detail": "{\"php\":\"8.1.34\",\"wordpress\":\"6.4.10\",\"mayfair_core\":true,\"mayfair_forms_leads\":true,\"acf\":true,\"elementor\":true,\"elementor_pro\":true,\"woocommerce\":true,\"post_types\":[\"property\",\"project\",\"insight\"],\"taxonomies\":[\"mpd_location\"],\"rest_namespaces\":[]}"
+  },
+  "detect_cpts": {
+    "pass": true,
+    "detail": ""
+  },
+  "detect_taxonomy": {
+    "pass": true,
+    "detail": ""
+  },
+  "compat_mode": {
+    "pass": true,
+    "detail": ""
+  },
+  "no_rep_cpts": {
+    "pass": true,
+    "detail": ""
+  },
+  "log_redaction": {
+    "pass": true,
+    "detail": ""
+  },
+  "path_traversal": {
+    "pass": true,
+    "detail": ""
+  },
+  "token": {
+    "pass": true,
+    "detail": ""
+  },
+  "syntax_all": {
+    "pass": true,
+    "detail": "[]"
+  },
+  "php_runtime": {
+    "pass": true,
+    "detail": "8.1.34"
+  },
+  "wp_runtime": {
+    "pass": true,
+    "detail": "6.4.10"
+  }
+}

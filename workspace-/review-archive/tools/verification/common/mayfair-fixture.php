@@ -1,0 +1,12 @@
+<?php
+/** Clean-room compatibility fixture; not a real Mayfair plugin test. */
+register_post_type( 'property', array( 'public' => true, 'show_in_rest' => true ) ); register_post_type( 'project', array( 'public' => true ) ); register_post_type( 'insight', array( 'public' => true ) ); register_taxonomy( 'mpd_location', array( 'property' ) );
+$ids = array( wp_insert_post( array( 'post_type' => 'property', 'post_title' => 'Fixture property', 'post_status' => 'publish' ) ) ); update_option( 'mayfair_fixture_setting', array( 'preserve' => true ) );
+register_rest_route( 'mayfair/v1', '/fixture', array( 'methods' => 'GET', 'callback' => static fn() => array( 'ok' => true ), 'permission_callback' => '__return_true' ) );
+update_option( 'active_plugins', array_merge( (array) get_option( 'active_plugins', array() ), array( 'mayfair-core/mayfair-core.php', 'mayfair-forms-leads/forms.php' ) ) );
+if ( ! class_exists( 'ACF' ) ) { class ACF {} } if ( ! class_exists( 'Elementor\\Plugin' ) ) { eval( 'namespace Elementor; class Plugin {}' ); } if ( ! class_exists( 'ElementorPro\\Plugin' ) ) { eval( 'namespace ElementorPro; class Plugin {}' ); }
+$before = array( 'objects' => array_map( 'get_post_type_object', array( 'property', 'project', 'insight' ) ), 'taxonomy' => get_taxonomy( 'mpd_location' ), 'ids' => $ids, 'option' => get_option( 'mayfair_fixture_setting' ), 'route' => isset( rest_get_server()->get_routes()['/mayfair/v1/fixture'] ) );
+\Mayfair\RealEstatePlatform\Core\Bootstrap::instance()->initialize(); $detector = new \Mayfair\RealEstatePlatform\Compatibility\CompatibilityDetector(); $snapshot = $detector->snapshot();
+$after = array( 'objects' => array_map( 'get_post_type_object', array( 'property', 'project', 'insight' ) ), 'taxonomy' => get_taxonomy( 'mpd_location' ), 'ids' => $ids, 'option' => get_option( 'mayfair_fixture_setting' ), 'route' => isset( rest_get_server()->get_routes()['/mayfair/v1/fixture'] ) );
+$pass = serialize( $before ) === serialize( $after ) && $snapshot['mayfair_core'] && $snapshot['mayfair_forms_leads'] && $snapshot['acf'] && $snapshot['elementor'] && $snapshot['elementor_pro'] && ! post_type_exists( 'realestate_property' );
+echo wp_json_encode( array( 'status' => $pass ? 'PASS' : 'FAIL', 'scope' => 'fixture-only', 'snapshot' => $snapshot, 'preserved' => serialize( $before ) === serialize( $after ) ), JSON_PRETTY_PRINT ); if ( ! $pass ) { exit( 1 ); }

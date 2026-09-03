@@ -1,0 +1,91 @@
+{
+    "status": "PASS",
+    "engine": "SQLite",
+    "checks": {
+        "bounded": true,
+        "search_queries": true,
+        "marker_queries": true,
+        "memory": true
+    },
+    "datasets": {
+        "10": {
+            "radius": {
+                "seconds": 0.01900005340576172,
+                "queries": 2,
+                "memory_delta": 0,
+                "count": 10
+            },
+            "bounds": {
+                "seconds": 0.006000041961669922,
+                "queries": 2,
+                "memory_delta": 0,
+                "count": 10
+            },
+            "combined": {
+                "seconds": 0.01699995994567871,
+                "queries": 2,
+                "memory_delta": 0,
+                "count": 0
+            },
+            "markers": {
+                "seconds": 0.010999917984008789,
+                "queries": 3,
+                "memory_delta": 0,
+                "count": 10
+            }
+        },
+        "100": {
+            "radius": {
+                "seconds": 0.017999887466430664,
+                "queries": 2,
+                "memory_delta": 0,
+                "count": 20
+            },
+            "bounds": {
+                "seconds": 0.006999969482421875,
+                "queries": 2,
+                "memory_delta": 0,
+                "count": 20
+            },
+            "combined": {
+                "seconds": 0.016000032424926758,
+                "queries": 2,
+                "memory_delta": 0,
+                "count": 0
+            },
+            "markers": {
+                "seconds": 0.02200007438659668,
+                "queries": 3,
+                "memory_delta": 0,
+                "count": 100
+            }
+        },
+        "1000": {
+            "radius": {
+                "seconds": 0.029000043869018555,
+                "queries": 2,
+                "memory_delta": 0,
+                "count": 20
+            },
+            "bounds": {
+                "seconds": 0.013000011444091797,
+                "queries": 2,
+                "memory_delta": 0,
+                "count": 20
+            },
+            "combined": {
+                "seconds": 0.023999929428100586,
+                "queries": 2,
+                "memory_delta": 0,
+                "count": 20
+            },
+            "markers": {
+                "seconds": 0.029999971389770508,
+                "queries": 3,
+                "memory_delta": 0,
+                "count": 100
+            }
+        }
+    },
+    "native_mysql_mariadb": "NOT VERIFIED"
+}

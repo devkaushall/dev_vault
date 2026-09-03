@@ -1,0 +1,5 @@
+# Phase 5 Data Model
+
+**Status: implementation in progress.** Migration 003 adds three user-owned tables. `rep_favorites` has a `(user_id, post_id)` primary key and property/created indexes. `rep_saved_searches` stores owner, bounded title, canonical SearchCriteria JSON, SHA-256 criteria hash, enabled state and timestamps; `(user_id, criteria_hash)` is unique. `rep_search_alerts` owns one alert per saved search, duplicates owner for efficient ownership/integrity checks, stores daily/weekly state, bounded deduplication JSON, failure count and due indexes.
+
+Canonical Property data is never modified. Favorites survive temporary unavailability but public listing hides unavailable Properties; permanent Property deletion removes favorites. WordPress user deletion removes owned favorites, saved searches and alerts. Compare is intentionally stateless/client-local for guests and authenticated users: no table, account or server session is created. The service validates up to four unique public Properties and emits an explicit public field allowlist.

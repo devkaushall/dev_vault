@@ -1,0 +1,11 @@
+
+WordPress Playground CLI
+
+PHP 8.3  WordPress 6.4
+Extensions intl
+Mount . → /workspace
+
+The default worker count has been reduced to 1 because this machine has only 2 CPU(s). Running fewer than 6 workers may increase the likelihood of deadlock due to workers blocking on file locks.
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+

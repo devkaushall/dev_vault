@@ -1,0 +1,40 @@
+services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: ${REP_TEST_DB_PASSWORD:?set by run.sh}
+      MYSQL_ROOT_PASSWORD: ${REP_TEST_ROOT_PASSWORD:?set by run.sh}
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -p$$MYSQL_ROOT_PASSWORD"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    tmpfs: [/var/lib/mysql]
+  wordpress:
+    image: wordpress:6.4.10-php8.3-apache
+    environment: &wp_env
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${REP_TEST_DB_PASSWORD:?set by run.sh}
+      WORDPRESS_DB_NAME: wordpress
+    depends_on:
+      db: {condition: service_healthy}
+    volumes:
+      - wp_data:/var/www/html
+      - ../../../plugins/realestate-platform:/var/www/html/wp-content/plugins/realestate-platform:ro
+  cli:
+    image: wordpress:cli-php8.3
+    user: "33:33"
+    environment: *wp_env
+    depends_on:
+      db: {condition: service_healthy}
+      wordpress: {condition: service_started}
+    volumes:
+      - wp_data:/var/www/html
+      - ../../../plugins/realestate-platform:/var/www/html/wp-content/plugins/realestate-platform:ro
+      - ../common:/verification:ro
+    working_dir: /var/www/html
+volumes:
+  wp_data:

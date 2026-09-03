@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "phase4_gate": "PASS",
+  "local_gates": {
+    "geo": "PASS",
+    "hardening": "PASS",
+    "http": "PASS",
+    "performance": "PASS"
+  },
+  "quality": {
+    "phpcs": "PASS",
+    "phpunit": "PASS",
+    "phpstan": "NOT VERIFIED",
+    "php_81": "PASS",
+    "php_82": "PASS",
+    "php_83": "PASS"
+  },
+  "migration": "No Phase-4 migration required; migration 002 already projects canonical coordinates.",
+  "package": {
+    "path": "dist/realestate-platform-0.4.0.zip",
+    "bytes": 60519,
+    "files": 72,
+    "sha256": "c5d57be0d54fb492e808974c361c9f697c631cb485ecd0f7dc6071eb905edbd7",
+    "reproducible": true,
+    "clean_install": "PASS"
+  },
+  "not_verified": [
+    "Phase 1 external verification",
+    "native WP-CLI",
+    "PHPStan actionable execution",
+    "native MySQL/MariaDB",
+    "live geocoder provider",
+    "browser/UI/accessibility",
+    "real Mayfair",
+    "real ACF"
+  ]
+}

@@ -1,0 +1,326 @@
+{
+    "status": "PASS",
+    "environment": {
+        "php": "8.3.32",
+        "wordpress": "6.4.10"
+    },
+    "failed": [],
+    "checks": {
+        "project_valid": {
+            "pass": true,
+            "detail": {
+                "status": 200
+            }
+        },
+        "insight_valid": {
+            "pass": true,
+            "detail": {
+                "status": 200
+            }
+        },
+        "project_wrong_scalar": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "rest_invalid_type",
+                "message": "meta.rep_price is not of type number.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "project_nested_object": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "rest_invalid_type",
+                "message": "meta.rep_latitude is not of type number.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "project_unexpected_array": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "rest_invalid_type",
+                "message": "meta.rep_price is not of type number.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "project_unknown_meta": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "realestate_invalid_meta",
+                "message": "One or more metadata values are invalid.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "project_oversized": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "rest_too_long",
+                "message": "meta.rep_address must be at most 65,535 characters long.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "project_invalid_numeric": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "rest_invalid_type",
+                "message": "meta.rep_price is not of type number.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "project_invalid_coordinate": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "realestate_invalid_meta",
+                "message": "One or more metadata values are invalid.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "project_invalid_url": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "realestate_invalid_meta",
+                "message": "One or more metadata values are invalid.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "project_invalid_attachment": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "realestate_invalid_meta",
+                "message": "One or more metadata values are invalid.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "project_invalid_taxonomy": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "realestate_invalid_taxonomy",
+                "message": "One or more taxonomy references are invalid.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "insight_wrong_scalar": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "rest_invalid_type",
+                "message": "meta.rep_reading_time is not of type integer.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "insight_nested_object": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "rest_invalid_type",
+                "message": "meta.rep_reading_time is not of type integer.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "insight_unexpected_array": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "rest_invalid_type",
+                "message": "meta.rep_reading_time is not of type integer.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "insight_unknown_meta": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "realestate_invalid_meta",
+                "message": "One or more metadata values are invalid.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "insight_oversized": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "rest_too_long",
+                "message": "meta.rep_subtitle must be at most 2,048 characters long.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "insight_invalid_numeric": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "rest_out_of_bounds",
+                "message": "meta.rep_reading_time must be greater than or equal to 0",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "insight_invalid_url": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "realestate_invalid_meta",
+                "message": "One or more metadata values are invalid.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "insight_invalid_attachment": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "realestate_invalid_meta",
+                "message": "One or more metadata values are invalid.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "insight_invalid_taxonomy": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "realestate_invalid_taxonomy",
+                "message": "One or more taxonomy references are invalid.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "project_null_optional_reset": {
+            "pass": true,
+            "detail": {
+                "status": 200,
+                "reset": true
+            }
+        },
+        "insight_null_optional_reset": {
+            "pass": true,
+            "detail": {
+                "status": 200,
+                "reset": true
+            }
+        },
+        "project_missing_meta": {
+            "pass": true,
+            "detail": {
+                "status": 200,
+                "unchanged": true
+            }
+        },
+        "insight_missing_meta": {
+            "pass": true,
+            "detail": {
+                "status": 200,
+                "unchanged": true
+            }
+        },
+        "project_empty_optional": {
+            "pass": true,
+            "detail": {
+                "status": 200
+            }
+        },
+        "insight_empty_optional": {
+            "pass": true,
+            "detail": {
+                "status": 200
+            }
+        },
+        "project_malformed_json": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "rest_invalid_json",
+                "message": "Invalid JSON body passed.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "insight_malformed_json": {
+            "pass": true,
+            "detail": {
+                "status": 400,
+                "code": "rest_invalid_json",
+                "message": "Invalid JSON body passed.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "project_unauthorized": {
+            "pass": true,
+            "detail": {
+                "status": 401,
+                "code": "rest_cannot_edit",
+                "message": "Sorry, you are not allowed to edit this post.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "insight_unauthorized": {
+            "pass": true,
+            "detail": {
+                "status": 401,
+                "code": "rest_cannot_edit",
+                "message": "Sorry, you are not allowed to edit this post.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "project_insufficient_capability": {
+            "pass": true,
+            "detail": {
+                "status": 403,
+                "code": "rest_cannot_edit",
+                "message": "Sorry, you are not allowed to edit this post.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "insight_insufficient_capability": {
+            "pass": true,
+            "detail": {
+                "status": 403,
+                "code": "rest_cannot_edit",
+                "message": "Sorry, you are not allowed to edit this post.",
+                "no_mutation": true,
+                "safe": true
+            }
+        },
+        "project_xss": {
+            "pass": true,
+            "detail": {
+                "status": 200,
+                "stored": "Safe"
+            }
+        },
+        "insight_xss": {
+            "pass": true,
+            "detail": {
+                "status": 200,
+                "stored": "Safe"
+            }
+        }
+    }
+}

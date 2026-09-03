@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "checks": {
+    "favorite_add": true,
+    "favorite_duplicate": true,
+    "favorite_unique": true,
+    "favorite_idor": true,
+    "favorite_private": true,
+    "favorite_list": true,
+    "favorite_toggle": true,
+    "favorite_preserved_unavailable": true,
+    "property_cleanup": true,
+    "user_cleanup": true
+  },
+  "derived_from": "phase5-foundation.json"
+}

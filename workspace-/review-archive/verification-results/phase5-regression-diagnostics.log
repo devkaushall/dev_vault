@@ -1,0 +1,152 @@
+
+WordPress Playground CLI
+
+PHP 8.3  WordPress 6.4
+Extensions intl
+Mount ./plugins/realestate-platform → /wordpress/wp-content/plugins/realestate-platform
+
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+
+{
+    "status": "PASS",
+    "checks": {
+        "healthy": true,
+        "missing": true,
+        "stale": true,
+        "orphaned": true,
+        "taxonomy_mismatch": true,
+        "visibility_mismatch": true,
+        "duplicate_constraint": true,
+        "read_only": true
+    },
+    "duplicate_note": "Primary key prevents deliberate duplicate post_id insertion; checker reports zero under enforced schema.",
+    "reports": {
+        "healthy": {
+            "schema": "003",
+            "schema_current": true,
+            "property_table_exists": true,
+            "taxonomy_table_exists": true,
+            "last_rebuild": null,
+            "expected": 1,
+            "indexed": 1,
+            "missing": 0,
+            "stale": 0,
+            "orphaned": 0,
+            "duplicates": 0,
+            "taxonomy_mismatches": 0,
+            "visibility_mismatches": 0,
+            "healthy": true,
+            "diagnostic_status": "PASS",
+            "read_only": true
+        },
+        "missing": {
+            "schema": "003",
+            "schema_current": true,
+            "property_table_exists": true,
+            "taxonomy_table_exists": true,
+            "last_rebuild": null,
+            "expected": 1,
+            "indexed": 0,
+            "missing": 1,
+            "stale": 0,
+            "orphaned": 0,
+            "duplicates": 0,
+            "taxonomy_mismatches": 0,
+            "visibility_mismatches": 0,
+            "healthy": false,
+            "diagnostic_status": "FAIL",
+            "read_only": true
+        },
+        "stale": {
+            "schema": "003",
+            "schema_current": true,
+            "property_table_exists": true,
+            "taxonomy_table_exists": true,
+            "last_rebuild": null,
+            "expected": 1,
+            "indexed": 1,
+            "missing": 0,
+            "stale": 1,
+            "orphaned": 0,
+            "duplicates": 0,
+            "taxonomy_mismatches": 0,
+            "visibility_mismatches": 0,
+            "healthy": false,
+            "diagnostic_status": "FAIL",
+            "read_only": true
+        },
+        "orphaned": {
+            "schema": "003",
+            "schema_current": true,
+            "property_table_exists": true,
+            "taxonomy_table_exists": true,
+            "last_rebuild": null,
+            "expected": 1,
+            "indexed": 2,
+            "missing": 0,
+            "stale": 0,
+            "orphaned": 1,
+            "duplicates": 0,
+            "taxonomy_mismatches": 0,
+            "visibility_mismatches": 0,
+            "healthy": false,
+            "diagnostic_status": "FAIL",
+            "read_only": true
+        },
+        "taxonomy": {
+            "schema": "003",
+            "schema_current": true,
+            "property_table_exists": true,
+            "taxonomy_table_exists": true,
+            "last_rebuild": null,
+            "expected": 1,
+            "indexed": 1,
+            "missing": 0,
+            "stale": 0,
+            "orphaned": 0,
+            "duplicates": 0,
+            "taxonomy_mismatches": 1,
+            "visibility_mismatches": 0,
+            "healthy": false,
+            "diagnostic_status": "FAIL",
+            "read_only": true
+        },
+        "visibility": {
+            "schema": "003",
+            "schema_current": true,
+            "property_table_exists": true,
+            "taxonomy_table_exists": true,
+            "last_rebuild": null,
+            "expected": 0,
+            "indexed": 1,
+            "missing": 0,
+            "stale": 0,
+            "orphaned": 0,
+            "duplicates": 0,
+            "taxonomy_mismatches": 0,
+            "visibility_mismatches": 1,
+            "healthy": false,
+            "diagnostic_status": "FAIL",
+            "read_only": true
+        },
+        "duplicates_prevented": {
+            "schema": "003",
+            "schema_current": true,
+            "property_table_exists": true,
+            "taxonomy_table_exists": true,
+            "last_rebuild": null,
+            "expected": 1,
+            "indexed": 1,
+            "missing": 0,
+            "stale": 0,
+            "orphaned": 0,
+            "duplicates": 0,
+            "taxonomy_mismatches": 0,
+            "visibility_mismatches": 0,
+            "healthy": true,
+            "diagnostic_status": "PASS",
+            "read_only": true
+        }
+    }
+}

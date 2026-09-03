@@ -1,0 +1,31 @@
+{
+    "status": "PASS",
+    "checks": {
+        "version": true,
+        "migrations": true,
+        "repeat_unchanged": true,
+        "checksums": true,
+        "property_table": true,
+        "term_table": true,
+        "property_schema": true,
+        "term_schema": true
+    },
+    "migrations": [
+        {
+            "migration_id": "001",
+            "checksum": "ab3cfca247b66203a1aaf4ace9a0155a092aae3a29142b4c321fc1346e4f7ef8"
+        },
+        {
+            "migration_id": "002",
+            "checksum": "654847a808524248630ff0484dc0e4f547bf72f654986d69b6876adaaa5d7ef8"
+        },
+        {
+            "migration_id": "003",
+            "checksum": "b86ec742ed858773c4e8e1eef2c44cec00acc1b26175d68beeb776f47aee99cb"
+        },
+        {
+            "migration_id": "004",
+            "checksum": "a9c3cb7a256fa15e35fb71629f31bdd7a0483c6ef341c58ef985a1a397d8af8b"
+        }
+    ]
+}

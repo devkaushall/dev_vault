@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "phase3_gate": "PASS",
+  "generated_at": "2026-08-31T08:36:32.733Z",
+  "local_gates": {
+    "search": "PASS",
+    "lifecycle": "PASS",
+    "rebuild": "PASS",
+    "consistency": "PASS",
+    "diagnostics": "PASS",
+    "transport": "PASS",
+    "audits": "PASS",
+    "performance": "PASS",
+    "migration": "PASS",
+    "package": "PASS"
+  },
+  "quality": {
+    "php_syntax_81": "PASS",
+    "php_syntax_82": "PASS",
+    "php_syntax_83": "PASS",
+    "phpcs": "PASS",
+    "phpunit": "PASS",
+    "phpstan": "NOT VERIFIED"
+  },
+  "package": {
+    "path": "dist/realestate-platform-0.3.0.zip",
+    "bytes": 50832,
+    "sha256": "1cc091b50f0622ceb8b535d7c72013ea03870ef6145e2517bf7a637620726ea7",
+    "installation": "PASS",
+    "reproducible": true
+  },
+  "not_verified": [
+    "Phase 1 external verification",
+    "native WP-CLI binary runtime",
+    "PHPStan actionable execution",
+    "MySQL/MariaDB",
+    "real Mayfair compatibility",
+    "real ACF compatibility",
+    "browser/UI",
+    "10,000-row benchmark"
+  ]
+}

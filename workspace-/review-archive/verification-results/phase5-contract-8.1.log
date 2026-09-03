@@ -1,0 +1,96 @@
+
+WordPress Playground CLI
+
+PHP 8.1  WordPress 6.4
+Extensions intl
+Mount ./plugins/realestate-platform → /wordpress/wp-content/plugins/realestate-platform
+Mount ./scripts/phase5-contract-runner.php → /workspace/runner.php
+
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+
+{
+    "status": "PASS",
+    "checks": {
+        "rest": {
+            "anonymous_blocked": true,
+            "favorite_add": true,
+            "favorite_duplicate": true,
+            "favorite_status": true,
+            "favorite_list": true,
+            "favorite_invalid_4907ef54b009b0c3146b331f1a1b0846": true,
+            "favorite_invalid_750b38f0e82afd4a3663c3f86572cc23": true,
+            "favorite_invalid_022335c6225c27b2efd2ba6a9329cb15": true,
+            "favorite_invalid_40cd750bba9870f18aada2478b24840a": true,
+            "favorite_invalid_dcca48101505dd86b703689a604fe3c4": true,
+            "pagination_zero": true,
+            "pagination_text": true,
+            "compare_valid": true,
+            "compare_string": true,
+            "compare_five": true,
+            "compare_bad_id": true,
+            "saved_create": true,
+            "saved_list": true,
+            "saved_get": true,
+            "saved_bad_criteria": true,
+            "saved_update_bad_bool": true,
+            "saved_update": true,
+            "alert_save": true,
+            "alert_get": true,
+            "alert_frequency": true,
+            "alert_bad_bool": true,
+            "alert_disable": true,
+            "alert_reenable": true,
+            "saved_delete": true
+        },
+        "ajax": {
+            "missing_nonce": true,
+            "invalid_nonce": true,
+            "bad_operation": true,
+            "bad_id": true,
+            "bad_criteria": true,
+            "bad_bool": true,
+            "valid_add": true,
+            "valid_remove": true,
+            "valid_toggle": true,
+            "valid_saved_create": true,
+            "valid_alert_save": true,
+            "valid_alert_delete": true,
+            "valid_saved_delete": true,
+            "rate_below": true,
+            "rate_threshold": true,
+            "rate_exceeded": true,
+            "rate_user_isolated": true,
+            "rate_operation_isolated": true
+        },
+        "privacy": {
+            "exporter_registered": true,
+            "eraser_registered": true,
+            "export": true,
+            "erase": true
+        },
+        "diagnostics": {
+            "healthy": true,
+            "read_only": true,
+            "invalid_json_detected": true,
+            "corruption_not_repaired": true,
+            "failed_alert_warn": true,
+            "orphan_favorite_detected": true,
+            "broken_alert_detected": true,
+            "schema_mismatch_detected": true,
+            "scheduler_missing_detected": true
+        },
+        "security": {
+            "saved_get_idor": true,
+            "saved_delete_idor": true,
+            "alert_get_idor": true,
+            "alert_delete_idor": true,
+            "alert_modify_idor": true
+        },
+        "integrity": {
+            "property_unchanged": true,
+            "saved_owner_intact": true,
+            "erased": true
+        }
+    }
+}

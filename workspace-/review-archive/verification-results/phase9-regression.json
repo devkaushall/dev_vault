@@ -1,0 +1,56 @@
+{
+  "phase2": {
+    "final": "PASS",
+    "rest_8.1": "PASS",
+    "rest_8.2": "PASS",
+    "rest_8.3": "PASS"
+  },
+  "phase3": {
+    "phase3-search-core": "PASS",
+    "phase3-index-lifecycle": "PASS",
+    "phase3-index-rebuild": "PASS",
+    "phase3-index-consistency": "PASS",
+    "phase3-diagnostics": "PASS",
+    "phase3-cli": "PASS",
+    "phase3-rest-ajax-url": "PASS",
+    "phase3-rest-ajax-performance": "PASS",
+    "phase3-final-audits": "PASS",
+    "phase3-performance-final": "PASS",
+    "phase3-migration-final": "PASS"
+  },
+  "phase4": {
+    "phase4-geo-core": "PASS",
+    "phase4-hardening": "PASS",
+    "phase4-secure-http": "PASS",
+    "phase4-performance": "PASS"
+  },
+  "phase5": {
+    "phase5-foundation": "PASS",
+    "phase5-alerts": "PASS",
+    "phase5-migration": "PASS",
+    "phase5-rest": "PASS",
+    "phase5-ajax": "PASS",
+    "phase5-privacy": "PASS",
+    "phase5-diagnostics": "PASS",
+    "phase5-security": "PASS",
+    "phase5-data-integrity": "PASS",
+    "phase5-performance": "PASS"
+  },
+  "phase6": {
+    "8.1": "PASS",
+    "8.2": "PASS",
+    "8.3": "PASS"
+  },
+  "phase7": {
+    "8.1": "PASS",
+    "8.2": "PASS",
+    "8.3": "PASS"
+  },
+  "phase8": {
+    "8.1": "PASS",
+    "8.2": "PASS",
+    "8.3": "PASS"
+  },
+  "aggregate_status": "PASS",
+  "phase3_retired_final_report_wrapper": "NOT RUN: requires absent historical dist/realestate-platform-0.3.0.zip; underlying components passed"
+}

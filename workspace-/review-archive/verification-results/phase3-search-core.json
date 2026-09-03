@@ -1,0 +1,69 @@
+{
+    "status": "PASS",
+    "checks": {
+        "visibility": {
+            "pass": true,
+            "detail": ""
+        },
+        "city": {
+            "pass": true,
+            "detail": ""
+        },
+        "price_range": {
+            "pass": true,
+            "detail": ""
+        },
+        "combined": {
+            "pass": true,
+            "detail": ""
+        },
+        "keyword_title": {
+            "pass": true,
+            "detail": ""
+        },
+        "keyword_reference": {
+            "pass": true,
+            "detail": ""
+        },
+        "keyword_developer": {
+            "pass": true,
+            "detail": ""
+        },
+        "taxonomy": {
+            "pass": true,
+            "detail": ""
+        },
+        "sort": {
+            "pass": true,
+            "detail": ""
+        },
+        "pagination": {
+            "pass": true,
+            "detail": ""
+        },
+        "invalid_10": {
+            "pass": true,
+            "detail": ""
+        },
+        "invalid_11": {
+            "pass": true,
+            "detail": ""
+        },
+        "invalid_12": {
+            "pass": true,
+            "detail": ""
+        },
+        "invalid_13": {
+            "pass": true,
+            "detail": ""
+        },
+        "invalid_14": {
+            "pass": true,
+            "detail": ""
+        },
+        "read_only": {
+            "pass": true,
+            "detail": ""
+        }
+    }
+}

@@ -1,0 +1,2 @@
+# Dependency Model
+Required runtime: PHP 8.1+, WordPress 6.4+, JSON and mbstring. Composer provides PSR-4 for packaged/development builds; a narrow fallback PSR-4 loader prevents fatal activation when vendor autoload is absent. ACF, Elementor, Elementor Pro and WooCommerce are detected without loading their classes and are optional. No Phase-1 integration code is registered. WP-CLI is loaded only when `WP_CLI` is true. Module dependencies point inward to Contracts/Core.

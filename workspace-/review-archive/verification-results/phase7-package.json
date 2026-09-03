@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "plugin_version": "0.7.0",
+  "schema_version": "004",
+  "artifact": "dist/realestate-platform-0.7.0.zip",
+  "sha256": "81858aaa145b7005b8192dd8af582360a69e9f26ae0c5c7e74574e0db60afe3b",
+  "two_builds_byte_identical": true,
+  "source_package_file_set_equal": true,
+  "clean_extracted_runtime": "verification-results/phase7-package-runtime-8.3.json",
+  "clean_extracted_migration_upgrade": "verification-results/phase7-package-migration-upgrade-8.3.json"
+}

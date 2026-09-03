@@ -1,0 +1,14 @@
+{
+    "status": "PASS",
+    "checks": {
+        "create": true,
+        "meta": true,
+        "taxonomy": true,
+        "idempotent": true,
+        "unpublish": true,
+        "republish": true,
+        "trash": true,
+        "restore": true,
+        "delete": true
+    }
+}

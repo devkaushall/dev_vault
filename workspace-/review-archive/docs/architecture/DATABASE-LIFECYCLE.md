@@ -1,0 +1,4 @@
+# Database Lifecycle
+Activation checks environment, runs ordered migration files, records each successful ID, creates foundation defaults/capabilities and stores plugin version. Migration 001 creates `{prefix}rep_schema_migrations` via `dbDelta`, records its checksum, and then the runner advances the option ledger/version. A failure is logged without adding the ID; rerun resumes at the failed migration. Migrations are forward-only and idempotent by ledger plus idempotent DDL.
+
+Deactivation clears only the maintenance schedule and preserves data. Uninstall preserves data by default. Explicit purge deletes Phase-1 options only and refuses multisite. Automatic rollback is intentionally absent: backup before upgrades; restore backup on destructive future failures; every future migration must document compensating actions and backfill restart behavior.

@@ -1,0 +1,16 @@
+
+WordPress Playground CLI
+
+PHP 8.2  WordPress 6.4
+Extensions intl
+Mount ./plugins/realestate-platform → /workspace/plugin
+Mount ./scripts/php-syntax-runner.php → /workspace/syntax.php
+
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+
+{
+    "status": "PASS",
+    "files": 2774,
+    "failed": []
+}

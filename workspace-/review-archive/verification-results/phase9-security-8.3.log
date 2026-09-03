@@ -1,0 +1,8 @@
+<br />
+<b>Fatal error</b>:  Uncaught TypeError: {closure}(): Argument #1 ($route) must be of type string, array given in /phase9-security-runner.php:83
+Stack trace:
+#0 [internal function]: {closure}(Array)
+#1 /phase9-security-runner.php(83): array_filter(Array, Object(Closure))
+#2 /internal/eval.php(1): require('/phase9-securit...')
+#3 {main}
+  thrown in <b>/phase9-security-runner.php</b> on line <b>83</b><br />

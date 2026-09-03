@@ -1,0 +1,22 @@
+
+WordPress Playground CLI
+
+PHP 8.2  WordPress 6.4
+Extensions intl
+Mount . → /workspace
+
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+
+PHPUnit 10.5.64 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.2.32
+Configuration: /workspace/plugins/realestate-platform/phpunit.xml
+
+................S                                                 17 / 17 (100%)
+
+Time: 00:00.125, Memory: 36.00 MB
+
+OK, but some tests were skipped!
+Tests: 17, Assertions: 29, Skipped: 1.
+

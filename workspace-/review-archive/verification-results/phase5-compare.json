@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "checks": {
+    "compare": true,
+    "compare_private": true,
+    "compare_limit": true
+  },
+  "derived_from": "phase5-foundation.json"
+}

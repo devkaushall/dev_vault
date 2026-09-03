@@ -1,0 +1,54 @@
+{
+    "status": "PASS",
+    "engine": "SQLite",
+    "results": {
+        "0": {
+            "pass": true,
+            "count": 0,
+            "duplicates": 0,
+            "seconds": 0.01100015640258789,
+            "memory_delta": 0,
+            "stats": {
+                "processed": 0,
+                "failed": 0,
+                "batches": 0
+            }
+        },
+        "10": {
+            "pass": true,
+            "count": 10,
+            "duplicates": 0,
+            "seconds": 0.3299999237060547,
+            "memory_delta": 0,
+            "stats": {
+                "processed": 10,
+                "failed": 0,
+                "batches": 1
+            }
+        },
+        "100": {
+            "pass": true,
+            "count": 100,
+            "duplicates": 0,
+            "seconds": 3.175999879837036,
+            "memory_delta": 0,
+            "stats": {
+                "processed": 100,
+                "failed": 0,
+                "batches": 2
+            }
+        },
+        "1000": {
+            "pass": true,
+            "count": 1000,
+            "duplicates": 0,
+            "seconds": 32.99399995803833,
+            "memory_delta": 8388608,
+            "stats": {
+                "processed": 1000,
+                "failed": 0,
+                "batches": 14
+            }
+        }
+    }
+}

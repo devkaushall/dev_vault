@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "checks": {
+    "saved_create": true,
+    "saved_stable_duplicate": true,
+    "saved_idor": true,
+    "saved_update": true,
+    "saved_list": true,
+    "saved_invalid": true,
+    "saved_delete": true
+  },
+  "derived_from": "phase5-foundation.json"
+}

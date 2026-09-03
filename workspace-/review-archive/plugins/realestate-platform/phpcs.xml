@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ruleset name="RealEstate Platform">
+	<description>WordPress Core coding standards adapted for PSR-4 class loading.</description>
+	<config name="installed_paths" value="vendor/wp-coding-standards/wpcs,vendor/phpcsstandards/phpcsutils,vendor/phpcsstandards/phpcsextra"/>
+	<file>realestate-platform.php</file>
+	<file>src</file>
+	<file>migrations</file>
+	<arg name="extensions" value="php"/>
+	<rule ref="WordPress-Core">
+		<!-- PSR-4 requires class-matching filenames rather than WordPress class-*.php names. -->
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+		<!-- Public API camelCase names are established Phase-1 contracts. -->
+		<exclude name="WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid"/>
+		<!-- Syntax is verified independently on PHP 8.1-8.3; this sniff crashes under PHP-WASM. -->
+		<exclude name="Generic.PHP.Syntax"/>
+	</rule>
+	<config name="minimum_supported_wp_version" value="6.4"/>
+</ruleset>

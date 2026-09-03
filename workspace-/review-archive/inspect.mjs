@@ -1,0 +1,1 @@
+import { runCLI } from '@wp-playground/cli'; const c=await runCLI({command:'server',php:'8.1',wp:'6.4'}); console.log(typeof c.playground.run, Object.keys(c.playground).slice(0,20)); console.log(await c.playground.run({code:'<?php echo PHP_VERSION;'})); await c[Symbol.asyncDispose]();

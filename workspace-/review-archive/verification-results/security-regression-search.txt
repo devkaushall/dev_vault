@@ -1,0 +1,92 @@
+plugins/realestate-platform/composer.json:6:  "require": {
+plugins/realestate-platform/composer.json:14:  "require-dev": {
+plugins/realestate-platform/composer.lock:24:            "require": {
+plugins/realestate-platform/composer.lock:29:            "require-dev": {
+plugins/realestate-platform/composer.lock:120:            "require": {
+plugins/realestate-platform/composer.lock:127:            "require-dev": {
+plugins/realestate-platform/composer.lock:180:            "require": {
+plugins/realestate-platform/composer.lock:185:            "require-dev": {
+plugins/realestate-platform/composer.lock:237:            "require": {
+plugins/realestate-platform/composer.lock:304:            "require": {
+plugins/realestate-platform/composer.lock:358:            "require-dev": {
+plugins/realestate-platform/composer.lock:407:            "require": {
+plugins/realestate-platform/composer.lock:414:            "require-dev": {
+plugins/realestate-platform/composer.lock:469:            "require": {
+plugins/realestate-platform/composer.lock:472:            "require-dev": {
+plugins/realestate-platform/composer.lock:545:            "require": {
+plugins/realestate-platform/composer.lock:550:            "require-dev": {
+plugins/realestate-platform/composer.lock:620:            "require": {
+plugins/realestate-platform/composer.lock:625:            "require-dev": {
+plugins/realestate-platform/composer.lock:702:            "require": {
+plugins/realestate-platform/composer.lock:707:            "require-dev": {
+plugins/realestate-platform/composer.lock:790:            "require": {
+plugins/realestate-platform/composer.lock:848:            "require": {
+plugins/realestate-platform/composer.lock:863:            "require-dev": {
+plugins/realestate-platform/composer.lock:926:            "require": {
+plugins/realestate-platform/composer.lock:929:            "require-dev": {
+plugins/realestate-platform/composer.lock:987:            "require": {
+plugins/realestate-platform/composer.lock:990:            "require-dev": {
+plugins/realestate-platform/composer.lock:1050:            "require": {
+plugins/realestate-platform/composer.lock:1053:            "require-dev": {
+plugins/realestate-platform/composer.lock:1110:            "require": {
+plugins/realestate-platform/composer.lock:1113:            "require-dev": {
+plugins/realestate-platform/composer.lock:1169:            "require": {
+plugins/realestate-platform/composer.lock:1262:            "require": {
+plugins/realestate-platform/composer.lock:1265:            "require-dev": {
+plugins/realestate-platform/composer.lock:1319:            "require": {
+plugins/realestate-platform/composer.lock:1322:            "require-dev": {
+plugins/realestate-platform/composer.lock:1375:            "require": {
+plugins/realestate-platform/composer.lock:1378:            "require-dev": {
+plugins/realestate-platform/composer.lock:1430:            "require": {
+plugins/realestate-platform/composer.lock:1437:            "require-dev": {
+plugins/realestate-platform/composer.lock:1519:            "require": {
+plugins/realestate-platform/composer.lock:1523:            "require-dev": {
+plugins/realestate-platform/composer.lock:1577:            "require": {
+plugins/realestate-platform/composer.lock:1580:            "require-dev": {
+plugins/realestate-platform/composer.lock:1644:            "require": {
+plugins/realestate-platform/composer.lock:1647:            "require-dev": {
+plugins/realestate-platform/composer.lock:1708:            "require": {
+plugins/realestate-platform/composer.lock:1713:            "require-dev": {
+plugins/realestate-platform/composer.lock:1798:            "require": {
+plugins/realestate-platform/composer.lock:1803:            "require-dev": {
+plugins/realestate-platform/composer.lock:1860:            "require": {
+plugins/realestate-platform/composer.lock:1864:            "require-dev": {
+plugins/realestate-platform/composer.lock:1918:            "require": {
+plugins/realestate-platform/composer.lock:1923:            "require-dev": {
+plugins/realestate-platform/composer.lock:1975:            "require": {
+plugins/realestate-platform/composer.lock:1978:            "require-dev": {
+plugins/realestate-platform/composer.lock:2030:            "require": {
+plugins/realestate-platform/composer.lock:2033:            "require-dev": {
+plugins/realestate-platform/composer.lock:2106:            "require": {
+plugins/realestate-platform/composer.lock:2109:            "require-dev": {
+plugins/realestate-platform/composer.lock:2162:            "require": {
+plugins/realestate-platform/composer.lock:2215:            "require": {
+plugins/realestate-platform/composer.lock:2221:            "require-dev": {
+plugins/realestate-platform/composer.lock:2294:            "require": {
+plugins/realestate-platform/composer.lock:2374:            "require": {
+plugins/realestate-platform/composer.lock:2380:            "require-dev": {
+plugins/realestate-platform/composer.lock:2395:                    "includes": [
+plugins/realestate-platform/composer.lock:2437:            "require": {
+plugins/realestate-platform/composer.lock:2487:            "require": {
+plugins/realestate-platform/composer.lock:2497:            "require-dev": {
+plugins/realestate-platform/migrations/001_initial.php:13:	require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+plugins/realestate-platform/migrations/001_initial.php:16:	global $wpdb;
+plugins/realestate-platform/migrations/001_initial.php:17:	/** @var \wpdb $wpdb */
+plugins/realestate-platform/migrations/001_initial.php:18:	if ( isset( $wpdb ) && method_exists( $wpdb, 'get_charset_collate' ) ) {
+plugins/realestate-platform/migrations/001_initial.php:19:		$charset = $wpdb->get_charset_collate();
+plugins/realestate-platform/phpcs.xml:10:		<!-- PSR-4 requires class-matching filenames rather than WordPress class-*.php names. -->
+plugins/realestate-platform/phpstan.neon:1:includes:
+plugins/realestate-platform/realestate-platform.php:24:	require $autoload;
+plugins/realestate-platform/realestate-platform.php:26:	require REALESTATE_PLATFORM_DIR . 'src/Core/Autoloader.php';
+plugins/realestate-platform/src/Admin/AdminModule.php:58:		echo '<div class="wrap"><h1>' . esc_html__( 'Real Estate Settings', 'realestate-platform' ) . '</h1><p>' . esc_html__( 'Foundation settings are registered through the WordPress Settings API. A field UI will be expanded only as modules require it.', 'realestate-platform' ) . '</p></div>';}
+plugins/realestate-platform/src/Core/Autoloader.php:20:					require $file;
+plugins/realestate-platform/src/Core/Environment.php:20:			$e[] = 'PHP ' . self::PHP_MIN . ' or newer is required.';
+plugins/realestate-platform/src/Core/Environment.php:22:			$e[] = 'WordPress ' . self::WP_MIN . ' or newer is required.';
+plugins/realestate-platform/src/Database/WpDatabase.php:16:		global $wpdb;
+plugins/realestate-platform/src/Database/WpDatabase.php:17:		$this->db = $db ?? $wpdb;
+plugins/realestate-platform/src/Diagnostics/DiagnosticsRunner.php:61:						global $wpdb;
+plugins/realestate-platform/src/Diagnostics/DiagnosticsRunner.php:62:						$ok = $wpdb->get_var( 'SELECT 1' ) === '1';
+plugins/realestate-platform/src/Migration/MigrationRunner.php:22:			$migration = require $file;
+plugins/realestate-platform/src/Security/Security.php:12:	public static function requireCapability( string $cap ): void {
+plugins/realestate-platform/src/Security/Security.php:18:			wp_safe_redirect( wp_validate_redirect( $url, $fallback ) );
+plugins/realestate-platform/tests/bootstrap.php:4:require dirname(__DIR__).'/src/Core/Autoloader.php';

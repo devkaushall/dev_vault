@@ -1,0 +1,146 @@
+{
+  "status": "PASS",
+  "runtimes": {
+    "8.1": {
+      "status": "PASS",
+      "runtime": "WordPress runtime contract checks; external integrations remain NOT VERIFIED.",
+      "checks": {
+        "services_composed": true,
+        "dry_run_zero_mutation": true,
+        "create_and_taxonomy": true,
+        "deterministic_upsert": true,
+        "create_only_conflict_visible": true,
+        "private_field_rejected_without_mutation": true,
+        "missing_term_dry_run_no_mutation": true,
+        "missing_term_execution_opt_in": true,
+        "supported_relationship_consistency": true,
+        "deterministic_exports": true,
+        "export_formula_and_privacy": true,
+        "unsafe_remote_media_not_verified": true,
+        "bounded_performance_runs": true,
+        "no_phase10": true
+      },
+      "benchmarks": {
+        "10": {
+          "seconds": 0.075,
+          "rows": 10,
+          "status": "PASS",
+          "memory_delta": 0,
+          "peak_delta": 0
+        },
+        "100": {
+          "seconds": 0.711,
+          "rows": 100,
+          "status": "PASS",
+          "memory_delta": 0,
+          "peak_delta": 0
+        },
+        "1000": {
+          "seconds": 6.545,
+          "rows": 1000,
+          "status": "PASS",
+          "memory_delta": 6291456,
+          "peak_delta": 6291456
+        }
+      },
+      "memory": {
+        "peak_bytes": 46137344,
+        "memory_limit": "256M"
+      }
+    },
+    "8.2": {
+      "status": "PASS",
+      "runtime": "WordPress runtime contract checks; external integrations remain NOT VERIFIED.",
+      "checks": {
+        "services_composed": true,
+        "dry_run_zero_mutation": true,
+        "create_and_taxonomy": true,
+        "deterministic_upsert": true,
+        "create_only_conflict_visible": true,
+        "private_field_rejected_without_mutation": true,
+        "missing_term_dry_run_no_mutation": true,
+        "missing_term_execution_opt_in": true,
+        "supported_relationship_consistency": true,
+        "deterministic_exports": true,
+        "export_formula_and_privacy": true,
+        "unsafe_remote_media_not_verified": true,
+        "bounded_performance_runs": true,
+        "no_phase10": true
+      },
+      "benchmarks": {
+        "10": {
+          "seconds": 0.069,
+          "rows": 10,
+          "status": "PASS",
+          "memory_delta": 0,
+          "peak_delta": 0
+        },
+        "100": {
+          "seconds": 0.703,
+          "rows": 100,
+          "status": "PASS",
+          "memory_delta": 0,
+          "peak_delta": 0
+        },
+        "1000": {
+          "seconds": 6.632,
+          "rows": 1000,
+          "status": "PASS",
+          "memory_delta": 2097152,
+          "peak_delta": 2097152
+        }
+      },
+      "memory": {
+        "peak_bytes": 46137344,
+        "memory_limit": "256M"
+      }
+    },
+    "8.3": {
+      "status": "PASS",
+      "runtime": "WordPress runtime contract checks; external integrations remain NOT VERIFIED.",
+      "checks": {
+        "services_composed": true,
+        "dry_run_zero_mutation": true,
+        "create_and_taxonomy": true,
+        "deterministic_upsert": true,
+        "create_only_conflict_visible": true,
+        "private_field_rejected_without_mutation": true,
+        "missing_term_dry_run_no_mutation": true,
+        "missing_term_execution_opt_in": true,
+        "supported_relationship_consistency": true,
+        "deterministic_exports": true,
+        "export_formula_and_privacy": true,
+        "unsafe_remote_media_not_verified": true,
+        "bounded_performance_runs": true,
+        "no_phase10": true
+      },
+      "benchmarks": {
+        "10": {
+          "seconds": 0.076,
+          "rows": 10,
+          "status": "PASS",
+          "memory_delta": 0,
+          "peak_delta": 0
+        },
+        "100": {
+          "seconds": 0.798,
+          "rows": 100,
+          "status": "PASS",
+          "memory_delta": 0,
+          "peak_delta": 0
+        },
+        "1000": {
+          "seconds": 6.816,
+          "rows": 1000,
+          "status": "PASS",
+          "memory_delta": 2097152,
+          "peak_delta": 2097152
+        }
+      },
+      "memory": {
+        "peak_bytes": 46137344,
+        "memory_limit": "256M"
+      }
+    }
+  }
+}

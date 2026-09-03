@@ -1,0 +1,11 @@
+External-verification availability check: 2026-08-30
+
+Commands and actual results:
+- docker --version: command not found
+- docker compose version: command not found
+- gh auth status: gh command not found
+- git rev-parse HEAD: not a Git repository
+- Workspace artifact search: no Mayfair Core, Mayfair Forms & Leads, ACF, Elementor, or Elementor Pro ZIP/tar artifact found
+
+Available local runtime: Node.js and WordPress Playground/PHP-WASM with SQLite.
+No production credentials or customer data are stored here.

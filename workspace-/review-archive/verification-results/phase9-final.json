@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "release": "0.9.0",
+  "generated_at": "2026-09-03",
+  "phase9": {
+    "runtime_matrix": "PASS",
+    "security": "PASS",
+    "privacy": "PASS",
+    "data_integrity": "PASS",
+    "unit_and_standards": {
+      "phpunit": "PASS",
+      "phpcs_wpcs": "PASS",
+      "phpstan": "NOT VERIFIED"
+    },
+    "syntax": {
+      "8.1": "PASS",
+      "8.2": "PASS",
+      "8.3": "PASS"
+    },
+    "package_reproducibility": "PASS",
+    "clean_package_runtime": "PASS"
+  },
+  "previous_phase_component_regression": {
+    "phase2": {
+      "final": "PASS",
+      "rest_8.1": "PASS",
+      "rest_8.2": "PASS",
+      "rest_8.3": "PASS"
+    },
+    "phase3": {
+      "phase3-search-core": "PASS",
+      "phase3-index-lifecycle": "PASS",
+      "phase3-index-rebuild": "PASS",
+      "phase3-index-consistency": "PASS",
+      "phase3-diagnostics": "PASS",
+      "phase3-cli": "PASS",
+      "phase3-rest-ajax-url": "PASS",
+      "phase3-rest-ajax-performance": "PASS",
+      "phase3-final-audits": "PASS",
+      "phase3-performance-final": "PASS",
+      "phase3-migration-final": "PASS"
+    },
+    "phase4": {
+      "phase4-geo-core": "PASS",
+      "phase4-hardening": "PASS",
+      "phase4-secure-http": "PASS",
+      "phase4-performance": "PASS"
+    },
+    "phase5": {
+      "phase5-foundation": "PASS",
+      "phase5-alerts": "PASS",
+      "phase5-migration": "PASS",
+      "phase5-rest": "PASS",
+      "phase5-ajax": "PASS",
+      "phase5-privacy": "PASS",
+      "phase5-diagnostics": "PASS",
+      "phase5-security": "PASS",
+      "phase5-data-integrity": "PASS",
+      "phase5-performance": "PASS"
+    },
+    "phase6": {
+      "8.1": "PASS",
+      "8.2": "PASS",
+      "8.3": "PASS"
+    },
+    "phase7": {
+      "8.1": "PASS",
+      "8.2": "PASS",
+      "8.3": "PASS"
+    },
+    "phase8": {
+      "8.1": "PASS",
+      "8.2": "PASS",
+      "8.3": "PASS"
+    },
+    "aggregate_status": "PASS",
+    "phase3_retired_final_report_wrapper": "NOT RUN: requires absent historical dist/realestate-platform-0.3.0.zip; underlying components passed"
+  },
+  "artifact": {
+    "path": "dist/realestate-platform-0.9.0.zip",
+    "files": 116,
+    "bytes": 140466,
+    "sha256": "4c8441eb002a85e6435b0031dee9f84e5249309e1dc6c52a7154f4d4e24f9f9b",
+    "byte_identical_builds": true,
+    "clean_extraction": "package-install/realestate-platform"
+  },
+  "not_verified": [
+    "PHPStan project-scope analysis at configured memory budget",
+    "native MySQL/MariaDB and controlled native-database failure recovery",
+    "native WP-CLI binary runtime and host scheduling/permissions",
+    "real Mayfair Core/Forms & Leads artifacts and mappings",
+    "real ACF/ACF Pro",
+    "real Elementor/Elementor Pro/browser/editor/Theme Builder/Loop Grid",
+    "allowed-public-provider remote-media success, DNS rebinding, and production egress",
+    "external CI/providers and production infrastructure",
+    "100k-scale/concurrent performance and durable process-death resume",
+    "legal/retention approval for content exports"
+  ],
+  "phase10": "LOCKED; no Phase 10 code started"
+}

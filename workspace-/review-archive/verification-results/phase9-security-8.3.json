@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "checks": {
+    "import_capability_boundary": true,
+    "export_capability_boundary": true,
+    "guest_no_mutation": true,
+    "actor_identity_binding": true,
+    "private_field_rejected": true,
+    "protected_input_rejected": true,
+    "arbitrary_taxonomy_rejected": true,
+    "malformed_csv_rejected": true,
+    "malformed_json_rejected": true,
+    "invalid_utf8_rejected": true,
+    "oversized_source_rejected": true,
+    "deep_json_rejected": true,
+    "duplicate_normalized_json_keys_rejected": true,
+    "import_path_traversal_rejected": true,
+    "import_absolute_path_rejected": true,
+    "export_path_traversal_rejected": true,
+    "export_extension_mismatch_rejected": true,
+    "http_remote_media_rejected": true,
+    "loopback_ssrf_rejected": true,
+    "metadata_ssrf_rejected": true,
+    "private_network_ssrf_rejected": true,
+    "unsafe_port_rejected": true,
+    "import_export_has_no_direct_sql_or_privilege_mutation": true,
+    "no_rest_import_surface": true,
+    "serialized_payload_is_not_executed": true
+  },
+  "failed": [],
+  "environment": {
+    "php": "8.3.32",
+    "wordpress": "6.4.10",
+    "database": "SQLite"
+  },
+  "qualifications": [
+    "No REST import/export route exists; nonce is not applicable to the sole WP-CLI transport.",
+    "Remote media was not downloaded; allowed-public-host behavior remains NOT VERIFIED."
+  ]
+}

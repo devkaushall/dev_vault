@@ -1,0 +1,40 @@
+{
+    "status": "PASS",
+    "environment": {
+        "database": "SQLite",
+        "php": "8.3.32",
+        "wordpress": "6.4.10"
+    },
+    "scales_executed": [
+        10,
+        100
+    ],
+    "scale_1000": "NOT VERIFIED: impractical in constrained WASM runtime",
+    "results": {
+        "10": {
+            "fixture_seconds": 0.9440000057220459,
+            "favorite_list_seconds": 0.05099987983703613,
+            "favorite_list_queries": 20,
+            "memory_delta": 134296
+        },
+        "100": {
+            "fixture_seconds": 9.164000034332275,
+            "favorite_list_seconds": 0.5199999809265137,
+            "favorite_list_queries": 200,
+            "memory_delta": 590664
+        },
+        "saved_10": {
+            "seconds": 0.09300017356872559,
+            "queries": 41
+        },
+        "scheduler_empty": {
+            "seconds": 0.0019998550415039062,
+            "queries": 1,
+            "result": {
+                "processed": 0,
+                "failed": 0
+            },
+            "bounded_limit": 25
+        }
+    }
+}

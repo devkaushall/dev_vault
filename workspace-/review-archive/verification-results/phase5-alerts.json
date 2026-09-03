@@ -1,0 +1,16 @@
+{
+    "status": "PASS",
+    "checks": {
+        "create": true,
+        "frequency": true,
+        "idor": true,
+        "first_notification": true,
+        "dedupe": true,
+        "rematch": true,
+        "disable": true,
+        "retry": true,
+        "schedule": true,
+        "run": true,
+        "cascade_service": true
+    }
+}

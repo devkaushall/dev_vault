@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "source": "phase6-runtime-8.3.json",
+  "checks": {
+    "agency_create": true,
+    "agent_create": true,
+    "agency_assign": true,
+    "property_assign": true,
+    "relationships": true,
+    "relationship_consistency": true,
+    "strict_id_rejection": true,
+    "agency_delete_blocked": true,
+    "lifecycle": true,
+    "public_allowlist": true,
+    "public_xss_safe": true,
+    "agent_idor_update": true,
+    "agent_idor_delete": true,
+    "agency_idor_update": true,
+    "agency_idor_delete": true,
+    "assignment_idor": true,
+    "idor_no_mutation": true,
+    "anonymous_public": true,
+    "anonymous_write_blocked": true,
+    "invalid_id": true,
+    "numeric_string_id": true,
+    "pagination_bound": true,
+    "rest_list": true,
+    "rest_create": true,
+    "rest_update": true,
+    "rest_delete": true,
+    "rest_agency_assignment": true,
+    "rest_property_assignment": true,
+    "rest_agency_removal": true,
+    "rest_agency_reassignment": true,
+    "invalid_relationship": true,
+    "privacy_export": true,
+    "privacy_erase": true,
+    "relationship_remove": true,
+    "agency_delete_blocked_by_property": true,
+    "rest_property_removal": true,
+    "property_relationship_remove": true,
+    "agency_delete_after_remove": true,
+    "service_singleton": true,
+    "privacy_user_delete": true,
+    "performance_smoke": true
+  },
+  "performance": {
+    "agent": {
+      "10": {
+        "listing_seconds": 0.007999897003173828,
+        "listing_queries": 3,
+        "memory_delta": 356456,
+        "returned": 10
+      },
+      "100": {
+        "listing_seconds": 0.029999971389770508,
+        "listing_queries": 3,
+        "memory_delta": 663776,
+        "returned": 100
+      },
+      "fixture_seconds": 1.8430001735687256
+    },
+    "agency": {
+      "10": {
+        "listing_seconds": 0.007999897003173828,
+        "listing_queries": 3,
+        "memory_delta": 19912,
+        "returned": 10
+      },
+      "100": {
+        "listing_seconds": 0.0280001163482666,
+        "listing_queries": 3,
+        "memory_delta": 324032,
+        "returned": 100
+      },
+      "fixture_seconds": 1.8640000820159912
+    }
+  },
+  "environment": {
+    "php": "8.3.32",
+    "wordpress": "6.4.10",
+    "database": "SQLite"
+  }
+}

@@ -1,0 +1,30 @@
+
+WordPress Playground CLI
+
+PHP 8.3  WordPress 6.4
+Extensions intl
+Mount ./plugins/realestate-platform → /wordpress/wp-content/plugins/realestate-platform
+Mount ./scripts/phase9-privacy-runner.php → /phase9-privacy-runner.php
+
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+
+{
+  "status": "PASS",
+  "checks": {
+    "catalog_excludes_private_and_operational_columns": true,
+    "public_exports_are_strings": true,
+    "private_editorial_metadata_excluded": true,
+    "draft_content_can_be_explicitly_reviewed": true,
+    "default_export_is_public_only": true,
+    "nonpublic_export_requires_manage_capability": true,
+    "private_import_input_rejected": true
+  },
+  "failed": [],
+  "environment": {
+    "php": "8.3.32",
+    "wordpress": "6.4.10",
+    "database": "SQLite"
+  },
+  "privacy_boundary": "Editorial public fields only; Phase 7 private workflow tables and user data are not export targets."
+}

@@ -1,0 +1,149 @@
+
+WordPress Playground CLI
+
+PHP 8.1  WordPress 6.4
+Extensions intl
+Mount ./plugins/realestate-platform → /wordpress/wp-content/plugins/realestate-platform
+Mount ./scripts/phase9-runner.php → /phase9-runner.php
+
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+
+
+WordPress Playground CLI
+
+PHP 8.2  WordPress 6.4
+Extensions intl
+Mount ./plugins/realestate-platform → /wordpress/wp-content/plugins/realestate-platform
+Mount ./scripts/phase9-runner.php → /phase9-runner.php
+
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+
+
+WordPress Playground CLI
+
+PHP 8.3  WordPress 6.4
+Extensions intl
+Mount ./plugins/realestate-platform → /wordpress/wp-content/plugins/realestate-platform
+Mount ./scripts/phase9-runner.php → /phase9-runner.php
+
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+
+{
+  "status": "PASS",
+  "runtimes": {
+    "8.1": {
+      "status": "PASS",
+      "runtime": "WordPress runtime contract checks; external integrations remain NOT VERIFIED.",
+      "checks": {
+        "services_composed": true,
+        "dry_run_zero_mutation": true,
+        "create_and_taxonomy": true,
+        "deterministic_upsert": true,
+        "create_only_conflict_visible": true,
+        "private_field_rejected_without_mutation": true,
+        "missing_term_dry_run_no_mutation": true,
+        "missing_term_execution_opt_in": true,
+        "supported_relationship_consistency": true,
+        "deterministic_exports": true,
+        "export_formula_and_privacy": true,
+        "unsafe_remote_media_not_verified": true,
+        "bounded_performance_runs": true,
+        "no_phase10": true
+      },
+      "benchmarks": {
+        "10": {
+          "seconds": 0.07,
+          "rows": 10,
+          "status": "PASS"
+        },
+        "100": {
+          "seconds": 0.701,
+          "rows": 100,
+          "status": "PASS"
+        },
+        "1000": {
+          "seconds": 6.693,
+          "rows": 1000,
+          "status": "PASS"
+        }
+      }
+    },
+    "8.2": {
+      "status": "PASS",
+      "runtime": "WordPress runtime contract checks; external integrations remain NOT VERIFIED.",
+      "checks": {
+        "services_composed": true,
+        "dry_run_zero_mutation": true,
+        "create_and_taxonomy": true,
+        "deterministic_upsert": true,
+        "create_only_conflict_visible": true,
+        "private_field_rejected_without_mutation": true,
+        "missing_term_dry_run_no_mutation": true,
+        "missing_term_execution_opt_in": true,
+        "supported_relationship_consistency": true,
+        "deterministic_exports": true,
+        "export_formula_and_privacy": true,
+        "unsafe_remote_media_not_verified": true,
+        "bounded_performance_runs": true,
+        "no_phase10": true
+      },
+      "benchmarks": {
+        "10": {
+          "seconds": 0.067,
+          "rows": 10,
+          "status": "PASS"
+        },
+        "100": {
+          "seconds": 0.692,
+          "rows": 100,
+          "status": "PASS"
+        },
+        "1000": {
+          "seconds": 6.699,
+          "rows": 1000,
+          "status": "PASS"
+        }
+      }
+    },
+    "8.3": {
+      "status": "PASS",
+      "runtime": "WordPress runtime contract checks; external integrations remain NOT VERIFIED.",
+      "checks": {
+        "services_composed": true,
+        "dry_run_zero_mutation": true,
+        "create_and_taxonomy": true,
+        "deterministic_upsert": true,
+        "create_only_conflict_visible": true,
+        "private_field_rejected_without_mutation": true,
+        "missing_term_dry_run_no_mutation": true,
+        "missing_term_execution_opt_in": true,
+        "supported_relationship_consistency": true,
+        "deterministic_exports": true,
+        "export_formula_and_privacy": true,
+        "unsafe_remote_media_not_verified": true,
+        "bounded_performance_runs": true,
+        "no_phase10": true
+      },
+      "benchmarks": {
+        "10": {
+          "seconds": 0.066,
+          "rows": 10,
+          "status": "PASS"
+        },
+        "100": {
+          "seconds": 0.653,
+          "rows": 100,
+          "status": "PASS"
+        },
+        "1000": {
+          "seconds": 6.501,
+          "rows": 1000,
+          "status": "PASS"
+        }
+      }
+    }
+  }
+}

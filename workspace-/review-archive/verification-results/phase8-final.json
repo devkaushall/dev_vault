@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "local_release_gate": "PASS",
+  "release": "0.8.0",
+  "database_schema": "004",
+  "environment": {
+    "php": "8.3.32",
+    "wordpress": "6.4.10",
+    "database": "SQLite"
+  },
+  "gates": {
+    "phase8_runtime": "PASS",
+    "phase8_checks": "40/40",
+    "php_syntax": {
+      "8.1": "PASS",
+      "8.2": "PASS",
+      "8.3": "PASS"
+    },
+    "phpunit": {
+      "status": "PASS",
+      "tests": 37,
+      "assertions": 313,
+      "skipped": 1
+    },
+    "phpcs_wpcs": "PASS",
+    "phpstan": "NOT VERIFIED",
+    "prior_phase_regressions": "PASS",
+    "package_zip_test": "PASS",
+    "package_clean_install": "PASS",
+    "reproducibility": "PASS"
+  },
+  "package": {
+    "path": "dist/realestate-platform-0.8.0.zip",
+    "files": 108,
+    "bytes": 115972,
+    "sha256": "9b5d1d66df1c425976945819a818f688a6540f5039370f2ceb0f9fab1d5ef971"
+  },
+  "not_verified": [
+    "PHPStan at configured project scope due constrained Playground memory",
+    "real Elementor runtime and editor",
+    "Elementor Pro runtime and editor",
+    "ACF runtime",
+    "browser/Theme Builder/Loop Grid visual rendering",
+    "Mayfair artifacts and compatibility",
+    "native MySQL/MariaDB",
+    "native WP-CLI",
+    "remote CI and production deployment"
+  ],
+  "phase9": "NOT STARTED / NOT AUTHORIZED"
+}

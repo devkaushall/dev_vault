@@ -1,0 +1,25 @@
+name: Phase 1
+on: [push, pull_request]
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    strategy: { matrix: { php: ['8.1','8.2','8.3'] } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with: { php-version: '${{ matrix.php }}', tools: composer:v2 }
+      - run: composer install --no-interaction --prefer-dist
+        working-directory: plugins/realestate-platform
+      - run: find . -name '*.php' -not -path './vendor/*' -print0 | xargs -0 -n1 php -l
+        working-directory: plugins/realestate-platform
+      - run: composer analyse
+        working-directory: plugins/realestate-platform
+      - run: composer lint
+        working-directory: plugins/realestate-platform
+      - run: composer test
+        working-directory: plugins/realestate-platform
+      - run: composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+        working-directory: plugins/realestate-platform
+      - run: bash scripts/package.sh
+      - uses: actions/upload-artifact@v4
+        with: { name: 'realestate-platform-${{ matrix.php }}', path: 'dist/*.zip' }

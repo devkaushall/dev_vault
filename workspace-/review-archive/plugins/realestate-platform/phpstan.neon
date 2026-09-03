@@ -1,0 +1,15 @@
+includes:
+  - vendor/szepeviktor/phpstan-wordpress/extension.neon
+
+parameters:
+  level: 8
+  paths: [src, realestate-platform.php, migrations]
+  excludePaths: [tests]
+  treatPhpDocTypesAsCertain: false
+  bootstrapFiles:
+    - tests/phpstan-bootstrap.php
+
+  ignoreErrors:
+    -
+      message: '#^Parameter \#1 \$query of method wpdb\:\:prepare\(\) expects literal\-string, string given\.$#'
+      path: src/Database/WpDatabase.php

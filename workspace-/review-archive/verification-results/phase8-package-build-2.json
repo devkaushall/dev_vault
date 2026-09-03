@@ -1,0 +1,11 @@
+{
+  "artifact": "dist/realestate-platform-0.8.0.zip",
+  "bytes": 115972,
+  "sha256": "9b5d1d66df1c425976945819a818f688a6540f5039370f2ceb0f9fab1d5ef971",
+  "files": 108,
+  "zip_test": "PASS",
+  "forbidden_entries": [],
+  "header_version": "0.8.0",
+  "db_version": "004",
+  "credential_like_matches": []
+}

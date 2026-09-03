@@ -1,0 +1,68 @@
+
+WordPress Playground CLI
+
+PHP 8.3  WordPress 6.4
+Extensions intl
+Mount ./plugins/realestate-platform → /wordpress/wp-content/plugins/realestate-platform
+
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+
+{
+    "status": "PASS",
+    "checks": {
+        "anonymous_public": true,
+        "visibility": true,
+        "filter_city": true,
+        "filter_price": true,
+        "filter_bedrooms": true,
+        "filter_taxonomy": true,
+        "filter_developer": true,
+        "filter_featured": true,
+        "filter_verified": true,
+        "filter_combined": true,
+        "filter_keyword": true,
+        "filter_empty": true,
+        "sort_relevance": true,
+        "sort_newest": true,
+        "sort_oldest": true,
+        "sort_price_asc": true,
+        "sort_price_desc": true,
+        "sort_area_asc": true,
+        "sort_area_desc": true,
+        "sort_bedrooms": true,
+        "sort_featured": true,
+        "sort_verified": true,
+        "pagination": true,
+        "invalid_0": true,
+        "invalid_1": true,
+        "invalid_2": true,
+        "invalid_3": true,
+        "invalid_4": true,
+        "invalid_5": true,
+        "invalid_6": true,
+        "invalid_7": true,
+        "invalid_8": true,
+        "invalid_9": true,
+        "invalid_10": true,
+        "invalid_11": true,
+        "invalid_12": true,
+        "invalid_13": true,
+        "unauthorized_write": true,
+        "malformed_json": true,
+        "rest_read_only": true,
+        "ajax_valid": true,
+        "ajax_missing_nonce": true,
+        "ajax_bad_nonce": true,
+        "ajax_invalid": true,
+        "transport_equivalence": true,
+        "ajax_read_only": true,
+        "url_roundtrip": true,
+        "url_empty": true,
+        "url_duplicate": true,
+        "url_nested": true,
+        "url_unknown": true,
+        "url_injection": true
+    },
+    "query_count": 452
+}

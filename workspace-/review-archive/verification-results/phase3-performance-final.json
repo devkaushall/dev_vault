@@ -1,0 +1,217 @@
+{
+    "status": "PASS",
+    "engine": "SQLite",
+    "largest_safe_dataset": 1000,
+    "ten_thousand": "NOT VERIFIED: extrapolated fixture\/rebuild cost exceeds safe execution budget in this sandbox.",
+    "checks": {
+        "bounded_queries": true,
+        "rebuild_1000": true,
+        "batching": true,
+        "single_sync": true,
+        "no_unnecessary_rebuild": true
+    },
+    "single_sync_seconds": 0.01399993896484375,
+    "datasets": {
+        "10": {
+            "rebuild": {
+                "seconds": 0.3690001964569092,
+                "memory_delta": 0,
+                "processed": 10,
+                "failed": 0,
+                "batches": 1
+            },
+            "search": {
+                "all": {
+                    "seconds": 0.00800013542175293,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 10,
+                    "total": 10
+                },
+                "keyword": {
+                    "seconds": 0.004999876022338867,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 10,
+                    "total": 10
+                },
+                "city": {
+                    "seconds": 0.005000114440917969,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 5,
+                    "total": 5
+                },
+                "taxonomy": {
+                    "seconds": 0.006999969482421875,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 1,
+                    "total": 1
+                },
+                "price": {
+                    "seconds": 0.004999876022338867,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 0,
+                    "total": 0
+                },
+                "combined": {
+                    "seconds": 0.006000041961669922,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 0,
+                    "total": 0
+                },
+                "sorting": {
+                    "seconds": 0.005000114440917969,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 10,
+                    "total": 10
+                },
+                "pagination": {
+                    "seconds": 0.004999876022338867,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 0,
+                    "total": 10
+                }
+            }
+        },
+        "100": {
+            "rebuild": {
+                "seconds": 3.633000135421753,
+                "memory_delta": 0,
+                "processed": 100,
+                "failed": 0,
+                "batches": 2
+            },
+            "search": {
+                "all": {
+                    "seconds": 0.00599980354309082,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 20,
+                    "total": 100
+                },
+                "keyword": {
+                    "seconds": 0.006000041961669922,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 20,
+                    "total": 100
+                },
+                "city": {
+                    "seconds": 0.006999969482421875,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 20,
+                    "total": 50
+                },
+                "taxonomy": {
+                    "seconds": 0.006999969482421875,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 1,
+                    "total": 1
+                },
+                "price": {
+                    "seconds": 0.0070002079010009766,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 20,
+                    "total": 50
+                },
+                "combined": {
+                    "seconds": 0.00599980354309082,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 5,
+                    "total": 5
+                },
+                "sorting": {
+                    "seconds": 0.006000041961669922,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 20,
+                    "total": 100
+                },
+                "pagination": {
+                    "seconds": 0.006000041961669922,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 20,
+                    "total": 100
+                }
+            }
+        },
+        "1000": {
+            "rebuild": {
+                "seconds": 36.21799993515015,
+                "memory_delta": 0,
+                "processed": 1000,
+                "failed": 0,
+                "batches": 14
+            },
+            "search": {
+                "all": {
+                    "seconds": 0.01100015640258789,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 20,
+                    "total": 1000
+                },
+                "keyword": {
+                    "seconds": 0.013000011444091797,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 20,
+                    "total": 1000
+                },
+                "city": {
+                    "seconds": 0.009999990463256836,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 20,
+                    "total": 500
+                },
+                "taxonomy": {
+                    "seconds": 0.008999824523925781,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 1,
+                    "total": 1
+                },
+                "price": {
+                    "seconds": 0.010000228881835938,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 20,
+                    "total": 101
+                },
+                "combined": {
+                    "seconds": 0.009999990463256836,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 20,
+                    "total": 95
+                },
+                "sorting": {
+                    "seconds": 0.010999917984008789,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 20,
+                    "total": 1000
+                },
+                "pagination": {
+                    "seconds": 0.012000083923339844,
+                    "queries": 2,
+                    "memory_delta": 0,
+                    "results": 20,
+                    "total": 1000
+                }
+            }
+        }
+    }
+}

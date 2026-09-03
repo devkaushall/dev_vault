@@ -1,0 +1,24 @@
+{
+  "status": "NOT VERIFIED",
+  "tool": "PHPStan 1.12.x",
+  "configuration": "plugins/realestate-platform/phpstan.neon",
+  "configuration_changed": false,
+  "attempts": [
+    {
+      "command": "node run-tool.mjs phpstan analyse --memory-limit=256M --error-format=table",
+      "exit_code": 1,
+      "result": "PHP fatal: allowed memory size of 268435456 bytes exhausted"
+    },
+    {
+      "command": "node run-tool.mjs phpstan analyse --memory-limit=512M --error-format=table",
+      "exit_code": 1,
+      "result": "PHP fatal: allowed memory size of 536870912 bytes exhausted"
+    },
+    {
+      "command": "node run-tool.mjs phpstan analyse --memory-limit=1024M --error-format=table",
+      "exit_code": -1,
+      "result": "constrained Playground process terminated before analysis completed"
+    }
+  ],
+  "interpretation": "Resource limitation; not a pass and no findings were hidden."
+}

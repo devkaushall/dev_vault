@@ -1,0 +1,21 @@
+{
+    "status": "PASS",
+    "checks": {
+        "rest_two_search_queries": true,
+        "ajax_two_search_queries": true,
+        "bounded_results": true,
+        "no_rebuild": true
+    },
+    "rest": {
+        "queries": 2,
+        "seconds": 0.009999990463256836,
+        "results": 20
+    },
+    "ajax": {
+        "queries": 2,
+        "seconds": 0.006999969482421875,
+        "results": 20
+    },
+    "engine": "SQLite",
+    "properties": 100
+}

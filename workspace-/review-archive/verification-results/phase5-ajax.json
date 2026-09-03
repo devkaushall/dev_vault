@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "checks": {
+    "missing_nonce": true,
+    "invalid_nonce": true,
+    "bad_operation": true,
+    "bad_id": true,
+    "bad_criteria": true,
+    "bad_bool": true,
+    "valid_add": true,
+    "valid_remove": true,
+    "valid_toggle": true,
+    "valid_saved_create": true,
+    "valid_alert_save": true,
+    "valid_alert_delete": true,
+    "valid_saved_delete": true,
+    "rate_below": true,
+    "rate_threshold": true,
+    "rate_exceeded": true,
+    "rate_user_isolated": true,
+    "rate_operation_isolated": true
+  },
+  "environment": {
+    "php": "8.3",
+    "wordpress": "6.4",
+    "database": "SQLite"
+  }
+}

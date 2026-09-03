@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "path": "dist/realestate-platform-0.9.0.zip",
+  "bytes": 140466,
+  "files": 116,
+  "sha256": "4c8441eb002a85e6435b0031dee9f84e5249309e1dc6c52a7154f4d4e24f9f9b",
+  "build_1": {
+    "path": "/tmp/realestate-platform-0.9.0-build-1.zip",
+    "bytes": 140466,
+    "sha256": "4c8441eb002a85e6435b0031dee9f84e5249309e1dc6c52a7154f4d4e24f9f9b"
+  },
+  "build_2": {
+    "path": "/tmp/realestate-platform-0.9.0-build-2.zip",
+    "bytes": 140466,
+    "sha256": "4c8441eb002a85e6435b0031dee9f84e5249309e1dc6c52a7154f4d4e24f9f9b"
+  },
+  "byte_identical": true,
+  "zip_integrity": true,
+  "forbidden_files": [],
+  "suspicious_content_files": [],
+  "excluded_runtime_artifacts": true,
+  "clean_extraction": "package-install/realestate-platform"
+}

@@ -1,0 +1,12 @@
+{
+    "status": "PASS",
+    "checks": {
+        "radius": true,
+        "bounds": true,
+        "dateline": true,
+        "invalid": true,
+        "exact": true,
+        "rounded": true,
+        "hidden": true
+    }
+}

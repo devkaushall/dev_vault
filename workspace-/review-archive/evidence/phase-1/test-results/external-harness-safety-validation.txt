@@ -1,0 +1,21 @@
+Date: 2026-08-30
+
+Executed:
+- docker --version: unavailable (command not found)
+- docker compose version: unavailable (command not found)
+- gh auth status: unavailable (command not found)
+- git rev-parse HEAD: unavailable (not a Git repository)
+- real artifact search: no Mayfair/ACF/Elementor ZIP or tar artifact found
+- bash -n on every verification shell script: PASS
+- destructive runner without marker: correctly refused with exit 64
+- destructive runner with marker: advanced to Docker invocation, then failed because Docker is unavailable
+- final-result.json parse/status validation: PASS
+- credential/private-key/token signature scan: PASS
+
+Harness safety properties:
+- Explicit REALESTATE_VERIFICATION_DISPOSABLE=YES acknowledgement required.
+- Externally supplied database host/URL variables are rejected.
+- Compose services expose no host database port.
+- Database volumes are disposable; teardown runs automatically unless KEEP_ENV=1.
+- Test passwords are generated in process environment and are not committed.
+- PASS requires successful underlying commands and generated JSON status.

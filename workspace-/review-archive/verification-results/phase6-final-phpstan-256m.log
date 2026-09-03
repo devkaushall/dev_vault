@@ -1,0 +1,35 @@
+
+WordPress Playground CLI
+
+PHP 8.3  WordPress 6.4
+Extensions intl
+Mount . → /workspace
+
+The default worker count has been reduced to 1 because this machine has only 2 CPU(s). Running fewer than 6 workers may increase the likelihood of deadlock due to workers blocking on file locks.
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+
+
+⚠️  You're running an old version of PHPStan.️
+
+The last release in the 1.12.x series with new features
+and bugfixes was released on July 17th 2025,
+that's 412 days ago.
+
+Since then more than 65 new PHPStan versions were released
+with hundreds of new features, bugfixes, and other
+quality of life improvements.
+
+To learn about what you're missing out on, check out
+this blog with articles about the latest major releases:
+https://phpstan.org/blog
+
+Upgrade today to PHPStan 2.2 or newer by using
+"phpstan/phpstan": "^2.2" in your composer.json.
+
+Note: Using configuration file /workspace/plugins/realestate-platform/phpstan.neon.
+  0/85 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 5286464 bytes) in phar:///workspace/plugins/realestate-platform/vendor/phpstan/phpstan/phpstan.phar/src/File/FileReader.php on line 16
+
+PHPStan process crashed because it reached configured PHP memory limit: 256M
+Increase your memory limit in php.ini or run PHPStan with --memory-limit CLI option.
+

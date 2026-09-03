@@ -1,0 +1,22 @@
+
+WordPress Playground CLI
+
+PHP 8.3  WordPress 6.4
+Extensions intl
+Mount ./plugins/realestate-platform → /wordpress/wp-content/plugins/realestate-platform
+
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+
+{
+    "status": "PASS",
+    "checks": {
+        "radius": true,
+        "bounds": true,
+        "dateline": true,
+        "invalid": true,
+        "exact": true,
+        "rounded": true,
+        "hidden": true
+    }
+}

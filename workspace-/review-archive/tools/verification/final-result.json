@@ -1,0 +1,17 @@
+{
+  "phase": 1,
+  "phpstan": "PASS",
+  "phpcs": "PASS",
+  "phpunit": "PASS",
+  "sqlite": "PASS",
+  "mysql": "NOT_VERIFIED",
+  "mariadb": "NOT_VERIFIED",
+  "migration_failure": "NOT_VERIFIED",
+  "uninstall": "NOT_VERIFIED",
+  "security": "NOT_VERIFIED",
+  "mayfair_compatibility_fixture": "PASS",
+  "mayfair_compatibility_real": "NOT_VERIFIED",
+  "zip": "PASS",
+  "ci": "NOT_VERIFIED",
+  "phase_gate": "FAIL"
+}

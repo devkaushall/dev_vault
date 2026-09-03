@@ -1,0 +1,89 @@
+
+WordPress Playground CLI
+
+PHP 8.3  WordPress 6.4
+Extensions intl
+Mount ./package-install/realestate-platform → /wordpress/wp-content/plugins/realestate-platform
+Mount ./scripts/phase6-runner.php → /workspace/runner.php
+
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+
+{
+    "status": "PASS",
+    "checks": {
+        "agency_create": true,
+        "agent_create": true,
+        "agency_assign": true,
+        "property_assign": true,
+        "relationships": true,
+        "agency_delete_blocked": true,
+        "lifecycle": true,
+        "public_allowlist": true,
+        "public_xss_safe": true,
+        "agent_idor_update": true,
+        "agent_idor_delete": true,
+        "agency_idor_update": true,
+        "agency_idor_delete": true,
+        "assignment_idor": true,
+        "idor_no_mutation": true,
+        "anonymous_public": true,
+        "anonymous_write_blocked": true,
+        "invalid_id": true,
+        "numeric_string_id": true,
+        "pagination_bound": true,
+        "rest_list": true,
+        "rest_create": true,
+        "rest_update": true,
+        "rest_delete": true,
+        "rest_agency_assignment": true,
+        "rest_property_assignment": true,
+        "rest_agency_removal": true,
+        "rest_agency_reassignment": true,
+        "invalid_relationship": true,
+        "privacy_export": true,
+        "privacy_erase": true,
+        "relationship_remove": true,
+        "agency_delete_after_remove": true,
+        "service_singleton": true,
+        "privacy_user_delete": true,
+        "performance_smoke": true
+    },
+    "performance": {
+        "agent": {
+            "fixture_seconds": 2.066999912261963,
+            "10": {
+                "listing_seconds": 0.0070002079010009766,
+                "listing_queries": 3,
+                "memory_delta": 356136,
+                "returned": 10
+            },
+            "100": {
+                "listing_seconds": 0.029999971389770508,
+                "listing_queries": 3,
+                "memory_delta": 663456,
+                "returned": 100
+            }
+        },
+        "agency": {
+            "fixture_seconds": 2.057999849319458,
+            "10": {
+                "listing_seconds": 0.00800013542175293,
+                "listing_queries": 3,
+                "memory_delta": 19912,
+                "returned": 10
+            },
+            "100": {
+                "listing_seconds": 0.029000043869018555,
+                "listing_queries": 3,
+                "memory_delta": 324032,
+                "returned": 100
+            }
+        }
+    },
+    "environment": {
+        "php": "8.3.32",
+        "wordpress": "6.4.10",
+        "database": "SQLite"
+    }
+}

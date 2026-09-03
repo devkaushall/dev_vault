@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "first": {
+    "bytes": 115972,
+    "sha256": "9b5d1d66df1c425976945819a818f688a6540f5039370f2ceb0f9fab1d5ef971",
+    "files": 108
+  },
+  "second": {
+    "bytes": 115972,
+    "sha256": "9b5d1d66df1c425976945819a818f688a6540f5039370f2ceb0f9fab1d5ef971",
+    "files": 108
+  },
+  "file_lists_identical": true
+}

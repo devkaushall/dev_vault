@@ -1,0 +1,83 @@
+{
+    "status": "PASS",
+    "checks": {
+        "agency_create": true,
+        "agent_create": true,
+        "agency_assign": true,
+        "property_assign": true,
+        "relationships": true,
+        "relationship_consistency": true,
+        "strict_id_rejection": true,
+        "agency_delete_blocked": true,
+        "lifecycle": true,
+        "public_allowlist": true,
+        "public_xss_safe": true,
+        "agent_idor_update": true,
+        "agent_idor_delete": true,
+        "agency_idor_update": true,
+        "agency_idor_delete": true,
+        "assignment_idor": true,
+        "idor_no_mutation": true,
+        "anonymous_public": true,
+        "anonymous_write_blocked": true,
+        "invalid_id": true,
+        "numeric_string_id": true,
+        "pagination_bound": true,
+        "rest_list": true,
+        "rest_create": true,
+        "rest_update": true,
+        "rest_delete": true,
+        "rest_agency_assignment": true,
+        "rest_property_assignment": true,
+        "rest_agency_removal": true,
+        "rest_agency_reassignment": true,
+        "invalid_relationship": true,
+        "privacy_export": true,
+        "privacy_erase": true,
+        "relationship_remove": true,
+        "agency_delete_blocked_by_property": true,
+        "rest_property_removal": true,
+        "property_relationship_remove": true,
+        "agency_delete_after_remove": true,
+        "service_singleton": true,
+        "privacy_user_delete": true,
+        "performance_smoke": true
+    },
+    "performance": {
+        "agent": {
+            "fixture_seconds": 1.886000156402588,
+            "10": {
+                "listing_seconds": 0.006999969482421875,
+                "listing_queries": 3,
+                "memory_delta": 377096,
+                "returned": 10
+            },
+            "100": {
+                "listing_seconds": 0.03299999237060547,
+                "listing_queries": 3,
+                "memory_delta": 804032,
+                "returned": 100
+            }
+        },
+        "agency": {
+            "fixture_seconds": 1.9900000095367432,
+            "10": {
+                "listing_seconds": 0.007999897003173828,
+                "listing_queries": 3,
+                "memory_delta": -93752,
+                "returned": 10
+            },
+            "100": {
+                "listing_seconds": 0.028999805450439453,
+                "listing_queries": 3,
+                "memory_delta": 329984,
+                "returned": 100
+            }
+        }
+    },
+    "environment": {
+        "php": "8.1.34",
+        "wordpress": "6.4.10",
+        "database": "SQLite"
+    }
+}

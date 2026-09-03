@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "checks": {
+    "version": true,
+    "plugin_version": true,
+    "history": true,
+    "historical_checksums_unchanged": true,
+    "new_checksum": true,
+    "table_rep_leads": true,
+    "table_rep_lead_requests": true,
+    "table_rep_lead_status_history": true,
+    "table_rep_lead_assignment_history": true,
+    "table_rep_site_visits": true,
+    "table_rep_site_visit_history": true,
+    "table_rep_notification_events": true
+  },
+  "environment": {
+    "php": "8.3.32",
+    "wordpress": "6.4.10",
+    "database": "SQLite"
+  }
+}

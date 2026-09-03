@@ -1,0 +1,434 @@
+
+WordPress Playground CLI
+
+PHP 8.3  WordPress 6.4
+Extensions intl
+Mount ./plugins/realestate-platform → /wordpress/wp-content/plugins/realestate-platform
+
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+
+{
+    "wp": "6.4.10",
+    "methods": [
+        "__construct",
+        "get_method",
+        "set_method",
+        "get_headers",
+        "canonicalize_header_name",
+        "get_header",
+        "get_header_as_array",
+        "set_header",
+        "add_header",
+        "remove_header",
+        "set_headers",
+        "get_content_type",
+        "is_json_content_type",
+        "get_param",
+        "has_param",
+        "set_param",
+        "get_params",
+        "get_url_params",
+        "set_url_params",
+        "get_query_params",
+        "set_query_params",
+        "get_body_params",
+        "set_body_params",
+        "get_file_params",
+        "set_file_params",
+        "get_default_params",
+        "set_default_params",
+        "get_body",
+        "set_body",
+        "get_json_params",
+        "get_route",
+        "set_route",
+        "get_attributes",
+        "set_attributes",
+        "sanitize_params",
+        "has_valid_params",
+        "offsetExists",
+        "offsetGet",
+        "offsetSet",
+        "offsetUnset",
+        "from_url"
+    ],
+    "route_found": true,
+    "endpoints": [
+        {
+            "methods": {
+                "GET": true
+            },
+            "arg_keys": [
+                "id",
+                "context",
+                "password"
+            ]
+        },
+        {
+            "methods": {
+                "POST": true,
+                "PUT": true,
+                "PATCH": true
+            },
+            "arg_keys": [
+                "id",
+                "date",
+                "date_gmt",
+                "slug",
+                "status",
+                "password",
+                "title",
+                "content",
+                "author",
+                "excerpt",
+                "featured_media",
+                "meta",
+                "template",
+                "location",
+                "project_type"
+            ]
+        },
+        {
+            "methods": {
+                "DELETE": true
+            },
+            "arg_keys": [
+                "id",
+                "force"
+            ]
+        },
+        {
+            "methods": {
+                "GET": true
+            },
+            "arg_keys": [
+                "id",
+                "context",
+                "password"
+            ]
+        },
+        {
+            "methods": {
+                "POST": true,
+                "PUT": true,
+                "PATCH": true
+            },
+            "arg_keys": [
+                "id",
+                "date",
+                "date_gmt",
+                "slug",
+                "status",
+                "password",
+                "title",
+                "content",
+                "author",
+                "excerpt",
+                "featured_media",
+                "meta",
+                "template",
+                "location",
+                "project_type"
+            ]
+        },
+        {
+            "methods": {
+                "DELETE": true
+            },
+            "arg_keys": [
+                "id",
+                "force"
+            ]
+        }
+    ],
+    "controller_meta_schema": {
+        "description": "Meta fields.",
+        "type": "object",
+        "context": [
+            "view",
+            "edit"
+        ],
+        "properties": {
+            "rep_price": {
+                "type": "number",
+                "description": "Canonical numeric price; never formatted.",
+                "default": 0,
+                "required": false
+            },
+            "rep_currency": {
+                "type": "string",
+                "description": "ISO 4217 currency code.",
+                "default": "INR",
+                "required": false
+            },
+            "rep_address": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false
+            },
+            "rep_city": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false
+            },
+            "rep_state": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false
+            },
+            "rep_country": {
+                "type": "string",
+                "description": "",
+                "default": "IN",
+                "required": false
+            },
+            "rep_postal_code": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false
+            },
+            "rep_latitude": {
+                "type": "number",
+                "description": "WGS84 latitude.",
+                "default": 0,
+                "required": false,
+                "minimum": -90,
+                "maximum": 90
+            },
+            "rep_longitude": {
+                "type": "number",
+                "description": "WGS84 longitude.",
+                "default": 0,
+                "required": false,
+                "minimum": -180,
+                "maximum": 180
+            },
+            "rep_possession": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false
+            },
+            "rep_construction_status": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false
+            },
+            "rep_developer": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false
+            },
+            "rep_rera": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false
+            },
+            "rep_featured": {
+                "type": "boolean",
+                "description": "",
+                "default": false,
+                "required": false
+            },
+            "rep_video": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false,
+                "format": "uri"
+            },
+            "rep_brochure": {
+                "type": "integer",
+                "description": "",
+                "default": 0,
+                "required": false,
+                "minimum": 1
+            },
+            "rep_gallery": {
+                "type": "array",
+                "items": {
+                    "type": "array",
+                    "description": "",
+                    "default": [],
+                    "required": false,
+                    "items": {
+                        "type": "integer",
+                        "minimum": 1
+                    }
+                }
+            }
+        },
+        "arg_options": {
+            "sanitize_callback": null,
+            "validate_callback": [
+                {},
+                "check_meta_is_array"
+            ]
+        }
+    },
+    "meta_schema": {
+        "validate_callback": [
+            {},
+            "check_meta_is_array"
+        ],
+        "sanitize_callback": null,
+        "description": "Meta fields.",
+        "type": "object",
+        "properties": {
+            "rep_price": {
+                "type": "number",
+                "description": "Canonical numeric price; never formatted.",
+                "default": 0,
+                "required": false
+            },
+            "rep_currency": {
+                "type": "string",
+                "description": "ISO 4217 currency code.",
+                "default": "INR",
+                "required": false
+            },
+            "rep_address": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false
+            },
+            "rep_city": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false
+            },
+            "rep_state": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false
+            },
+            "rep_country": {
+                "type": "string",
+                "description": "",
+                "default": "IN",
+                "required": false
+            },
+            "rep_postal_code": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false
+            },
+            "rep_latitude": {
+                "type": "number",
+                "description": "WGS84 latitude.",
+                "default": 0,
+                "required": false,
+                "minimum": -90,
+                "maximum": 90
+            },
+            "rep_longitude": {
+                "type": "number",
+                "description": "WGS84 longitude.",
+                "default": 0,
+                "required": false,
+                "minimum": -180,
+                "maximum": 180
+            },
+            "rep_possession": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false
+            },
+            "rep_construction_status": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false
+            },
+            "rep_developer": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false
+            },
+            "rep_rera": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false
+            },
+            "rep_featured": {
+                "type": "boolean",
+                "description": "",
+                "default": false,
+                "required": false
+            },
+            "rep_video": {
+                "type": "string",
+                "description": "",
+                "default": "",
+                "required": false,
+                "format": "uri"
+            },
+            "rep_brochure": {
+                "type": "integer",
+                "description": "",
+                "default": 0,
+                "required": false,
+                "minimum": 1
+            },
+            "rep_gallery": {
+                "type": "array",
+                "items": {
+                    "type": "array",
+                    "description": "",
+                    "default": [],
+                    "required": false,
+                    "items": {
+                        "type": "integer",
+                        "minimum": 1
+                    }
+                }
+            }
+        }
+    },
+    "params_before": {
+        "id": 4,
+        "meta": {
+            "rep_latitude": {
+                "nested": "bad"
+            }
+        }
+    },
+    "direct_validation": {
+        "code": "rest_invalid_type",
+        "message": "meta[rep_latitude] is not of type number.",
+        "data": {
+            "param": "meta[rep_latitude]"
+        }
+    },
+    "response": {
+        "status": 400,
+        "data": {
+            "code": "rest_invalid_type",
+            "message": "meta.rep_latitude is not of type number.",
+            "data": {
+                "status": 400
+            },
+            "additional_data": [
+                {
+                    "param": "meta.rep_latitude"
+                }
+            ]
+        }
+    },
+    "stored": ""
+}

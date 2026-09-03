@@ -1,0 +1,11 @@
+PHPUnit 10.5.64 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.3.32
+Configuration: /workspace/plugin/phpunit.xml
+
+...........................................S                      44 / 44 (100%)
+
+Time: 00:00.279, Memory: 52.06 MB
+
+OK, but some tests were skipped!
+Tests: 44, Assertions: 341, Skipped: 1.

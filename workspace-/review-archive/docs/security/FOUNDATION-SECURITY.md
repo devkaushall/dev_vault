@@ -1,0 +1,4 @@
+# Foundation Security
+Admin screens and REST use dedicated capabilities. REST status is authenticated, has a permission callback and response schema, and excludes options/log contents. Settings enforce capability, typed sanitization and validation. Logger allowlists levels/categories and recursively redacts secret/token/password/contact-like context keys. Security helpers cover nonce verification, capability failure, safe redirect, HTTPS/private-network-aware URL validation, traversal-resistant relative paths and cryptographic tokens.
+
+Limitations: DNS rebinding requires validation again at connection/redirect time in the future HTTP client; this helper alone is not an importer. Option logging is intentionally capped and is not suitable for high-volume modules. No lead/upload/payment functionality exists. Full security PASS requires CI, WordPress integration tests and manual review; currently unverified locally because PHP is unavailable.

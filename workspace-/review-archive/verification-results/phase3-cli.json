@@ -1,0 +1,53 @@
+{
+    "status": "PASS",
+    "runtime": "WP-CLI command callbacks executed in a deterministic CLI-compatible harness; native wp-cli binary unavailable.",
+    "checks": {
+        "registered_status": true,
+        "registered_rebuild": true,
+        "status_output": true,
+        "status_read_only": true,
+        "status_authorization": true,
+        "rebuild_authorization": true,
+        "rebuild_sizes": true,
+        "repeat": true,
+        "failure_exit": true
+    },
+    "rebuilds": {
+        "0": {
+            "output": {
+                "processed": 0,
+                "failed": 0,
+                "batches": 0
+            },
+            "indexed": 0,
+            "pass": true
+        },
+        "10": {
+            "output": {
+                "processed": 10,
+                "failed": 0,
+                "batches": 1
+            },
+            "indexed": 10,
+            "pass": true
+        },
+        "100": {
+            "output": {
+                "processed": 100,
+                "failed": 0,
+                "batches": 3
+            },
+            "indexed": 100,
+            "pass": true
+        },
+        "1000": {
+            "output": {
+                "processed": 1000,
+                "failed": 0,
+                "batches": 28
+            },
+            "indexed": 1000,
+            "pass": true
+        }
+    }
+}

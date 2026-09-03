@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "version": "0.5.0",
+  "sha256": "26f41b3bd6b3f6da18519d2f46888f1b01dcb68327b0c9d58e2309144fb8bec7",
+  "gates": {
+    "foundation": "PASS",
+    "favorites": "PASS",
+    "compare": "PASS",
+    "saved_searches": "PASS",
+    "alerts": "PASS",
+    "scheduler": "PASS",
+    "notification": "PASS",
+    "rest": "PASS",
+    "ajax": "PASS",
+    "privacy": "PASS",
+    "diagnostics": "PASS",
+    "security": "PASS",
+    "data_integrity": "PASS",
+    "performance": "PASS",
+    "migration_003": "PASS",
+    "phpunit": "PASS",
+    "phpcs_wpcs": "PASS",
+    "phpstan": "NOT VERIFIED",
+    "php_8_1": "PASS",
+    "php_8_2": "PASS",
+    "php_8_3": "PASS",
+    "production_zip": "PASS",
+    "zip_installation": "PASS",
+    "reproducibility": "PASS"
+  },
+  "external_not_verified": [
+    "Phase 1 external verification",
+    "native MySQL",
+    "native MariaDB",
+    "real Mayfair",
+    "real ACF",
+    "native WP-CLI",
+    "browser/UI",
+    "external notification providers",
+    "PHPStan",
+    "1,000-user WASM performance"
+  ],
+  "notes": [
+    "PHPStan 256 MiB exhausted memory; 1 GiB run terminated without actionable diagnostics.",
+    "Performance PASS applies to bounded behavior and executed 10/100-user SQLite-WASM measurements; 1,000-user measurement is NOT VERIFIED."
+  ]
+}

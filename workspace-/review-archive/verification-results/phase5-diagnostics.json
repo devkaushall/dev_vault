@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "checks": {
+    "healthy": true,
+    "read_only": true,
+    "invalid_json_detected": true,
+    "corruption_not_repaired": true,
+    "failed_alert_warn": true,
+    "orphan_favorite_detected": true,
+    "broken_alert_detected": true,
+    "schema_mismatch_detected": true,
+    "scheduler_missing_detected": true
+  },
+  "environment": {
+    "php": "8.3",
+    "wordpress": "6.4",
+    "database": "SQLite"
+  }
+}

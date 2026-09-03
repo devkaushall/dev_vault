@@ -1,0 +1,11 @@
+# Execute from workspace root; destructive disposable environments only.
+tools/verification/mysql/run.sh
+tools/verification/mariadb/run.sh
+tools/verification/migration-failure/run.sh mysql
+tools/verification/migration-failure/run.sh mariadb
+tools/verification/uninstall/run.sh mysql
+tools/verification/uninstall/run.sh mariadb
+tools/verification/security/run.sh mysql
+tools/verification/security/run.sh mariadb
+tools/verification/mayfair-compatibility/run-fixture.sh mysql
+tools/verification/ci/run.sh

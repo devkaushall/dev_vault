@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "date": "2026-09-02",
+  "scope": "Phase 6 hardening",
+  "changes": [
+    "shared strict positive integer ID parser used by profile REST, user-feature REST and user-feature AJAX adapters",
+    "Agent-to-Agency consistency required before Property assignment",
+    "Agency deletion blocked while Agents or Properties reference it",
+    "authenticated DELETE Property relationship endpoint added",
+    "regression coverage added for strict IDs, relationship consistency and property lifecycle"
+  ],
+  "runtime": {
+    "source": "verification-results/phase6-runtime-8.3.json",
+    "status": "PASS",
+    "checks": {
+      "agency_create": true,
+      "agent_create": true,
+      "agency_assign": true,
+      "property_assign": true,
+      "relationships": true,
+      "relationship_consistency": true,
+      "strict_id_rejection": true,
+      "agency_delete_blocked": true,
+      "lifecycle": true,
+      "public_allowlist": true,
+      "public_xss_safe": true,
+      "agent_idor_update": true,
+      "agent_idor_delete": true,
+      "agency_idor_update": true,
+      "agency_idor_delete": true,
+      "assignment_idor": true,
+      "idor_no_mutation": true,
+      "anonymous_public": true,
+      "anonymous_write_blocked": true,
+      "invalid_id": true,
+      "numeric_string_id": true,
+      "pagination_bound": true,
+      "rest_list": true,
+      "rest_create": true,
+      "rest_update": true,
+      "rest_delete": true,
+      "rest_agency_assignment": true,
+      "rest_property_assignment": true,
+      "rest_agency_removal": true,
+      "rest_agency_reassignment": true,
+      "invalid_relationship": true,
+      "privacy_export": true,
+      "privacy_erase": true,
+      "relationship_remove": true,
+      "agency_delete_blocked_by_property": true,
+      "rest_property_removal": true,
+      "property_relationship_remove": true,
+      "agency_delete_after_remove": true,
+      "service_singleton": true,
+      "privacy_user_delete": true,
+      "performance_smoke": true
+    },
+    "environment": {
+      "php": "8.3.32",
+      "wordpress": "6.4.10",
+      "database": "SQLite"
+    }
+  },
+  "quality": {
+    "phpunit": "PASS \u2014 30 tests, 44 assertions, 1 skipped on PHP 8.1, 8.2 and 8.3",
+    "phpcs_wpcs": "PASS \u2014 0 errors, 0 warnings",
+    "php_syntax": "PASS \u2014 2,775 PHP files parsed on PHP 8.3",
+    "phase5_rest_ajax_privacy_security_regression": "PASS \u2014 PHP 8.3"
+  },
+  "package": {
+    "files": 88,
+    "sha256": "e654f342991fe00b7ecf70c2886b0e71249624b7c6673363ac22eee26cf424a4",
+    "two_builds_byte_identical": true,
+    "clean_package_phase6_runtime": "PASS \u2014 PHP 8.3 / WordPress 6.4.10 / SQLite"
+  },
+  "not_verified": [
+    "PHPStan",
+    "native MySQL",
+    "native MariaDB",
+    "native WP-CLI",
+    "real Mayfair/ACF artifacts",
+    "browser/UI",
+    "Phase 1 external debt"
+  ]
+}

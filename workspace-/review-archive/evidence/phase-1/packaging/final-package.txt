@@ -1,0 +1,7 @@
+Date: 2026-08-30
+Artifact: dist/realestate-platform-0.1.0.zip
+SHA-256: 9082ba386ea92615115c9a5fe1df8b3e38521fd0db46e9598cb1671621230e29
+Reproducibility: PASS (two consecutive builds compared byte-for-byte)
+Archive integrity: PASS
+Prohibited development-content scan: PASS
+Extracted ZIP runtime: PASS, 46/46 on PHP 8.1, 8.2, 8.3 with WordPress 6.4.10

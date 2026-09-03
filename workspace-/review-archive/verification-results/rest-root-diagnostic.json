@@ -1,0 +1,266 @@
+
+WordPress Playground CLI
+
+PHP 8.3  WordPress 6.4
+Extensions intl
+Mount ./plugins/realestate-platform → /wordpress/wp-content/plugins/realestate-platform
+
+
+Ready! WordPress is running on http://127.0.0.1:9400 (1 worker)
+
+{
+    "wp": "6.4.10",
+    "methods": [
+        "__construct",
+        "get_method",
+        "set_method",
+        "get_headers",
+        "canonicalize_header_name",
+        "get_header",
+        "get_header_as_array",
+        "set_header",
+        "add_header",
+        "remove_header",
+        "set_headers",
+        "get_content_type",
+        "is_json_content_type",
+        "get_param",
+        "has_param",
+        "set_param",
+        "get_params",
+        "get_url_params",
+        "set_url_params",
+        "get_query_params",
+        "set_query_params",
+        "get_body_params",
+        "set_body_params",
+        "get_file_params",
+        "set_file_params",
+        "get_default_params",
+        "set_default_params",
+        "get_body",
+        "set_body",
+        "get_json_params",
+        "get_route",
+        "set_route",
+        "get_attributes",
+        "set_attributes",
+        "sanitize_params",
+        "has_valid_params",
+        "offsetExists",
+        "offsetGet",
+        "offsetSet",
+        "offsetUnset",
+        "from_url"
+    ],
+    "route_found": true,
+    "endpoints": [
+        {
+            "methods": {
+                "GET": true
+            },
+            "arg_keys": [
+                "id",
+                "context",
+                "password"
+            ]
+        },
+        {
+            "methods": {
+                "POST": true,
+                "PUT": true,
+                "PATCH": true
+            },
+            "arg_keys": [
+                "id",
+                "date",
+                "date_gmt",
+                "slug",
+                "status",
+                "password",
+                "title",
+                "content",
+                "author",
+                "excerpt",
+                "featured_media",
+                "meta",
+                "template",
+                "location",
+                "project_type"
+            ]
+        },
+        {
+            "methods": {
+                "DELETE": true
+            },
+            "arg_keys": [
+                "id",
+                "force"
+            ]
+        },
+        {
+            "methods": {
+                "GET": true
+            },
+            "arg_keys": [
+                "id",
+                "context",
+                "password"
+            ]
+        },
+        {
+            "methods": {
+                "POST": true,
+                "PUT": true,
+                "PATCH": true
+            },
+            "arg_keys": [
+                "id",
+                "date",
+                "date_gmt",
+                "slug",
+                "status",
+                "password",
+                "title",
+                "content",
+                "author",
+                "excerpt",
+                "featured_media",
+                "meta",
+                "template",
+                "location",
+                "project_type"
+            ]
+        },
+        {
+            "methods": {
+                "DELETE": true
+            },
+            "arg_keys": [
+                "id",
+                "force"
+            ]
+        }
+    ],
+    "controller_meta_schema": {
+        "description": "Meta fields.",
+        "type": "object",
+        "context": [
+            "view",
+            "edit"
+        ],
+        "properties": {
+            "rep_currency": {
+                "type": "string",
+                "description": "ISO 4217 currency code.",
+                "default": "INR",
+                "required": false
+            },
+            "rep_country": {
+                "type": "string",
+                "description": "",
+                "default": "IN",
+                "required": false
+            },
+            "rep_featured": {
+                "type": "boolean",
+                "description": "",
+                "default": false,
+                "required": false
+            }
+        },
+        "arg_options": {
+            "sanitize_callback": null,
+            "validate_callback": [
+                {},
+                "check_meta_is_array"
+            ]
+        }
+    },
+    "meta_schema": {
+        "validate_callback": [
+            {},
+            "check_meta_is_array"
+        ],
+        "sanitize_callback": null,
+        "description": "Meta fields.",
+        "type": "object",
+        "properties": {
+            "rep_currency": {
+                "type": "string",
+                "description": "ISO 4217 currency code.",
+                "default": "INR",
+                "required": false
+            },
+            "rep_country": {
+                "type": "string",
+                "description": "",
+                "default": "IN",
+                "required": false
+            },
+            "rep_featured": {
+                "type": "boolean",
+                "description": "",
+                "default": false,
+                "required": false
+            }
+        }
+    },
+    "params_before": {
+        "id": 4,
+        "meta": {
+            "rep_latitude": {
+                "nested": "bad"
+            }
+        },
+        "context": "edit"
+    },
+    "direct_validation": true,
+    "response": {
+        "status": 200,
+        "data": {
+            "id": 4,
+            "date": "2026-08-30T13:04:11",
+            "date_gmt": "2026-08-30T13:04:11",
+            "guid": {
+                "rendered": "http:\/\/127.0.0.1:9400\/projects\/diagnostic\/",
+                "raw": "http:\/\/127.0.0.1:9400\/projects\/diagnostic\/"
+            },
+            "modified": "2026-08-30T13:04:11",
+            "modified_gmt": "2026-08-30T13:04:11",
+            "password": "",
+            "slug": "diagnostic",
+            "status": "publish",
+            "type": "project",
+            "link": "http:\/\/127.0.0.1:9400\/projects\/diagnostic\/",
+            "title": {
+                "raw": "Diagnostic",
+                "rendered": "Diagnostic"
+            },
+            "content": {
+                "raw": "",
+                "rendered": "",
+                "protected": false,
+                "block_version": 0
+            },
+            "excerpt": {
+                "raw": "",
+                "rendered": "",
+                "protected": false
+            },
+            "author": 1,
+            "featured_media": 0,
+            "template": "",
+            "meta": {
+                "rep_currency": "INR",
+                "rep_country": "IN",
+                "rep_featured": false
+            },
+            "location": [],
+            "project_type": [],
+            "permalink_template": "http:\/\/127.0.0.1:9400\/projects\/%pagename%\/",
+            "generated_slug": "diagnostic"
+        }
+    },
+    "stored": ""
+}
