@@ -1,0 +1,2 @@
+/* Elementor → Custom Code → location </body> End. Sets --mf-y (px scrolled past section) on .mf-parallax */
+(function(){var s=document.querySelectorAll('.mf-parallax');if(!s.length)return;function u(){s.forEach(function(e){var r=e.getBoundingClientRect();e.style.setProperty('--mf-y',Math.round(window.innerHeight-r.top))})}addEventListener('scroll',u,{passive:true});addEventListener('resize',u);u()})();

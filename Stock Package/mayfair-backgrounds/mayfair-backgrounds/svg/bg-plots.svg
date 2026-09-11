@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="160" viewBox="0 0 240 160" role="img" aria-label="Plot layout"><title>Plot layout</title>
+<g fill="none" stroke="#725B2F" stroke-opacity=".12" stroke-width="1">
+<rect x=".5" y=".5" width="239" height="79"/><rect x=".5" y="80.5" width="239" height="79"/>
+<path d="M60 0V80M110 0V80M170 0V80M40 80V160M130 80V160M190 80V160"/></g>
+<path d="M0 80H240" stroke="#725B2F" stroke-opacity=".22" stroke-width="1.5"/></svg>
