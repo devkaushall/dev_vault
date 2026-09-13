@@ -1,0 +1,3031 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Estat.OS 1.0.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: estat-os\n"
+
+msgid "%1$d added, %2$d updated so far."
+msgstr ""
+
+msgid "%d bedroom"
+msgid_plural "%d bedrooms"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d enquiry needs a follow-up today."
+msgid_plural "%d enquiries need a follow-up today."
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d follow-up is due."
+msgid_plural "%d follow-ups are due."
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d listing is missing important information."
+msgid_plural "%d listings are missing important information."
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d listing was taken off the website because it reached its removal date."
+msgid_plural "%d listings were taken off the website because they reached their removal date."
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d new enquiry needs a response."
+msgid_plural "%d new enquiries need a response."
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d percent complete"
+msgstr ""
+
+msgid "%d properties are ready for searching."
+msgstr ""
+
+msgid "%d property listed"
+msgid_plural "%d properties listed"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d sample properties were added. They are all clearly marked."
+msgstr ""
+
+msgid "%d sample records were removed. Your real data was not touched."
+msgstr ""
+
+msgid "%d visit is scheduled today."
+msgid_plural "%d visits are scheduled today."
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%s (copy)"
+msgstr ""
+
+msgid "%s ago"
+msgstr ""
+
+msgid "%s number"
+msgstr ""
+
+msgid "(optional)"
+msgstr ""
+
+msgid "(required)"
+msgstr ""
+
+msgid "1 year"
+msgstr ""
+
+msgid "3 BHK apartment with a park view"
+msgstr ""
+
+msgid "3 months"
+msgstr ""
+
+msgid "30 days"
+msgstr ""
+
+msgid "360° tour link"
+msgstr ""
+
+msgid "7 days"
+msgstr ""
+
+msgid "A clear headline"
+msgstr ""
+
+msgid "A common mistake is typing the price as text. Type only numbers, for example 8500000."
+msgstr ""
+
+msgid "A connection to your other system did not work."
+msgstr ""
+
+msgid "A connection was notified"
+msgstr ""
+
+msgid "A description of the property"
+msgstr ""
+
+msgid "A draft is only visible to your office. Nothing is published until you choose to."
+msgstr ""
+
+msgid "A few words about them"
+msgstr ""
+
+msgid "A form was deleted"
+msgstr ""
+
+msgid "A form was saved"
+msgstr ""
+
+msgid "A healthy office turns roughly one in twenty enquiries into a deal. Use this as a direction, not a rule."
+msgstr ""
+
+msgid "A listing was added"
+msgstr ""
+
+msgid "A listing was changed"
+msgstr ""
+
+msgid "A listing was deleted"
+msgstr ""
+
+msgid "A listing went live on the website"
+msgstr ""
+
+msgid "A location on the map"
+msgstr ""
+
+msgid "A main photo"
+msgstr ""
+
+msgid "A more complete listing gets more enquiries."
+msgstr ""
+
+msgid "A new enquiry arrived"
+msgstr ""
+
+msgid "A new enquiry arrives"
+msgstr ""
+
+msgid "A new enquiry has arrived."
+msgstr ""
+
+msgid "A price (or price on request)"
+msgstr ""
+
+msgid "A property goes live on the website"
+msgstr ""
+
+msgid "A sample society used for practice. Delete it whenever you like."
+msgstr ""
+
+msgid "A site visit has been scheduled."
+msgstr ""
+
+msgid "A site visit is arranged"
+msgstr ""
+
+msgid "A site visit is marked as done"
+msgstr ""
+
+msgid "A site visit was scheduled"
+msgstr ""
+
+msgid "A site visit was updated"
+msgstr ""
+
+msgid "A spreadsheet import finished"
+msgstr ""
+
+msgid "A spreadsheet import started"
+msgstr ""
+
+msgid "A team member in charge"
+msgstr ""
+
+msgid "A visit needs either an enquiry or a property."
+msgstr ""
+
+msgid "About it"
+msgstr ""
+
+msgid "About this screen"
+msgstr ""
+
+msgid "Access for other software"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "Add %s"
+msgstr ""
+
+msgid "Add a Home"
+msgstr ""
+
+msgid "Add a column"
+msgstr ""
+
+msgid "Add a field"
+msgstr ""
+
+msgid "Add a note"
+msgstr ""
+
+msgid "Add a price, or choose \"Price on request\"."
+msgstr ""
+
+msgid "Add a row"
+msgstr ""
+
+msgid "Add a society or project"
+msgstr ""
+
+msgid "Add and edit listings"
+msgstr ""
+
+msgid "Add another instead"
+msgstr ""
+
+msgid "Add every submission to the Enquiries inbox"
+msgstr ""
+
+msgid "Add it"
+msgstr ""
+
+msgid "Add new"
+msgstr ""
+
+msgid "Add photos"
+msgstr ""
+
+msgid "Add sample data"
+msgstr ""
+
+msgid "Add someone to the team"
+msgstr ""
+
+msgid "Add the monthly rent, or choose \"Price on request\"."
+msgstr ""
+
+msgid "Add them"
+msgstr ""
+
+msgid "Add visit"
+msgstr ""
+
+msgid "Add your office name and phone number in Office Settings."
+msgstr ""
+
+msgid "Added"
+msgstr ""
+
+msgid "Added:"
+msgstr ""
+
+msgid "Adding another language"
+msgstr ""
+
+msgid "Address"
+msgstr ""
+
+msgid "Age in years"
+msgstr ""
+
+msgid "Age of the property in years"
+msgstr ""
+
+msgid "All enquiries"
+msgstr ""
+
+msgid "All listings"
+msgstr ""
+
+msgid "All practice records have been removed."
+msgstr ""
+
+msgid "All visits"
+msgstr ""
+
+msgid "Also erase all office data when the plugin is deleted"
+msgstr ""
+
+msgid "Always run a test first. It checks your file without changing anything."
+msgstr ""
+
+msgid "Amenities"
+msgstr ""
+
+msgid "Amenities (separate several with commas)"
+msgstr ""
+
+msgid "Amenity"
+msgstr ""
+
+msgid "An enquiry changes status or owner"
+msgstr ""
+
+msgid "An enquiry was given to a team member"
+msgstr ""
+
+msgid "An enquiry was updated"
+msgstr ""
+
+msgid "Any"
+msgstr ""
+
+msgid "Anyone can publish"
+msgstr ""
+
+msgid "Anything that makes this one different."
+msgstr ""
+
+msgid "Anything you add now is marked PRACTICE and can be removed in one click from Office Settings."
+msgstr ""
+
+msgid "Anywhere"
+msgstr ""
+
+msgid "Apartment"
+msgstr ""
+
+msgid "Appearance"
+msgstr ""
+
+msgid "Are you sure? This cannot be undone."
+msgstr ""
+
+msgid "Area unit you use most"
+msgstr ""
+
+msgid "Arrange a visit"
+msgstr ""
+
+msgid "Arrived %s ago"
+msgstr ""
+
+msgid "Articles"
+msgstr ""
+
+msgid "Ask about this property"
+msgstr ""
+
+msgid "Ask for consent"
+msgstr ""
+
+msgid "Asked again: %s"
+msgstr ""
+
+msgid "Assign enquiries to team members"
+msgstr ""
+
+msgid "Assign some now"
+msgstr ""
+
+msgid "At least three photos"
+msgstr ""
+
+msgid "Attach to a property"
+msgstr ""
+
+msgid "Availability"
+msgstr ""
+
+msgid "Available"
+msgstr ""
+
+msgid "Available here"
+msgstr ""
+
+msgid "Average listing quality"
+msgstr ""
+
+msgid "Average price"
+msgstr ""
+
+msgid "Back to forms"
+msgstr ""
+
+msgid "Back to listings"
+msgstr ""
+
+msgid "Background colour"
+msgstr ""
+
+msgid "Balconies"
+msgstr ""
+
+msgid "Bathrooms"
+msgstr ""
+
+msgid "Bedrooms"
+msgstr ""
+
+msgid "Bedrooms (minimum)"
+msgstr ""
+
+msgid "Book a site visit"
+msgstr ""
+
+msgid "Bring information in from a spreadsheet, or take it out."
+msgstr ""
+
+msgid "Bring properties in from a spreadsheet"
+msgstr ""
+
+msgid "Brochures"
+msgstr ""
+
+msgid "Brochures & Documents"
+msgstr ""
+
+msgid "Brochures and documents"
+msgstr ""
+
+msgid "Budget up to"
+msgstr ""
+
+msgid "Build a form once here, then place it on any page — including pages you design with Elementor."
+msgstr ""
+
+msgid "Build a form with a date field under Forms, then choose it here."
+msgstr ""
+
+msgid "Build and edit forms"
+msgstr ""
+
+msgid "Builder / developer"
+msgstr ""
+
+msgid "Builder / developer name"
+msgstr ""
+
+msgid "Builder Floor"
+msgstr ""
+
+msgid "Builder or developer"
+msgstr ""
+
+msgid "Buildings and developments you work with."
+msgstr ""
+
+msgid "Built-up area"
+msgstr ""
+
+msgid "Button colour"
+msgstr ""
+
+msgid "Button link"
+msgstr ""
+
+msgid "Button text"
+msgstr ""
+
+msgid "Buy or rent"
+msgstr ""
+
+msgid "By default your properties, enquiries and visits stay exactly where they are, even if the plugin is deleted. Nothing is ever thrown away without you asking."
+msgstr ""
+
+msgid "Call"
+msgstr ""
+
+msgid "Call %s"
+msgstr ""
+
+msgid "Call now"
+msgstr ""
+
+msgid "Cancelled"
+msgstr ""
+
+msgid "Carpet area"
+msgstr ""
+
+msgid "Category name"
+msgstr ""
+
+msgid "Change office settings"
+msgstr ""
+
+msgid "Changing the look of a form never changes what it does with the information."
+msgstr ""
+
+msgid "Changing the look of the form never changes these settings."
+msgstr ""
+
+msgid "Chapter 1 — The home"
+msgstr ""
+
+msgid "Chapter 2 — Story and extras"
+msgstr ""
+
+msgid "Chapter 3 — Office information"
+msgstr ""
+
+msgid "Cheapest first"
+msgstr ""
+
+msgid "Checked by the owner/agent"
+msgstr ""
+
+msgid "Checking listings before they go live"
+msgstr ""
+
+msgid "Choices (one per line)"
+msgstr ""
+
+msgid "Choose \"Compare\" on a few properties and they will appear here side by side."
+msgstr ""
+
+msgid "Choose \"Price on request\" to hide the number from visitors."
+msgstr ""
+
+msgid "Choose a form to display."
+msgstr ""
+
+msgid "Choose a form…"
+msgstr ""
+
+msgid "Choose a language"
+msgstr ""
+
+msgid "Choose a person"
+msgstr ""
+
+msgid "Choose a photo"
+msgstr ""
+
+msgid "Choose a project"
+msgstr ""
+
+msgid "Choose a property"
+msgstr ""
+
+msgid "Choose a society/project"
+msgstr ""
+
+msgid "Choose a team member"
+msgstr ""
+
+msgid "Choose an image"
+msgstr ""
+
+msgid "Choose automatically"
+msgstr ""
+
+msgid "Choose many"
+msgstr ""
+
+msgid "Choose one"
+msgstr ""
+
+msgid "Choose what the owner wants to do with this property."
+msgstr ""
+
+msgid "Choose your CSV file"
+msgstr ""
+
+msgid "Clear temporary data"
+msgstr ""
+
+msgid "Clubhouse"
+msgstr ""
+
+msgid "Column heading"
+msgstr ""
+
+msgid "Commercial Shop"
+msgstr ""
+
+msgid "Companies"
+msgstr ""
+
+msgid "Company"
+msgstr ""
+
+msgid "Compare"
+msgstr ""
+
+msgid "Compare properties"
+msgstr ""
+
+msgid "Completed"
+msgstr ""
+
+msgid "Connection"
+msgstr ""
+
+msgid "Connection problems"
+msgstr ""
+
+msgid "Connections"
+msgstr ""
+
+msgid "Consent tick box"
+msgstr ""
+
+msgid "Construction stage"
+msgstr ""
+
+msgid "Contact"
+msgstr ""
+
+msgid "Contact Call to Action"
+msgstr ""
+
+msgid "Contacted"
+msgstr ""
+
+msgid "Converted"
+msgstr ""
+
+msgid "Copied."
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "Copy the translation file from the plugin's languages folder, translate it with a free tool such as Poedit, and save it into wp-content/languages/plugins. It will appear in the list above automatically."
+msgstr ""
+
+msgid "Cr"
+msgstr ""
+
+msgid "Create a form"
+msgstr ""
+
+msgid "Create an enquiry"
+msgstr ""
+
+msgid "Create form"
+msgstr ""
+
+msgid "Currency code"
+msgstr ""
+
+msgid "Currency symbol"
+msgstr ""
+
+msgid "Daily housekeeping is not scheduled. Deactivate and activate the plugin to fix this."
+msgstr ""
+
+msgid "Daily housekeeping is running."
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Date and time"
+msgstr ""
+
+msgid "Deals closed"
+msgstr ""
+
+msgid "Delete form"
+msgstr ""
+
+msgid "Delete listings"
+msgstr ""
+
+msgid "Delete this form"
+msgstr ""
+
+msgid "Deleting the plugin"
+msgstr ""
+
+msgid "Describe the property"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Design"
+msgstr ""
+
+msgid "Design the forms visitors fill in on your website."
+msgstr ""
+
+msgid "Design your form"
+msgstr ""
+
+msgid "Details:"
+msgstr ""
+
+msgid "Developers can read and write your office data through this address, using a normal WordPress application password:"
+msgstr ""
+
+msgid "Direction it faces"
+msgstr ""
+
+msgid "Do not show maps"
+msgstr ""
+
+msgid "Document"
+msgstr ""
+
+msgid "Documents"
+msgstr ""
+
+msgid "Documents & Brochures"
+msgstr ""
+
+msgid "Done"
+msgstr ""
+
+msgid "Download a sample file"
+msgstr ""
+
+msgid "Draft"
+msgstr ""
+
+msgid "Drafts"
+msgstr ""
+
+msgid "Drag a field into a row. Set how wide each field should be on a computer, tablet and phone."
+msgstr ""
+
+msgid "Drag the photos to change their order. The first one is used as the main photo if you have not chosen one."
+msgstr ""
+
+msgid "Drag to reorder"
+msgstr ""
+
+msgid "Dropdown"
+msgstr ""
+
+msgid "Duplicate"
+msgstr ""
+
+msgid "Earlier notes"
+msgstr ""
+
+msgid "East"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Edit %s"
+msgstr ""
+
+msgid "Edit this person"
+msgstr ""
+
+msgid "Edit this society or project"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Email address"
+msgstr ""
+
+msgid "Email me when a visit is arranged"
+msgstr ""
+
+msgid "Email me when someone enquires"
+msgstr ""
+
+msgid "Email the office"
+msgstr ""
+
+msgid "Email:"
+msgstr ""
+
+msgid "Emails"
+msgstr ""
+
+msgid "English"
+msgstr ""
+
+msgid "Enquiries"
+msgstr ""
+
+msgid "Enquiries handled"
+msgstr ""
+
+msgid "Enquiries per week"
+msgstr ""
+
+msgid "Enquiries received"
+msgstr ""
+
+msgid "Enquiries that became deals"
+msgstr ""
+
+msgid "Enquiry"
+msgstr ""
+
+msgid "Enquiry pages"
+msgstr ""
+
+msgid "Erase personal information"
+msgstr ""
+
+msgid "Erased"
+msgstr ""
+
+msgid "Event:"
+msgstr ""
+
+msgid "Every field on this screen has a short explanation below it."
+msgstr ""
+
+msgid "Every message is signed so the receiving app can confirm it is genuine."
+msgstr ""
+
+msgid "Every property your office is handling."
+msgstr ""
+
+msgid "Everything important is filled in."
+msgstr ""
+
+msgid "Everything is exported as a CSV file you can open in Excel or Google Sheets. Your data is always yours."
+msgstr ""
+
+msgid "Everything is stored in square feet behind the scenes, so you can mix units safely."
+msgstr ""
+
+msgid "Everything looks complete. Nice work."
+msgstr ""
+
+msgid "Example text inside the box"
+msgstr ""
+
+msgid "Export enquiries"
+msgstr ""
+
+msgid "Export properties"
+msgstr ""
+
+msgid "Export site visits"
+msgstr ""
+
+msgid "Export societies"
+msgstr ""
+
+msgid "Export spreadsheets"
+msgstr ""
+
+msgid "Export the team"
+msgstr ""
+
+msgid "Farm Land"
+msgstr ""
+
+msgid "Feature"
+msgstr ""
+
+msgid "Featured"
+msgstr ""
+
+msgid "Featured first"
+msgstr ""
+
+msgid "Features"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "File upload"
+msgstr ""
+
+msgid "Fill in a few basics and save. Nothing goes on the website until you choose \"Put it on the website\"."
+msgstr ""
+
+msgid "Fill in your office details first: name, phone and currency."
+msgstr ""
+
+msgid "Fill the office with realistic sample properties so you can learn safely. Everything created this way is clearly marked and can be removed in one click."
+msgstr ""
+
+msgid "Filter by outcome"
+msgstr ""
+
+msgid "Filter by state"
+msgstr ""
+
+msgid "Filter by status"
+msgstr ""
+
+msgid "Finished imports"
+msgstr ""
+
+msgid "Fix this"
+msgstr ""
+
+msgid "Fixed price"
+msgstr ""
+
+msgid "Flat"
+msgstr ""
+
+msgid "Floor plans"
+msgstr ""
+
+msgid "Floors in the building"
+msgstr ""
+
+msgid "Follow the website language"
+msgstr ""
+
+msgid "Follow-up reminders"
+msgstr ""
+
+msgid "Follow-ups due"
+msgstr ""
+
+msgid "For Lease"
+msgstr ""
+
+msgid "For Rent"
+msgstr ""
+
+msgid "For Sale"
+msgstr ""
+
+msgid "For example an apartment, a villa or a shop."
+msgstr ""
+
+msgid "For example: %s"
+msgstr ""
+
+msgid "For example: +91 98765 43210"
+msgstr ""
+
+msgid "For example: 3 BHK near the metro"
+msgstr ""
+
+msgid "For example: 9000000"
+msgstr ""
+
+msgid "For example: Priya Sharma"
+msgstr ""
+
+msgid "For example: Property enquiry"
+msgstr ""
+
+msgid "For example: called, will visit on Sunday."
+msgstr ""
+
+msgid "For example: lift, parking, power backup."
+msgstr ""
+
+msgid "Form"
+msgstr ""
+
+msgid "Form details"
+msgstr ""
+
+msgid "Form name"
+msgstr ""
+
+msgid "Forms"
+msgstr ""
+
+msgid "Forms are built once under Forms in your office menu, then reused on any page."
+msgstr ""
+
+msgid "Full address"
+msgstr ""
+
+msgid "Full description"
+msgstr ""
+
+msgid "Full name"
+msgstr ""
+
+msgid "Full number: ₹85,000,000"
+msgstr ""
+
+msgid "Fully furnished"
+msgstr ""
+
+msgid "Furnishing"
+msgstr ""
+
+msgid "Gallery"
+msgstr ""
+
+msgid "Gallery & Media"
+msgstr ""
+
+msgid "Gated community"
+msgstr ""
+
+msgid "Give each row a reference number so importing the same file twice does not create copies."
+msgstr ""
+
+msgid "Give it a name. You can design it on the next screen."
+msgstr ""
+
+msgid "Give it a short headline"
+msgstr ""
+
+msgid "Good day, %s."
+msgstr ""
+
+msgid "Good for investment"
+msgstr ""
+
+msgid "Google Maps (needs a key)"
+msgstr ""
+
+msgid "Google Maps key"
+msgstr ""
+
+msgid "Green Meadows Residency"
+msgstr ""
+
+msgid "Gym"
+msgstr ""
+
+msgid "HTTP status %d"
+msgstr ""
+
+msgid "Have we checked this property?"
+msgstr ""
+
+msgid "Heading"
+msgstr ""
+
+msgid "Headline"
+msgstr ""
+
+msgid "Headline for the property"
+msgstr ""
+
+msgid "Help Google understand your listings"
+msgstr ""
+
+msgid "Hidden value"
+msgstr ""
+
+msgid "Hide the price?"
+msgstr ""
+
+msgid "Highest price"
+msgstr ""
+
+msgid "Highest price (numbers only)"
+msgstr ""
+
+msgid "Highlights"
+msgstr ""
+
+msgid "Hinglish is written in normal English letters, the way most offices actually speak."
+msgstr ""
+
+msgid "How big is it?"
+msgstr ""
+
+msgid "How close the map starts"
+msgstr ""
+
+msgid "How did it go?"
+msgstr ""
+
+msgid "How each person is doing"
+msgstr ""
+
+msgid "How it looks on the website"
+msgstr ""
+
+msgid "How many"
+msgstr ""
+
+msgid "How many bedrooms?"
+msgstr ""
+
+msgid "How many to show"
+msgstr ""
+
+msgid "How prices should read"
+msgstr ""
+
+msgid "How ready is this listing?"
+msgstr ""
+
+msgid "How should the price be shown?"
+msgstr ""
+
+msgid "How the office is doing"
+msgstr ""
+
+msgid "How to place it"
+msgstr ""
+
+msgid "How your office is doing."
+msgstr ""
+
+msgid "How your property pages behave"
+msgstr ""
+
+msgid "I agree to be contacted about this enquiry."
+msgstr ""
+
+msgid "I would like to visit this property this weekend."
+msgstr ""
+
+msgid "If search results look wrong or out of date, rebuilding the search list usually fixes it. It is completely safe and changes nothing about your properties."
+msgstr ""
+
+msgid "If the locality is not in the list, just type it and we will add it."
+msgstr ""
+
+msgid "If you ask for help, copy this. It contains no passwords or personal information."
+msgstr ""
+
+msgid "If you ever remove this plugin"
+msgstr ""
+
+msgid "Import a spreadsheet"
+msgstr ""
+
+msgid "Import spreadsheets"
+msgstr ""
+
+msgid "In Elementor, add the \"Estat Form\" block and choose this form. The same form can be used on as many pages as you like."
+msgstr ""
+
+msgid "Independent House"
+msgstr ""
+
+msgid "Indian style: ₹8.5 Cr, ₹45 Lakh"
+msgstr ""
+
+msgid "Industrial Property"
+msgstr ""
+
+msgid "Information for support"
+msgstr ""
+
+msgid "Inside spacing"
+msgstr ""
+
+msgid "Insights"
+msgstr ""
+
+msgid "Insights & Articles"
+msgstr ""
+
+msgid "Interested in this property?"
+msgstr ""
+
+msgid "Investment"
+msgstr ""
+
+msgid "Is it for sale, rent or lease?"
+msgstr ""
+
+msgid "Is it still available?"
+msgstr ""
+
+msgid "Is this for sale, rent or lease?"
+msgstr ""
+
+msgid "Just the basics. You can add more later."
+msgstr ""
+
+msgid "K"
+msgstr ""
+
+msgid "Keep a copy"
+msgstr ""
+
+msgid "Keep things running smoothly"
+msgstr ""
+
+msgid "Kind of deal"
+msgstr ""
+
+msgid "Label"
+msgstr ""
+
+msgid "Lakh"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Language for the office screens"
+msgstr ""
+
+msgid "Language inside the office screens"
+msgstr ""
+
+msgid "Language on the public website"
+msgstr ""
+
+msgid "Leave as 0 for a plot, shop or office."
+msgstr ""
+
+msgid "Leave empty if it is the same as the phone number."
+msgstr ""
+
+msgid "Leave empty on a property page and the enquiry is attached automatically."
+msgstr ""
+
+msgid "Leave empty to keep it live."
+msgstr ""
+
+msgid "Leave empty to keep it live. On this date it becomes a draft again — nothing is deleted."
+msgstr ""
+
+msgid "Leave empty to show your latest articles."
+msgstr ""
+
+msgid "Leave empty to use the address in Office Settings."
+msgstr ""
+
+msgid "Leave empty to use the website administrator address."
+msgstr ""
+
+msgid "Leave empty to use your main properties page."
+msgstr ""
+
+msgid "Leave this field empty"
+msgstr ""
+
+msgid "Leave this off to bring them in as drafts and check them first. This is the safer choice."
+msgstr ""
+
+msgid "Let visitors compare up to four properties"
+msgstr ""
+
+msgid "Let visitors save properties they like"
+msgstr ""
+
+msgid "Let visitors switch language themselves"
+msgstr ""
+
+msgid "Lift"
+msgstr ""
+
+msgid "Link this person to a login so they can sign in and see their own work."
+msgstr ""
+
+msgid "Link this person to a website login so they can sign in."
+msgstr ""
+
+msgid "Listing"
+msgstr ""
+
+msgid "Listing pages"
+msgstr ""
+
+msgid "Listing readiness"
+msgstr ""
+
+msgid "Listings"
+msgstr ""
+
+msgid "Listings that need information"
+msgstr ""
+
+msgid "Live on the website"
+msgstr ""
+
+msgid "Loading the designer…"
+msgstr ""
+
+msgid "Localities"
+msgstr ""
+
+msgid "Locality"
+msgstr ""
+
+msgid "Locality (separate several with commas)"
+msgstr ""
+
+msgid "Login account"
+msgstr ""
+
+msgid "Long text"
+msgstr ""
+
+msgid "Looking at the last"
+msgstr ""
+
+msgid "Lost"
+msgstr ""
+
+msgid "Lowest price"
+msgstr ""
+
+msgid "Lowest price (numbers only)"
+msgstr ""
+
+msgid "Main contact person"
+msgstr ""
+
+msgid "Main photo"
+msgstr ""
+
+msgid "Maintenance was run"
+msgstr ""
+
+msgid "Manage connections and API"
+msgstr ""
+
+msgid "Manage site visits"
+msgstr ""
+
+msgid "Manage societies and projects"
+msgstr ""
+
+msgid "Manage the team"
+msgstr ""
+
+msgid "Map"
+msgstr ""
+
+msgid "Map latitude"
+msgstr ""
+
+msgid "Map longitude"
+msgstr ""
+
+msgid "Map starts at this latitude"
+msgstr ""
+
+msgid "Map starts at this longitude"
+msgstr ""
+
+msgid "Map style"
+msgstr ""
+
+msgid "Maps"
+msgstr ""
+
+msgid "Maps work out of the box with free OpenStreetMap. A Google key is only needed if you prefer Google maps."
+msgstr ""
+
+msgid "Mark listings as office verified"
+msgstr ""
+
+msgid "Mark this as a good investment opportunity"
+msgstr ""
+
+msgid "Maximum submissions per visitor"
+msgstr ""
+
+msgid "Measured in"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "Message after sending"
+msgstr ""
+
+msgid "Message if something is wrong"
+msgstr ""
+
+msgid "Message:"
+msgstr ""
+
+msgid "Mon to Sat, 10am to 7pm"
+msgstr ""
+
+msgid "Money and measurements"
+msgstr ""
+
+msgid "Monthly maintenance"
+msgstr ""
+
+msgid "Monthly rent"
+msgstr ""
+
+msgid "Monthly rent (numbers only)"
+msgstr ""
+
+msgid "Most expensive first"
+msgstr ""
+
+msgid "Move down"
+msgstr ""
+
+msgid "Move up"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Name of the person"
+msgstr ""
+
+msgid "Name of the society or project"
+msgstr ""
+
+msgid "Name of your registration authority"
+msgstr ""
+
+msgid "Name:"
+msgstr ""
+
+msgid "Need help?"
+msgstr ""
+
+msgid "Negotiable"
+msgstr ""
+
+msgid "New"
+msgstr ""
+
+msgid "New %s"
+msgstr ""
+
+msgid "New Launch"
+msgstr ""
+
+msgid "New enquiries"
+msgstr ""
+
+msgid "New enquiry"
+msgstr ""
+
+msgid "New field"
+msgstr ""
+
+msgid "New properties"
+msgstr ""
+
+msgid "Newest first"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "Next follow-up"
+msgstr ""
+
+msgid "No %s yet."
+msgstr ""
+
+msgid "No enquiries have been assigned to anyone in this period."
+msgstr ""
+
+msgid "No enquiries in this period yet."
+msgstr ""
+
+msgid "No enquiries yet. When someone fills in a form on your website, it will appear here."
+msgstr ""
+
+msgid "No login"
+msgstr ""
+
+msgid "No properties match what you are looking for. Try widening your search."
+msgstr ""
+
+msgid "No responses yet."
+msgstr ""
+
+msgid "No site visits have been arranged yet. You can book one from any enquiry."
+msgstr ""
+
+msgid "No societies or projects have been added yet."
+msgstr ""
+
+msgid "No team members have been added yet."
+msgstr ""
+
+msgid "No-show"
+msgstr ""
+
+msgid "Nobody yet"
+msgstr ""
+
+msgid "North"
+msgstr ""
+
+msgid "North East"
+msgstr ""
+
+msgid "North West"
+msgstr ""
+
+msgid "Not checked yet"
+msgstr ""
+
+msgid "Not linked to an enquiry"
+msgstr ""
+
+msgid "Not part of one"
+msgstr ""
+
+msgid "Not recorded"
+msgstr ""
+
+msgid "Not set"
+msgstr ""
+
+msgid "Not specified"
+msgstr ""
+
+msgid "Nothing added yet."
+msgstr ""
+
+msgid "Nothing has happened yet."
+msgstr ""
+
+msgid "Nothing here is deleted when you deactivate the plugin."
+msgstr ""
+
+msgid "Nothing here."
+msgstr ""
+
+msgid "Nothing saved yet. Tap the heart on any property to keep it here."
+msgstr ""
+
+msgid "Nothing urgent today. A good time to add a new listing."
+msgstr ""
+
+msgid "Nothing was deleted. Type DELETE in capital letters to confirm."
+msgstr ""
+
+msgid "Nothing was erased. Type DELETE in capital letters to confirm."
+msgstr ""
+
+msgid "Number"
+msgstr ""
+
+msgid "Number of balconies"
+msgstr ""
+
+msgid "Number of bathrooms"
+msgstr ""
+
+msgid "Number of bedrooms"
+msgstr ""
+
+msgid "Numbers only."
+msgstr ""
+
+msgid "Offer"
+msgstr ""
+
+msgid "Office"
+msgstr ""
+
+msgid "Office Agent"
+msgstr ""
+
+msgid "Office Owner"
+msgstr ""
+
+msgid "Office Settings"
+msgstr ""
+
+msgid "Office address"
+msgstr ""
+
+msgid "Office health"
+msgstr ""
+
+msgid "Office language"
+msgstr ""
+
+msgid "Office logo"
+msgstr ""
+
+msgid "Office name"
+msgstr ""
+
+msgid "Office settings were changed"
+msgstr ""
+
+msgid "On Hold / Under Offer"
+msgstr ""
+
+msgid "On the website"
+msgstr ""
+
+msgid "One good photo makes a big difference. You can add more later."
+msgstr ""
+
+msgid "One line about the office"
+msgstr ""
+
+msgid "One point per line."
+msgstr ""
+
+msgid "Only CSV files can be imported. Save your spreadsheet as CSV and try again."
+msgstr ""
+
+msgid "Only featured properties"
+msgstr ""
+
+msgid "Only for rent or lease listings."
+msgstr ""
+
+msgid "Only needed for rent or lease."
+msgstr ""
+
+msgid "Only the first column is required. Leave out any column you do not use."
+msgstr ""
+
+msgid "Only the locality is shown publicly unless you say otherwise."
+msgstr ""
+
+msgid "Only these few details are needed to begin. You can add photos, description and everything else afterwards."
+msgstr ""
+
+msgid "Only verified listings appear on the website"
+msgstr ""
+
+msgid "Only your office can see this. Never shown on the website."
+msgstr ""
+
+msgid "Only your office sees this name."
+msgstr ""
+
+msgid "Open Office Settings"
+msgstr ""
+
+msgid "Open enquiries"
+msgstr ""
+
+msgid "Open enquiry"
+msgstr ""
+
+msgid "Open the property page"
+msgstr ""
+
+msgid "Open your office dashboard to reply:"
+msgstr ""
+
+msgid "OpenStreetMap (free, no setup)"
+msgstr ""
+
+msgid "Opening hours"
+msgstr ""
+
+msgid "Optional. Adding this shows a map on the property page."
+msgstr ""
+
+msgid "Optional. Leave empty to show the message instead."
+msgstr ""
+
+msgid "Or use the \"Estat Form\" block in Elementor and pick this form."
+msgstr ""
+
+msgid "Order"
+msgstr ""
+
+msgid "Other"
+msgstr ""
+
+msgid "Our team"
+msgstr ""
+
+msgid "Outcome"
+msgstr ""
+
+msgid "PRACTICE"
+msgstr ""
+
+msgid "Park"
+msgstr ""
+
+msgid "Parking"
+msgstr ""
+
+msgid "Parking spaces"
+msgstr ""
+
+msgid "Paste this into any page or post:"
+msgstr ""
+
+msgid "Pending"
+msgstr ""
+
+msgid "Penthouse"
+msgstr ""
+
+msgid "People who have asked about your properties."
+msgstr ""
+
+msgid "Person"
+msgstr ""
+
+msgid "Personal information was erased"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Phone number"
+msgstr ""
+
+msgid "Phone:"
+msgstr ""
+
+msgid "Photo"
+msgstr ""
+
+msgid "Photo gallery"
+msgstr ""
+
+msgid "Photos"
+msgstr ""
+
+msgid "Photos, description, address and everything that helps a buyer decide."
+msgstr ""
+
+msgid "Please add a phone number or an email address so we can reply."
+msgstr ""
+
+msgid "Please check this email address. Example: name@example.com"
+msgstr ""
+
+msgid "Please check this phone number."
+msgstr ""
+
+msgid "Please choose a CSV file to upload."
+msgstr ""
+
+msgid "Please choose a valid date."
+msgstr ""
+
+msgid "Please choose one of the available options."
+msgstr ""
+
+msgid "Please choose sale, rent or lease."
+msgstr ""
+
+msgid "Please choose the date and time of the visit."
+msgstr ""
+
+msgid "Please choose…"
+msgstr ""
+
+msgid "Please enter the name of the society or project."
+msgstr ""
+
+msgid "Please enter the person's name."
+msgstr ""
+
+msgid "Please fill in \"%s\"."
+msgstr ""
+
+msgid "Please give this form a name, for example \"Property enquiry\"."
+msgstr ""
+
+msgid "Please give this property a short headline, for example \"3 BHK apartment near the metro\"."
+msgstr ""
+
+msgid "Please tell us your name."
+msgstr ""
+
+msgid "Please tick the box so we may contact you."
+msgstr ""
+
+msgid "Please try again"
+msgstr ""
+
+msgid "Plot"
+msgstr ""
+
+msgid "Plot area"
+msgstr ""
+
+msgid "Possession date"
+msgstr ""
+
+msgid "Possession date (YYYY-MM-DD)"
+msgstr ""
+
+msgid "Power backup"
+msgstr ""
+
+msgid "Practice Agent"
+msgstr ""
+
+msgid "Practice Locality"
+msgstr ""
+
+msgid "Practice Residency"
+msgstr ""
+
+msgid "Practice mode"
+msgstr ""
+
+msgid "Practice mode is off."
+msgstr ""
+
+msgid "Practice mode is on."
+msgstr ""
+
+msgid "Practice record"
+msgstr ""
+
+msgid "Practice records have been created for you to try."
+msgstr ""
+
+msgid "Practice records were removed"
+msgstr ""
+
+msgid "Practice: 2 BHK apartment with a park view"
+msgstr ""
+
+msgid "Practice: 3 BHK builder floor near the market"
+msgstr ""
+
+msgid "Practice: corner shop on the main road"
+msgstr ""
+
+msgid "Previous"
+msgstr ""
+
+msgid "Price"
+msgstr ""
+
+msgid "Price (%s)"
+msgstr ""
+
+msgid "Price (numbers only)"
+msgstr ""
+
+msgid "Price on request"
+msgstr ""
+
+msgid "Prices from"
+msgstr ""
+
+msgid "Private office notes"
+msgstr ""
+
+msgid "Priya Sharma"
+msgstr ""
+
+msgid "Progress"
+msgstr ""
+
+msgid "Project"
+msgstr ""
+
+msgid "Project Details"
+msgstr ""
+
+msgid "Projects"
+msgstr ""
+
+msgid "Properties"
+msgstr ""
+
+msgid "Properties handled"
+msgstr ""
+
+msgid "Properties listed"
+msgstr ""
+
+msgid "Properties on the website"
+msgstr ""
+
+msgid "Properties shown per page"
+msgstr ""
+
+msgid "Property"
+msgstr ""
+
+msgid "Property Card"
+msgstr ""
+
+msgid "Property Comparison"
+msgstr ""
+
+msgid "Property Details"
+msgstr ""
+
+msgid "Property Directory"
+msgstr ""
+
+msgid "Property Gallery"
+msgstr ""
+
+msgid "Property Map"
+msgstr ""
+
+msgid "Property Search"
+msgstr ""
+
+msgid "Property enquiry"
+msgstr ""
+
+msgid "Property information"
+msgstr ""
+
+msgid "Property pages"
+msgstr ""
+
+msgid "Property search is up to date."
+msgstr ""
+
+msgid "Property search needs refreshing. You can do that in Office Settings."
+msgstr ""
+
+msgid "Property type"
+msgstr ""
+
+msgid "Property:"
+msgstr ""
+
+msgid "Publish listings to the website"
+msgstr ""
+
+msgid "Publish them straight away"
+msgstr ""
+
+msgid "Put it on the website"
+msgstr ""
+
+msgid "Qualified"
+msgstr ""
+
+msgid "Quick actions"
+msgstr ""
+
+msgid "Readiness"
+msgstr ""
+
+msgid "Readiness score"
+msgstr ""
+
+msgid "Ready for searching"
+msgstr ""
+
+msgid "Ready to Move"
+msgstr ""
+
+msgid "Real Estate"
+msgstr ""
+
+msgid "Real estate enquiries"
+msgstr ""
+
+msgid "Rebuild the search list"
+msgstr ""
+
+msgid "Received"
+msgstr ""
+
+msgid "Recent activity"
+msgstr ""
+
+msgid "Recent imports"
+msgstr ""
+
+msgid "Recommended. This adds hidden information that search engines read."
+msgstr ""
+
+msgid "Estat Form"
+msgstr ""
+
+msgid "Reference number of the property they asked about"
+msgstr ""
+
+msgid "Reference number of the society/project"
+msgstr ""
+
+msgid "Reference number of the team member"
+msgstr ""
+
+msgid "Registration number"
+msgstr ""
+
+msgid "Registration numbers"
+msgstr ""
+
+msgid "Remind me each morning about follow-ups due today"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Remove all sample data"
+msgstr ""
+
+msgid "Remove this field?"
+msgstr ""
+
+msgid "Remove this photo"
+msgstr ""
+
+msgid "Removed"
+msgstr ""
+
+msgid "Removed."
+msgstr ""
+
+msgid "Rented"
+msgstr ""
+
+msgid "Repair the office database"
+msgstr ""
+
+msgid "Reports"
+msgstr ""
+
+msgid "Reports need the office database tables. Open Office Settings and run the repair tool."
+msgstr ""
+
+msgid "Require a tick box before the form can be sent"
+msgstr ""
+
+msgid "Responses"
+msgstr ""
+
+msgid "Retire listings after this many days"
+msgstr ""
+
+msgid "Retired listings"
+msgstr ""
+
+msgid "Role"
+msgstr ""
+
+msgid "Role in the office"
+msgstr ""
+
+msgid "Rows that already exist"
+msgstr ""
+
+msgid "Run maintenance tools"
+msgstr ""
+
+msgid "Run the daily jobs now"
+msgstr ""
+
+msgid "Sales"
+msgstr ""
+
+msgid "Sales Manager"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Save as draft"
+msgstr ""
+
+msgid "Save changes"
+msgstr ""
+
+msgid "Save form"
+msgstr ""
+
+msgid "Save settings"
+msgstr ""
+
+msgid "Save this choice"
+msgstr ""
+
+msgid "Save this property"
+msgstr ""
+
+msgid "Save your sheet as a CSV file first. Excel and Google Sheets can both do this from the File menu."
+msgstr ""
+
+msgid "Saved Properties"
+msgstr ""
+
+msgid "Saved as a draft. It is not on the website yet."
+msgstr ""
+
+msgid "Saved properties"
+msgstr ""
+
+msgid "Saved."
+msgstr ""
+
+msgid "Saving…"
+msgstr ""
+
+msgid "Say what it is and where, in a few words."
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Search by name or locality"
+msgstr ""
+
+msgid "Search by name, phone or email"
+msgstr ""
+
+msgid "Search engines"
+msgstr ""
+
+msgid "Search enquiries"
+msgstr ""
+
+msgid "Search listings"
+msgstr ""
+
+msgid "Search properties"
+msgstr ""
+
+msgid "Section heading"
+msgstr ""
+
+msgid "Security"
+msgstr ""
+
+msgid "Security deposit"
+msgstr ""
+
+msgid "See form submissions"
+msgstr ""
+
+msgid "See reports"
+msgstr ""
+
+msgid "See the activity history"
+msgstr ""
+
+msgid "Semi furnished"
+msgstr ""
+
+msgid "Send an email whenever this form is used"
+msgstr ""
+
+msgid "Send enquiry"
+msgstr ""
+
+msgid "Send office emails to"
+msgstr ""
+
+msgid "Send them to a page afterwards"
+msgstr ""
+
+msgid "Send those emails to"
+msgstr ""
+
+msgid "Send your data to another app"
+msgstr ""
+
+msgid "Sending…"
+msgstr ""
+
+msgid "Separate several with commas."
+msgstr ""
+
+msgid "Shared secret"
+msgstr ""
+
+msgid "Sharma Properties"
+msgstr ""
+
+msgid "Short biography"
+msgstr ""
+
+msgid "Short explanation"
+msgstr ""
+
+msgid "Short style: ₹8.5M, ₹450K"
+msgstr ""
+
+msgid "Short text"
+msgstr ""
+
+msgid "Show"
+msgstr ""
+
+msgid "Show \"Price on request\" instead of the number"
+msgstr ""
+
+msgid "Show them publicly on each property"
+msgstr ""
+
+msgid "Show this on the home page"
+msgstr ""
+
+msgid "Show this property prominently on the website"
+msgstr ""
+
+msgid "Side by side"
+msgstr ""
+
+msgid "Single tick box"
+msgstr ""
+
+msgid "Site Visits"
+msgstr ""
+
+msgid "Site visit booked"
+msgstr ""
+
+msgid "Site visit completed."
+msgstr ""
+
+msgid "Site visits booked"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Size (numbers only)"
+msgstr ""
+
+msgid "Size in square feet"
+msgstr ""
+
+msgid "Size measured in"
+msgstr ""
+
+msgid "Size of the property"
+msgstr ""
+
+msgid "Skipped"
+msgstr ""
+
+msgid "Skipped:"
+msgstr ""
+
+msgid "Societies & Projects"
+msgstr ""
+
+msgid "Societies and projects"
+msgstr ""
+
+msgid "Society / Project"
+msgstr ""
+
+msgid "Society or project"
+msgstr ""
+
+msgid "Sold"
+msgstr ""
+
+msgid "Some office tables are missing. Deactivate and activate the plugin to rebuild them."
+msgstr ""
+
+msgid "Some tables are still missing. Ask your host to check the database user has permission to create tables."
+msgstr ""
+
+msgid "Something went wrong and nothing was saved."
+msgstr ""
+
+msgid "Something went wrong. Please check and try again."
+msgstr ""
+
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+msgid "Sorry, we could not send your enquiry. Please check the form and try again."
+msgstr ""
+
+msgid "Source"
+msgstr ""
+
+msgid "South"
+msgstr ""
+
+msgid "South East"
+msgstr ""
+
+msgid "South West"
+msgstr ""
+
+msgid "Space between fields"
+msgstr ""
+
+msgid "Special features"
+msgstr ""
+
+msgid "Spend more time on whatever is bringing people in."
+msgstr ""
+
+msgid "Spreadsheet"
+msgstr ""
+
+msgid "Square feet"
+msgstr ""
+
+msgid "Square metres"
+msgstr ""
+
+msgid "Square yards"
+msgstr ""
+
+msgid "Stage"
+msgstr ""
+
+msgid "Stage: ready, construction, new_launch, completed"
+msgstr ""
+
+msgid "Start the import"
+msgstr ""
+
+msgid "Start typing, or add a new one"
+msgstr ""
+
+msgid "Start your day here, then click through to whatever needs attention."
+msgstr ""
+
+msgid "Starting from"
+msgstr ""
+
+msgid "State"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Status: new, contacted, qualified, visit_scheduled, converted, lost"
+msgstr ""
+
+msgid "Still being prepared"
+msgstr ""
+
+msgid "Still missing:"
+msgstr ""
+
+msgid "Still open"
+msgstr ""
+
+msgid "Store the full response so you can look at it later"
+msgstr ""
+
+msgid "Studio"
+msgstr ""
+
+msgid "Submit button"
+msgstr ""
+
+msgid "Super built-up area"
+msgstr ""
+
+msgid "Swimming pool"
+msgstr ""
+
+msgid "Take it off the website on"
+msgstr ""
+
+msgid "Take off the website on"
+msgstr ""
+
+msgid "Take your information out"
+msgstr ""
+
+msgid "Talk to our team"
+msgstr ""
+
+msgid "Team"
+msgstr ""
+
+msgid "Team Directory"
+msgstr ""
+
+msgid "Team Member"
+msgstr ""
+
+msgid "Team member"
+msgstr ""
+
+msgid "Team member in charge"
+msgstr ""
+
+msgid "Team members"
+msgstr ""
+
+msgid "Tell me if a connected app stops receiving data"
+msgstr ""
+
+msgid "Tell me when a spreadsheet import finishes"
+msgstr ""
+
+msgid "Tell me when listings are retired automatically"
+msgstr ""
+
+msgid "Tell us about the home"
+msgstr ""
+
+msgid "Temporary data cleared."
+msgstr ""
+
+msgid "Text block"
+msgstr ""
+
+msgid "Thank you. We have received your enquiry and will contact you soon."
+msgstr ""
+
+msgid "That date is in the past. Please pick a future date and time."
+msgstr ""
+
+msgid "That email address does not look right. Example: name@example.com"
+msgstr ""
+
+msgid "That enquiry could not be found."
+msgstr ""
+
+msgid "That file is larger than 20 MB. Please split it into smaller files."
+msgstr ""
+
+msgid "That file is not in the uploads folder, so we cannot read it."
+msgstr ""
+
+msgid "That form could not be found."
+msgstr ""
+
+msgid "That import could not be found."
+msgstr ""
+
+msgid "That link or form has expired. Please go back, refresh the page and try once more. Nothing was changed."
+msgstr ""
+
+msgid "That listing could not be found."
+msgstr ""
+
+msgid "That listing could not be found. It may have been deleted."
+msgstr ""
+
+msgid "That maintenance task does not exist."
+msgstr ""
+
+msgid "That phone number looks too short. Please check it."
+msgstr ""
+
+msgid "That property could not be found."
+msgstr ""
+
+msgid "That size looks too large. Please check the number."
+msgstr ""
+
+msgid "That society or project could not be found."
+msgstr ""
+
+msgid "That visit could not be found."
+msgstr ""
+
+msgid "That was very quick. Please check the form and send it again."
+msgstr ""
+
+msgid "The daily jobs have been run."
+msgstr ""
+
+msgid "The enquiry has been given to that team member."
+msgstr ""
+
+msgid "The form layout could not be read, so nothing was changed. Please try again."
+msgstr ""
+
+msgid "The headline is very short. Add a few more words so buyers understand it."
+msgstr ""
+
+msgid "The import has finished."
+msgstr ""
+
+msgid "The information every buyer looks for first."
+msgstr ""
+
+msgid "The locality"
+msgstr ""
+
+msgid "The number stays in your office records but visitors will not see it."
+msgstr ""
+
+msgid "The office database is not ready yet."
+msgstr ""
+
+msgid "The office database is not ready yet. Please try again shortly."
+msgstr ""
+
+msgid "The office database looks healthy."
+msgstr ""
+
+msgid "The official registration number, if this property has one."
+msgstr ""
+
+msgid "The official registration or approval number, if any."
+msgstr ""
+
+msgid "The other app uses this to check the message really came from you. Any long random text works."
+msgstr ""
+
+msgid "The people in your office."
+msgstr ""
+
+msgid "The personal information for this enquiry has been erased."
+msgstr ""
+
+msgid "The personal information has been erased."
+msgstr ""
+
+msgid "The price cannot be a negative number."
+msgstr ""
+
+msgid "The property search has been refreshed."
+msgstr ""
+
+msgid "The removal date is in the past. Please pick a future date."
+msgstr ""
+
+msgid "The responses you have already received are kept. Only the form itself is removed."
+msgstr ""
+
+msgid "The site visit has been added."
+msgstr ""
+
+msgid "The size of the property"
+msgstr ""
+
+msgid "The uploaded file could not be found. Please upload it again."
+msgstr ""
+
+msgid "The visual designer needs JavaScript. Your existing form still works exactly as it is."
+msgstr ""
+
+msgid "This appears on your website and in the emails you send."
+msgstr ""
+
+msgid "This cannot be undone. Only tick this if you have exported anything you want to keep."
+msgstr ""
+
+msgid "This form is not available right now."
+msgstr ""
+
+msgid "This information is needed."
+msgstr ""
+
+msgid "This information is required"
+msgstr ""
+
+msgid "This is practice information so you can try the system safely. It is not a real property."
+msgstr ""
+
+msgid "This is the first thing a buyer sees. Say what it is and where."
+msgstr ""
+
+msgid "This is the photo people see first."
+msgstr ""
+
+msgid "This only changes the words you see in the office screens. Your property information is never translated."
+msgstr ""
+
+msgid "This page has been open for a while. Please refresh and send the form again."
+msgstr ""
+
+msgid "This permanently erases the name, phone and email. The record of the enquiry stays. Continue?"
+msgstr ""
+
+msgid "This row has no name."
+msgstr ""
+
+msgid "This row has no project name."
+msgstr ""
+
+msgid "This screen shows what happened recently and what is waiting for you."
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Today"
+msgstr ""
+
+msgid "Too many requests. Please slow down and try again in a minute."
+msgstr ""
+
+msgid "Tools"
+msgstr ""
+
+msgid "Total units"
+msgstr ""
+
+msgid "Turn this on"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Type DELETE in capital letters to confirm."
+msgstr ""
+
+msgid "Type only numbers, no commas or symbols. We will show it neatly on the website."
+msgstr ""
+
+msgid "Type only numbers. We will show it nicely on the website."
+msgstr ""
+
+msgid "Type only the number, then pick the unit."
+msgstr ""
+
+msgid "Type only the number."
+msgstr ""
+
+msgid "Under Construction"
+msgstr ""
+
+msgid "Unfurnished"
+msgstr ""
+
+msgid "Unit types"
+msgstr ""
+
+msgid "Unit types, for example 2 BHK, 3 BHK"
+msgstr ""
+
+msgid "Units still available"
+msgstr ""
+
+msgid "Unknown"
+msgstr ""
+
+msgid "Up to 20 MB. Large files are handled a few rows at a time so your website stays fast."
+msgstr ""
+
+msgid "Upcoming visits"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "Update them instead of skipping them"
+msgstr ""
+
+msgid "Updated"
+msgstr ""
+
+msgid "Updated:"
+msgstr ""
+
+msgid "Use the current page"
+msgstr ""
+
+msgid "Use this image"
+msgstr ""
+
+msgid "Used to avoid duplicates when importing spreadsheets."
+msgstr ""
+
+msgid "Useful for tools like Zapier, Make or your own CRM. If you do not know what this is, you can safely leave it off."
+msgstr ""
+
+msgid "Verified by our office"
+msgstr ""
+
+msgid "Version %s"
+msgstr ""
+
+msgid "Video link"
+msgstr ""
+
+msgid "View"
+msgstr ""
+
+msgid "View %s"
+msgstr ""
+
+msgid "Villa"
+msgstr ""
+
+msgid "Visit Request"
+msgstr ""
+
+msgid "Visit request"
+msgstr ""
+
+msgid "Visit scheduled"
+msgstr ""
+
+msgid "Visitor choice"
+msgstr ""
+
+msgid "Visits that happened"
+msgstr ""
+
+msgid "Visits today"
+msgstr ""
+
+msgid "Visits your team has arranged."
+msgstr ""
+
+msgid "Warehouse"
+msgstr ""
+
+msgid "Water supply"
+msgstr ""
+
+msgid "We could not create a folder for imports."
+msgstr ""
+
+msgid "We could not open the file. Please upload it again."
+msgstr ""
+
+msgid "We could not read the first line of this file. Please check that it is a CSV with column names."
+msgstr ""
+
+msgid "We could not save the uploaded file."
+msgstr ""
+
+msgid "We could not save this enquiry. Please try again."
+msgstr ""
+
+msgid "We could not save this visit. Please try again."
+msgstr ""
+
+msgid "We match on your own reference number, so nothing is duplicated."
+msgstr ""
+
+msgid "Web address to send to"
+msgstr ""
+
+msgid "Website"
+msgstr ""
+
+msgid "Website address"
+msgstr ""
+
+msgid "Website login"
+msgstr ""
+
+msgid "West"
+msgstr ""
+
+msgid "What are you looking for?"
+msgstr ""
+
+msgid "What happens with the information"
+msgstr ""
+
+msgid "What kind of property is it?"
+msgstr ""
+
+msgid "What needs your attention right now."
+msgstr ""
+
+msgid "What the columns mean"
+msgstr ""
+
+msgid "What they asked"
+msgstr ""
+
+msgid "What they sent"
+msgstr ""
+
+msgid "What to put in it"
+msgstr ""
+
+msgid "What to send"
+msgstr ""
+
+msgid "What would you like to know?"
+msgstr ""
+
+msgid "What you have to sell"
+msgstr ""
+
+msgid "WhatsApp"
+msgstr ""
+
+msgid "WhatsApp number"
+msgstr ""
+
+msgid "When"
+msgstr ""
+
+msgid "When should we email you?"
+msgstr ""
+
+msgid "When you send an enquiry about a property, we store your name, phone number, email address and message so that our team can reply to you. You can ask us to erase this information at any time."
+msgstr ""
+
+msgid "When:"
+msgstr ""
+
+msgid "Where"
+msgstr ""
+
+msgid "Where it came from"
+msgstr ""
+
+msgid "Where should results be shown?"
+msgstr ""
+
+msgid "Where to use this form"
+msgstr ""
+
+msgid "Where your enquiries are sitting"
+msgstr ""
+
+msgid "Where your enquiries came from"
+msgstr ""
+
+msgid "Which area is this?"
+msgstr ""
+
+msgid "Which floor"
+msgstr ""
+
+msgid "Which form?"
+msgstr ""
+
+msgid "Which locality is it in?"
+msgstr ""
+
+msgid "Which properties?"
+msgstr ""
+
+msgid "Which way does it face?"
+msgstr ""
+
+msgid "Who"
+msgstr ""
+
+msgid "Who is handling it"
+msgstr ""
+
+msgid "Who is handling it, whether it is still available, and private notes."
+msgstr ""
+
+msgid "Who is handling it?"
+msgstr ""
+
+msgid "Who to speak to"
+msgstr ""
+
+msgid "Who you are"
+msgstr ""
+
+msgid "Width on a computer"
+msgstr ""
+
+msgid "Width on a phone"
+msgstr ""
+
+msgid "Width on a tablet"
+msgstr ""
+
+msgid "Within ten minutes. This stops automated spam."
+msgstr ""
+
+msgid "WordPress user in charge"
+msgstr ""
+
+msgid "Work with enquiries"
+msgstr ""
+
+msgid "Write as if you were telling a friend about it. Mention the neighbourhood, the light, what is nearby."
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "You always type the plain number. This only changes how visitors see it."
+msgstr ""
+
+msgid "You are not allowed to assign enquiries."
+msgstr ""
+
+msgid "You can compare up to four properties at a time."
+msgstr ""
+
+msgid "You can only edit listings that belong to you."
+msgstr ""
+
+msgid "You do not have any forms yet. Create one above and it will be ready to place on your website."
+msgstr ""
+
+msgid "You do not have permission to add listings."
+msgstr ""
+
+msgid "You do not have permission to change office settings."
+msgstr ""
+
+msgid "You do not have permission to do that."
+msgstr ""
+
+msgid "You do not have permission to import or export."
+msgstr ""
+
+msgid "You do not have permission to manage forms."
+msgstr ""
+
+msgid "You do not have permission to manage societies and projects."
+msgstr ""
+
+msgid "You do not have permission to manage the team."
+msgstr ""
+
+msgid "You do not have permission to see enquiries."
+msgstr ""
+
+msgid "You do not have permission to see form responses."
+msgstr ""
+
+msgid "You do not have permission to see reports."
+msgstr ""
+
+msgid "You do not have permission to see site visits."
+msgstr ""
+
+msgid "You have not added any properties yet. Adding your first one takes about a minute."
+msgstr ""
+
+msgid "You have sent several enquiries already. Please try again in a few minutes."
+msgstr ""
+
+msgid "Your busiest areas"
+msgstr ""
+
+msgid "Your forms"
+msgstr ""
+
+msgid "Your listing is now on the website."
+msgstr ""
+
+msgid "Your listings"
+msgstr ""
+
+msgid "Your message is very long. Please shorten it a little."
+msgstr ""
+
+msgid "Your name"
+msgstr ""
+
+msgid "Your office"
+msgstr ""
+
+msgid "Your office database is healthy."
+msgstr ""
+
+msgid "Your office details and how the system behaves."
+msgstr ""
+
+msgid "Your office details are filled in."
+msgstr ""
+
+msgid "Your own reference number"
+msgstr ""
+
+msgid "Your own reference number (used to avoid duplicates)"
+msgstr ""
+
+msgid "Your saved properties"
+msgstr ""
+
+msgid "Your societies and projects"
+msgstr ""
+
+msgid "Your spreadsheet import has finished."
+msgstr ""
+
+msgid "Your team"
+msgstr ""
+
+msgid "Zero means never. Retired listings are moved to drafts, never deleted."
+msgstr ""
+
+msgid "[%s] Connection problem"
+msgstr ""
+
+msgid "[%s] Follow-ups due today"
+msgstr ""
+
+msgid "[%s] Import finished"
+msgstr ""
+
+msgid "[%s] Listings taken offline"
+msgstr ""
+
+msgid "[%s] New enquiry"
+msgstr ""
+
+msgid "[%s] Site visit scheduled"
+msgstr ""
+
+msgid "apartment, villa, plot, office and so on"
+msgstr ""
+
+msgid "available, on_hold, sold or rented"
+msgstr ""
+
+msgid "carpet, builtup, super or plot"
+msgstr ""
+
+msgid "draft or publish"
+msgstr ""
+
+msgid "fixed, negotiable, starting_from or on_request"
+msgstr ""
+
+msgid "optional"
+msgstr ""
+
+msgid "ready, construction or new_launch"
+msgstr ""
+
+msgid "required"
+msgstr ""
+
+msgid "sale, rent or lease"
+msgstr ""
+
+msgid "sq ft"
+msgstr ""
+
+msgid "sq m"
+msgstr ""
+
+msgid "sq yd"
+msgstr ""
+
+msgid "sqft, sqyd or sqm"
+msgstr ""
+
+msgid "unfurnished, semi or furnished"
+msgstr ""
+
+msgid "yes or no"
+msgstr ""

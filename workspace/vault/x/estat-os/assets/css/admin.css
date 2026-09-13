@@ -1,0 +1,4164 @@
+/**
+ * Estat.OS - admin styles.
+ *
+ * Written to feel calm and readable for people who are not used to WordPress.
+ * Large touch targets, generous spacing, no jargon-sized dense tables.
+ */
+
+/* ------------------------------------------------------- Design tokens */
+/*
+ * Every colour, spacing step and radius lives here. Screens never hardcode a
+ * colour, so switching to the dark theme below changes the whole plugin and
+ * nothing has to be touched twice.
+ */
+
+.estat-screen {
+	/* Text */
+	--estat-ink: #16202c;
+	--estat-ink-soft: #3d4b5c;
+	--estat-muted: #6b7889;
+	--estat-faint: #93a0b1;
+
+	/* Surfaces */
+	--estat-bg: #f4f6f9;
+	--estat-card: #fdfdfe;
+	--estat-card-alt: #f8fafc;
+	--estat-sunken: #eef1f6;
+
+	/* Lines */
+	--estat-line: #e3e8ef;
+	--estat-line-strong: #cfd7e3;
+
+	/* Brand and states */
+	--estat-accent: #2a6df4;
+	--estat-accent-soft: #eaf1fe;
+	--estat-accent-ink: #1a4fbd;
+	/* Text that sits ON the accent. Off-white, not pure: pure white on a
+	 * saturated colour vibrates and looks harsher than it needs to. */
+	--estat-on-accent: #f8fafd;
+	--estat-good: #12855a;
+	--estat-good-soft: #e6f7ef;
+	--estat-warn: #a2650a;
+	--estat-warn-soft: #fdf3e2;
+	--estat-danger: #c0392f;
+	--estat-danger-soft: #fdeceb;
+
+	/* Type: a real six-step scale. Nothing outside it. */
+	--estat-text-xs: 11px;
+	--estat-text-sm: 12px;
+	--estat-text: 13px;
+	--estat-text-md: 15px;
+	--estat-text-lg: 17px;
+	--estat-text-xl: 22px;
+	--estat-text-2xl: 28px;
+
+	/* Line heights, paired to the scale. */
+	--estat-leading-tight: 1.25;
+	--estat-leading: 1.45;
+	--estat-leading-loose: 1.6;
+
+	/* Shape */
+	--estat-radius: 12px;
+	--estat-radius-sm: 8px;
+	--estat-radius-lg: 16px;
+	--estat-radius-pill: 999px;
+
+	/* Depth: soft, never heavy. */
+	--estat-shadow-sm: 0 1px 2px rgba( 16, 24, 40, 0.04 ), 0 1px 3px rgba( 16, 24, 40, 0.06 );
+	--estat-shadow: 0 1px 3px rgba( 16, 24, 40, 0.05 ), 0 4px 12px rgba( 16, 24, 40, 0.06 );
+	--estat-shadow-lg: 0 4px 10px rgba( 16, 24, 40, 0.06 ), 0 12px 32px rgba( 16, 24, 40, 0.10 );
+	--estat-ring: 0 0 0 3px rgba( 42, 109, 244, 0.18 );
+
+	/* Spacing scale */
+	--estat-gap-xs: 4px;
+	--estat-gap-sm: 8px;
+	--estat-gap: 16px;
+	--estat-gap-md: 20px;
+	--estat-gap-lg: 28px;
+	--estat-gap-xl: 40px;
+}
+
+/* ---------------------------------------------------------- Dark theme */
+/*
+ * Chosen in Office Settings. Only the tokens change; every rule below keeps
+ * working because nothing hardcodes a colour.
+ */
+
+.estat-screen.estat-theme-dark {
+	--estat-on-accent: #0b1016;
+	--estat-ink: #e9eef5;
+	--estat-ink-soft: #c2cddb;
+	--estat-muted: #93a1b3;
+	--estat-faint: #6d7c90;
+
+	--estat-bg: #0f151d;
+	--estat-card: #171f2a;
+	--estat-card-alt: #1c2632;
+	--estat-sunken: #131b24;
+
+	--estat-line: #29343f;
+	--estat-line-strong: #3a4756;
+
+	--estat-accent: #5b91ff;
+	--estat-accent-soft: #1b2b47;
+	--estat-accent-ink: #a8c5ff;
+	--estat-good: #3fbb85;
+	--estat-good-soft: #122b22;
+	--estat-warn: #e0a44a;
+	--estat-warn-soft: #2e2415;
+	--estat-danger: #f0736a;
+	--estat-danger-soft: #331c1b;
+
+	--estat-shadow-sm: 0 1px 2px rgba( 0, 0, 0, 0.35 );
+	--estat-shadow: 0 2px 6px rgba( 0, 0, 0, 0.40 );
+	--estat-shadow-lg: 0 12px 32px rgba( 0, 0, 0, 0.50 );
+	--estat-ring: 0 0 0 3px rgba( 91, 145, 255, 0.28 );
+}
+
+/* Follow the computer's own setting when the office picks "Automatic". */
+@media ( prefers-color-scheme: dark ) {
+	.estat-screen.estat-theme-auto {
+		--estat-ink: #e9eef5;
+		--estat-ink-soft: #c2cddb;
+		--estat-muted: #93a1b3;
+		--estat-faint: #6d7c90;
+
+		--estat-bg: #0f151d;
+		--estat-card: #171f2a;
+		--estat-card-alt: #1c2632;
+		--estat-sunken: #131b24;
+
+		--estat-line: #29343f;
+		--estat-line-strong: #3a4756;
+
+		--estat-accent: #5b91ff;
+		--estat-accent-soft: #1b2b47;
+		--estat-accent-ink: #a8c5ff;
+		--estat-good: #3fbb85;
+		--estat-good-soft: #122b22;
+		--estat-warn: #e0a44a;
+		--estat-warn-soft: #2e2415;
+		--estat-danger: #f0736a;
+		--estat-danger-soft: #331c1b;
+
+		--estat-shadow-sm: 0 1px 2px rgba( 0, 0, 0, 0.35 );
+		--estat-shadow: 0 2px 6px rgba( 0, 0, 0, 0.40 );
+		--estat-shadow-lg: 0 12px 32px rgba( 0, 0, 0, 0.50 );
+		--estat-ring: 0 0 0 3px rgba( 91, 145, 255, 0.28 );
+	}
+}
+
+/* --------------------------------------------------------- Page canvas */
+
+.estat-screen #wpcontent,
+.estat-screen #wpbody-content {
+	background: var(--estat-bg);
+}
+
+.estat-screen #wpbody-content {
+	padding-bottom: var(--estat-gap-xl);
+}
+
+.estat-screen .wrap,
+.estat-screen #wpbody-content > .estat-page-head {
+	max-width: 1240px;
+}
+
+/*
+ * The form studio is the one screen that genuinely wants the whole window:
+ * three working columns side by side. Capping it at 1240px left a wide
+ * monitor half empty.
+ */
+.estat-screen .wrap.estat-wrap-wide,
+.estat-screen #wpbody-content > .estat-page-head.estat-wrap-wide {
+	max-width: none;
+}
+
+.estat-screen,
+.estat-screen .wrap {
+	color: var(--estat-ink);
+	font-size: var(--estat-text);
+	-webkit-font-smoothing: antialiased;
+}
+
+/* In dark mode WordPress's own chrome has to follow, or the page looks torn. */
+.estat-theme-dark.estat-screen #wpcontent,
+.estat-theme-dark.estat-screen #wpfooter {
+	color: var(--estat-ink);
+}
+
+.estat-theme-dark.estat-screen #wpfooter,
+.estat-theme-dark.estat-screen #wpfooter a {
+	color: var(--estat-muted);
+}
+
+.estat-theme-dark.estat-screen .notice,
+.estat-theme-dark.estat-screen .updated,
+.estat-theme-dark.estat-screen .error {
+	background: var(--estat-card);
+	color: var(--estat-ink);
+	border-color: var(--estat-line);
+}
+
+/* ---------------------------------------------------------------- Header */
+
+.estat-page-head {
+	margin: 20px 0 16px;
+}
+
+.estat-page-head h1 {
+	font-size: var(--estat-text-xl);
+	line-height: 1.2;
+	margin: 0 0 4px;
+	padding: 0;
+}
+
+.estat-subtitle {
+	color: var(--estat-muted);
+	font-size: var(--estat-text-md);
+	margin: 0;
+	max-width: 70ch;
+}
+
+.estat-greeting {
+	font-size: var(--estat-text-lg);
+	font-weight: 600;
+	margin: 0 0 4px;
+}
+
+/* ----------------------------------------------------------------- Help */
+
+.estat-help-toggle {
+	background: none;
+	border: 1px solid var(--estat-line);
+	border-radius: 999px;
+	color: var(--estat-ink);
+	cursor: pointer;
+	font-size: var(--estat-text);
+	padding: 4px 12px;
+}
+
+.estat-help {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-left: 4px solid var(--estat-accent);
+	border-radius: var(--estat-radius);
+	margin: 12px 0 20px;
+	max-width: 80ch;
+	padding: 14px 18px;
+}
+
+.estat-help h2 {
+	font-size: var(--estat-text-md);
+	margin: 0 0 6px;
+}
+
+.estat-help ul {
+	margin: 0 0 0 18px;
+	list-style: disc;
+}
+
+.estat-help li {
+	margin-bottom: 4px;
+}
+
+/* ---------------------------------------------------------------- Cards */
+
+.estat-card-panel {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	margin: 0 0 20px;
+	padding: 18px 20px;
+}
+
+.estat-card-panel > h2 {
+	font-size: var(--estat-text-lg);
+	margin: 0 0 4px;
+	padding: 0;
+}
+
+.estat-card-panel > .estat-card-note {
+	color: var(--estat-muted);
+	margin: 0 0 14px;
+	max-width: 75ch;
+}
+
+.estat-columns {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: 2fr 1fr;
+	align-items: start;
+}
+
+@media (max-width: 960px) {
+	.estat-columns {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ---------------------------------------------------------------- Stats */
+
+.estat-stats {
+	display: grid;
+	gap: 12px;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	margin: 0 0 8px;
+}
+
+.estat-stat {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	display: block;
+	padding: 14px 16px;
+	text-decoration: none;
+	color: inherit;
+}
+
+a.estat-stat:hover,
+a.estat-stat:focus-visible {
+	border-color: var(--estat-accent);
+	box-shadow: 0 0 0 1px var(--estat-accent);
+}
+
+.estat-stat-value {
+	display: block;
+	font-size: var(--estat-text-2xl);
+	font-weight: 600;
+	line-height: 1.1;
+}
+
+.estat-stat-label {
+	color: var(--estat-muted);
+	display: block;
+	font-size: var(--estat-text);
+	margin-top: 2px;
+}
+
+.estat-stat.is-good .estat-stat-value {
+	color: var(--estat-good);
+}
+
+.estat-stat.is-warn .estat-stat-value {
+	color: var(--estat-warn);
+}
+
+/* --------------------------------------------------------------- Alerts */
+
+.estat-alerts {
+	border-left: 4px solid var(--estat-warn);
+	background: var(--estat-warn-soft);
+	border-radius: var(--estat-radius);
+	list-style: none;
+	margin: 0 0 20px;
+	padding: 12px 18px;
+}
+
+.estat-alerts li {
+	margin: 4px 0;
+}
+
+.estat-alerts-clear {
+	border-left-color: var(--estat-good);
+	background: var(--estat-good-soft);
+}
+
+/* -------------------------------------------------------- Quick actions */
+
+.estat-quick-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 0;
+}
+
+.estat-quick-actions .button {
+	min-height: 36px;
+}
+
+/* ----------------------------------------------------- Lists and health */
+
+.estat-todo,
+.estat-health,
+.estat-activity {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.estat-todo li,
+.estat-health li,
+.estat-activity li {
+	border-bottom: 1px solid var(--estat-line);
+	padding: 8px 0;
+}
+
+.estat-todo li:last-child,
+.estat-health li:last-child,
+.estat-activity li:last-child {
+	border-bottom: 0;
+}
+
+.estat-health .is-good::before {
+	content: "\2713\00a0";
+	color: var(--estat-good);
+	font-weight: 700;
+}
+
+.estat-health .is-warn::before {
+	content: "\26a0\00a0";
+	color: var(--estat-warn);
+}
+
+.estat-muted {
+	color: var(--estat-muted);
+}
+
+.estat-good {
+	color: var(--estat-good);
+}
+
+.estat-pill {
+	background: var(--estat-sunken);
+	border-radius: 999px;
+	display: inline-block;
+	font-size: var(--estat-text-sm);
+	line-height: 1.6;
+	padding: 1px 10px;
+	white-space: nowrap;
+}
+
+/* ------------------------------------------------------ Filters, tables */
+
+.estat-filters {
+	align-items: center;
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 0 0 16px;
+	padding: 12px 14px;
+}
+
+.estat-table {
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	overflow: hidden;
+}
+
+.estat-table th,
+.estat-table td {
+	padding: 10px 12px;
+	vertical-align: top;
+}
+
+.estat-table thead th {
+	background: var(--estat-sunken);
+	font-size: var(--estat-text);
+}
+
+.estat-pagination {
+	display: flex;
+	gap: 6px;
+	margin: 14px 0 0;
+}
+
+.estat-pagination .current {
+	font-weight: 700;
+}
+
+/* Mobile: turn each row into a small card using data-label. */
+@media (max-width: 782px) {
+	.estat-table thead {
+		display: none;
+	}
+
+	.estat-table tr {
+		border: 1px solid var(--estat-line);
+		border-radius: var(--estat-radius);
+		display: block;
+		margin-bottom: 10px;
+		padding: 6px 10px;
+		background: var(--estat-card);
+	}
+
+	.estat-table td,
+	.estat-table th {
+		display: block;
+		padding: 6px 0;
+	}
+
+	.estat-table td::before,
+	.estat-table th::before {
+		color: var(--estat-muted);
+		content: attr(data-label);
+		display: block;
+		font-size: var(--estat-text-sm);
+		text-transform: none;
+	}
+}
+
+/* ---------------------------------------------------------------- Forms */
+
+/*
+ * An ordinary admin form is a column of fields, and a column of fields is
+ * unreadable when it is 1400px wide. 780px is right for those.
+ *
+ * The builder is not that. It is a three column workspace, and it happens to
+ * live inside a <form> so that Save posts everything at once. This cap was
+ * therefore squeezing the whole studio to 780px no matter how much room the
+ * page had -- the studio's own widths were correct all along, they were just
+ * dividing up 780px instead of the window.
+ */
+.estat-form-admin {
+	max-width: 780px;
+}
+
+.estat-form-admin.estat-builder-form {
+	max-width: none;
+}
+
+.estat-field-row {
+	margin: 0 0 18px;
+}
+
+.estat-field-label {
+	display: block;
+	font-size: var(--estat-text-md);
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+
+.estat-required {
+	color: var(--estat-danger);
+	font-weight: 400;
+	font-size: var(--estat-text-sm);
+	margin-left: 4px;
+}
+
+.estat-optional {
+	color: var(--estat-muted);
+	font-weight: 400;
+	font-size: var(--estat-text-sm);
+	margin-left: 4px;
+}
+
+.estat-field-row input[type="text"],
+.estat-field-row input[type="email"],
+.estat-field-row input[type="tel"],
+.estat-field-row input[type="url"],
+.estat-field-row input[type="date"],
+.estat-field-row input[type="datetime-local"],
+.estat-field-row input[type="number"],
+.estat-field-row select,
+.estat-field-row textarea {
+	font-size: var(--estat-text-md);
+	max-width: 100%;
+	padding: 7px 10px;
+	width: 100%;
+}
+
+.estat-field-row .description {
+	color: var(--estat-muted);
+	margin: 4px 0 0;
+}
+
+.estat-inline-check {
+	align-items: center;
+	display: flex;
+	gap: 8px;
+	margin: 4px 0;
+}
+
+.estat-inline-form {
+	display: inline-flex;
+	gap: 6px;
+	align-items: center;
+	margin: 0;
+}
+
+.estat-form-actions-admin {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: center;
+	margin: 20px 0 0;
+}
+
+.estat-sticky-actions {
+	background: rgba(246, 247, 248, 0.94);
+	border-top: 1px solid var(--estat-line);
+	bottom: 0;
+	padding: 12px 0;
+	position: sticky;
+	z-index: 10;
+}
+
+/* --------------------------------------------------------------- Images */
+
+.estat-image-picker img {
+	border: 1px solid var(--estat-line);
+	border-radius: 6px;
+	display: block;
+	margin-bottom: 8px;
+	max-width: 220px;
+	height: auto;
+}
+
+.estat-gallery-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	list-style: none;
+	margin: 0 0 8px;
+	padding: 0;
+}
+
+.estat-gallery-list li {
+	border: 1px solid var(--estat-line);
+	border-radius: 6px;
+	cursor: grab;
+	overflow: hidden;
+	position: relative;
+}
+
+.estat-gallery-list li.is-dragging {
+	opacity: 0.4;
+}
+
+.estat-gallery-list img {
+	display: block;
+	height: 80px;
+	object-fit: cover;
+	width: 80px;
+}
+
+.estat-gallery-remove {
+	background: rgba(0, 0, 0, 0.65);
+	border: 0;
+	color: var(--estat-on-accent);
+	cursor: pointer;
+	font-size: var(--estat-text);
+	line-height: 1;
+	padding: 3px 6px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+/* -------------------------------------------------------------- Editor */
+
+.estat-editor-layout {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr);
+	align-items: start;
+}
+
+@media (max-width: 1100px) {
+	.estat-editor-layout {
+		grid-template-columns: 1fr;
+	}
+}
+
+.estat-editor-side {
+	position: sticky;
+	top: 46px;
+}
+
+.estat-chapter {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	margin-bottom: 12px;
+}
+
+.estat-chapter > summary {
+	cursor: pointer;
+	font-size: var(--estat-text-md);
+	font-weight: 600;
+	list-style: none;
+	padding: 14px 18px;
+}
+
+.estat-chapter > summary::-webkit-details-marker {
+	display: none;
+}
+
+.estat-chapter > summary::before {
+	content: "\25b8\00a0\00a0";
+	color: var(--estat-muted);
+}
+
+.estat-chapter[open] > summary::before {
+	content: "\25be\00a0\00a0";
+}
+
+.estat-chapter-body {
+	border-top: 1px solid var(--estat-line);
+	padding: 18px;
+}
+
+.estat-progress {
+	background: var(--estat-sunken);
+	border-radius: 999px;
+	height: 10px;
+	overflow: hidden;
+	margin: 6px 0 10px;
+}
+
+.estat-progress-bar {
+	background: var(--estat-good);
+	display: block;
+	height: 100%;
+}
+
+.estat-missing {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.estat-missing li::before {
+	content: "\00b7\00a0";
+	color: var(--estat-warn);
+}
+
+.estat-preview {
+	border: 1px dashed var(--estat-line);
+	border-radius: var(--estat-radius);
+	padding: 12px;
+}
+
+/* ---------------------------------------------------------------- Leads */
+
+.estat-lead-card {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	margin-bottom: 14px;
+	padding: 16px 18px;
+}
+
+.estat-lead-head {
+	align-items: baseline;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: space-between;
+}
+
+.estat-lead-head h3 {
+	font-size: var(--estat-text-lg);
+	margin: 0;
+}
+
+.estat-lead-contact {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 8px 0;
+}
+
+.estat-lead-message {
+	background: var(--estat-card-alt);
+	border-radius: 8px;
+	margin: 8px 0;
+	padding: 10px 12px;
+	white-space: pre-wrap;
+}
+
+.estat-lead-fields {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.estat-lead-note textarea {
+	width: 100%;
+}
+
+.estat-lead-history {
+	border-left: 3px solid var(--estat-line);
+	color: var(--estat-muted);
+	font-size: var(--estat-text);
+	margin: 10px 0 0;
+	padding-left: 10px;
+	white-space: pre-wrap;
+}
+
+.estat-lead-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 12px;
+}
+
+.estat-danger-link,
+.estat-danger-button {
+	color: var(--estat-danger);
+}
+
+.estat-danger summary {
+	color: var(--estat-danger);
+	cursor: pointer;
+}
+
+/* ----------------------------------------------------------- Empty state */
+
+.estat-empty-state {
+	background: var(--estat-card);
+	border: 1px dashed var(--estat-line);
+	border-radius: var(--estat-radius);
+	color: var(--estat-muted);
+	padding: 32px 20px;
+	text-align: center;
+}
+
+.estat-empty-state p {
+	font-size: var(--estat-text-md);
+	margin: 0 0 12px;
+}
+
+/* ---------------------------------------------------------- Diagnostics */
+
+.estat-diagnostics {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	font-size: var(--estat-text);
+	padding: 14px 18px;
+}
+
+.estat-diagnostics dl {
+	display: grid;
+	gap: 2px 16px;
+	grid-template-columns: max-content 1fr;
+	margin: 0 0 10px;
+}
+
+.estat-diagnostics dt {
+	color: var(--estat-muted);
+}
+
+.estat-copyable {
+	background: var(--estat-sunken);
+	border-radius: 4px;
+	display: inline-block;
+	padding: 3px 8px;
+	user-select: all;
+}
+
+/* ----------------------------------------------------------- Reporting */
+
+.estat-bars {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.estat-bar-row {
+	align-items: center;
+	display: grid;
+	gap: 12px;
+	grid-template-columns: minmax(120px, 200px) 1fr 48px;
+	margin-bottom: 8px;
+}
+
+.estat-bar {
+	background: var(--estat-sunken);
+	border-radius: 999px;
+	display: block;
+	height: 14px;
+	overflow: hidden;
+}
+
+.estat-bar-fill {
+	background: var(--estat-accent);
+	display: block;
+	height: 100%;
+}
+
+.estat-bar-value {
+	font-variant-numeric: tabular-nums;
+	text-align: right;
+}
+
+@media (max-width: 600px) {
+	.estat-bar-row {
+		grid-template-columns: 1fr 40px;
+	}
+
+	.estat-bar {
+		grid-column: 1 / -1;
+	}
+}
+
+/* --------------------------------------------------------- Form builder */
+
+.estat-tabs {
+	margin-bottom: 18px;
+}
+
+.estat-builder-layout {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+	align-items: start;
+}
+
+@media (max-width: 1100px) {
+	.estat-builder-layout {
+		grid-template-columns: 1fr;
+	}
+}
+
+.estat-field-palette {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.estat-builder-row {
+	background: var(--estat-card-alt);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	margin-bottom: 12px;
+	padding: 12px;
+}
+
+.estat-builder-row-head {
+	align-items: center;
+	display: flex;
+	gap: 8px;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+.estat-builder-devices {
+	align-items: center;
+	background: var(--estat-sunken);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--estat-gap-sm);
+	margin-bottom: var(--estat-gap);
+	padding: var(--estat-gap-sm);
+}
+
+.estat-builder-device-hint {
+	color: var(--estat-muted);
+	flex: 1 1 100%;
+	font-size: var(--estat-text-xs);
+	margin-left: 0;
+	order: 10;
+}
+
+/* On a roomy screen the hint tucks back onto the same line. */
+@media (min-width: 1500px) {
+	.estat-builder-device-hint {
+		flex: 0 1 auto;
+		margin-left: auto;
+		order: 0;
+	}
+}
+
+/* The canvas narrows to mimic the device being previewed. */
+
+.estat-builder-canvas {
+	margin: 0 auto;
+	transition: max-width 0.2s ease;
+	width: 100%;
+}
+
+.estat-builder-canvas[data-device="tablet"] {
+	max-width: 720px;
+}
+
+.estat-builder-canvas[data-device="mobile"] {
+	max-width: 380px;
+}
+
+.estat-builder-addrow {
+	margin-top: var(--estat-gap-sm);
+	width: 100%;
+}
+
+/* ---------------------------------------------------------- Row tools */
+
+/*
+ * Two rows, not one. All of this needed ~930px on a single line while the
+ * canvas column only ever offers ~520px, so the labels were wrapping three
+ * lines deep and the controls were being clipped.
+ *
+ * Line 1: the column presets, which need the most room.
+ * Line 2: spacing and alignment, side by side.
+ */
+.estat-builder-row-tools {
+	border-bottom: 1px solid var(--estat-line);
+	display: grid;
+	gap: var(--estat-gap-sm);
+	margin-bottom: var(--estat-gap-sm);
+	padding-bottom: var(--estat-gap-sm);
+}
+
+.estat-builder-row-tools .estat-builder-tool:first-child {
+	grid-column: 1 / -1;
+}
+
+.estat-builder-tools-line {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--estat-gap);
+}
+
+.estat-builder-tool {
+	align-items: center;
+	display: flex;
+	gap: var(--estat-gap-xs);
+	min-width: 0;
+}
+
+/* Labels must never be the reason a strip wraps. */
+.estat-builder-tool-label {
+	flex: 0 0 auto;
+	white-space: nowrap;
+}
+
+.estat-builder-tool-label {
+	color: var(--estat-muted);
+	font-size: var(--estat-text-xs);
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+}
+
+.estat-builder-tool-value {
+	color: var(--estat-ink-soft);
+	font-size: var(--estat-text-xs);
+	font-variant-numeric: tabular-nums;
+	min-width: 34px;
+}
+
+.estat-builder-range {
+	accent-color: var(--estat-accent);
+	flex: 1 1 60px;
+	max-width: 100px;
+	min-width: 50px;
+}
+
+/* ------------------------------------------------- Layout preset chips */
+
+.estat-builder-layouts {
+	display: flex;
+	gap: 4px;
+}
+
+.estat-layout-chip {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius-sm);
+	cursor: pointer;
+	display: flex;
+	gap: 2px;
+	height: 24px;
+	padding: 3px;
+	width: 42px;
+}
+
+.estat-layout-chip:hover {
+	border-color: var(--estat-line-strong);
+}
+
+.estat-layout-chip.is-active {
+	border-color: var(--estat-accent);
+	box-shadow: 0 0 0 1px var(--estat-accent);
+}
+
+.estat-layout-chip:focus-visible {
+	box-shadow: var(--estat-ring);
+	outline: none;
+}
+
+.estat-layout-slice {
+	background: var(--estat-line);
+	border-radius: 1px;
+	flex-basis: 0;
+	min-width: 0;
+}
+
+.estat-layout-chip.is-active .estat-layout-slice {
+	background: var(--estat-accent);
+}
+
+/* --------------------------------------------------- Segmented control */
+
+.estat-seg {
+	background: var(--estat-sunken);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius-pill);
+	display: inline-flex;
+	gap: 2px;
+	padding: 2px;
+}
+
+.estat-seg-item {
+	background: none;
+	border: 0;
+	border-radius: var(--estat-radius-pill);
+	color: var(--estat-ink-soft);
+	cursor: pointer;
+	font-size: var(--estat-text-sm);
+	line-height: 1.4;
+	padding: 5px 11px;
+	white-space: nowrap;
+}
+
+.estat-seg-item:hover {
+	color: var(--estat-ink);
+}
+
+.estat-seg-item.is-active {
+	background: var(--estat-accent);
+	color: var(--estat-card);
+	font-weight: 600;
+}
+
+.estat-seg-item:focus-visible {
+	box-shadow: var(--estat-ring);
+	outline: none;
+}
+
+/* ------------------------------------------------------------ Columns */
+
+/*
+ * The canvas must show the REAL split. Columns used to be flex:1 1 220px,
+ * so a 25/75 row was drawn as 50/50 and the office could not see what it
+ * was actually building.
+ */
+.estat-builder-columns {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--cgap, 10px);
+}
+
+.estat-builder-columns[data-align="start"] {
+	align-items: flex-start;
+}
+
+.estat-builder-columns[data-align="center"] {
+	align-items: center;
+}
+
+.estat-builder-columns[data-align="end"] {
+	align-items: flex-end;
+}
+
+.estat-builder-column {
+	background: var(--estat-card);
+	border: 1px dashed var(--estat-line);
+	border-radius: 8px;
+	box-sizing: border-box;
+	flex: 1 1 calc(var(--cw, 100%) - var(--cgap, 10px));
+	max-width: 100%;
+	min-width: 0;
+	padding: var(--estat-gap-sm);
+}
+
+@media (max-width: 782px) {
+	.estat-builder-column {
+		flex-basis: 100%;
+	}
+}
+
+.estat-builder-column.is-over {
+	border-color: var(--estat-accent);
+	border-style: solid;
+	background: var(--estat-accent-soft);
+}
+
+.estat-builder-column-bar {
+	align-items: center;
+	border-bottom: 1px dashed var(--estat-line);
+	display: flex;
+	gap: var(--estat-gap-xs);
+	margin-bottom: var(--estat-gap-sm);
+	padding-bottom: 6px;
+}
+
+.estat-builder-column-width {
+	color: var(--estat-muted);
+	flex: 0 0 auto;
+	font-size: var(--estat-text-xs);
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.estat-builder-column-pick {
+	font-size: var(--estat-text-xs);
+	height: 26px;
+	min-height: 26px;
+	padding: 0 var(--estat-gap-xs);
+}
+
+.estat-builder-column-bar .estat-builder-column-pick {
+	flex: 1 1 60px;
+	min-width: 0;
+}
+
+.estat-builder-column-bar .estat-danger-link {
+	margin-left: auto;
+}
+
+/* A square icon button, for places too narrow to spell "Remove". */
+.estat-icon-button {
+	align-items: center;
+	background: none;
+	border: 1px solid transparent;
+	border-radius: var(--estat-radius-sm);
+	color: var(--estat-muted);
+	cursor: pointer;
+	display: inline-flex;
+	flex: 0 0 auto;
+	font-size: var(--estat-text-md);
+	height: 24px;
+	justify-content: center;
+	line-height: 1;
+	padding: 0;
+	width: 24px;
+}
+
+.estat-icon-button:hover {
+	background: var(--estat-danger-soft);
+	border-color: var(--estat-danger);
+	color: var(--estat-danger);
+}
+
+.estat-icon-button:focus-visible {
+	box-shadow: var(--estat-ring);
+	outline: none;
+}
+
+/* -------------------------------------------------------------- Fields */
+
+.estat-builder-field {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: 8px;
+	cursor: grab;
+	margin-bottom: 8px;
+	padding: 10px;
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.estat-builder-field:hover {
+	border-color: var(--estat-line-strong);
+}
+
+.estat-builder-field:active {
+	cursor: grabbing;
+}
+
+.estat-builder-field:focus-visible {
+	box-shadow: var(--estat-ring);
+	outline: none;
+}
+
+.estat-builder-field.is-selected {
+	border-color: var(--estat-accent);
+	box-shadow: 0 0 0 1px var(--estat-accent);
+}
+
+.estat-builder-field-head {
+	align-items: center;
+	display: flex;
+	gap: 8px;
+	justify-content: space-between;
+}
+
+.estat-builder-field-type {
+	color: var(--estat-muted);
+	font-size: var(--estat-text-sm);
+}
+
+.estat-builder-field-editor {
+	border-top: 1px solid var(--estat-line);
+	cursor: auto;
+	display: grid;
+	gap: var(--estat-gap-sm);
+	margin-top: var(--estat-gap-sm);
+	padding-top: var(--estat-gap-sm);
+}
+
+.estat-builder-field-editor > p {
+	margin: 0;
+}
+
+.estat-builder-sub {
+	color: var(--estat-muted);
+	display: block;
+	font-size: var(--estat-text-xs);
+	letter-spacing: 0.03em;
+	margin-bottom: 4px;
+	text-transform: uppercase;
+}
+
+.estat-builder-input {
+	margin: 0;
+}
+
+.estat-builder-input label {
+	display: block;
+	font-size: var(--estat-text-sm);
+	color: var(--estat-ink-soft);
+}
+
+.estat-builder-widths {
+	display: grid;
+	gap: 6px;
+	grid-template-columns: repeat(3, 1fr);
+	margin-top: 8px;
+}
+
+.estat-builder-widths label {
+	font-size: var(--estat-text-xs);
+	color: var(--estat-muted);
+	display: block;
+}
+
+.estat-builder-widths select {
+	width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.estat-builder-canvas,
+	.estat-builder-field {
+		transition: none;
+	}
+}
+
+.estat-payload {
+	margin: 0;
+}
+
+.estat-payload dt {
+	color: var(--estat-muted);
+	font-size: var(--estat-text-sm);
+}
+
+.estat-payload dd {
+	margin: 0 0 6px;
+}
+
+/* -------------------------------------------------------- Practice mode */
+
+.estat-practice #wpbody-content::before {
+	background: var(--estat-warn-soft);
+	border-bottom: 1px solid var(--estat-warn);
+	content: attr(data-estat-practice);
+	display: block;
+	font-size: var(--estat-text);
+	padding: 6px 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation: none !important;
+		transition: none !important;
+	}
+}
+
+/* ------------------------------------------------ Highlight tick-boxes */
+
+.estat-highlights {
+	margin: 24px 0 8px;
+	padding: 20px;
+	border: 1px solid var(--estat-line);
+	border-radius: 10px;
+	background: var(--estat-card-alt);
+}
+
+.estat-highlights-intro h3 {
+	margin: 0 0 4px;
+	font-size: var(--estat-text-md);
+}
+
+.estat-highlights-intro .description {
+	margin: 0 0 14px;
+}
+
+/* Live preview of the chips that will appear on the card. */
+.estat-highlights-preview {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 8px;
+	min-height: 34px;
+	margin-bottom: 18px;
+	padding: 8px 12px;
+	border: 1px dashed var(--estat-line-strong);
+	border-radius: 8px;
+	background: var(--estat-card);
+}
+
+.estat-highlights-preview-label {
+	font-size: var(--estat-text-sm);
+	font-weight: 600;
+	color: var(--estat-muted);
+}
+
+.estat-highlights-preview-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.estat-preview-chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	padding: 3px 10px;
+	border: 1px solid var(--estat-line);
+	border-radius: 999px;
+	background: var(--estat-card-alt);
+	font-size: var(--estat-text-sm);
+	color: var(--estat-ink-soft);
+}
+
+.estat-preview-empty {
+	font-size: var(--estat-text-sm);
+	color: var(--estat-faint);
+	font-style: italic;
+}
+
+.estat-highlight-group {
+	margin: 0 0 16px;
+	padding: 0;
+	border: 0;
+}
+
+.estat-highlight-group legend {
+	padding: 0 0 8px;
+	font-size: var(--estat-text-sm);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--estat-muted);
+}
+
+.estat-highlight-grid {
+	display: grid;
+	grid-template-columns: repeat( auto-fill, minmax( 190px, 1fr ) );
+	gap: 8px;
+}
+
+/* Each highlight is a button-like tick box. */
+.estat-highlight {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 9px 12px;
+	border: 1px solid var(--estat-line);
+	border-radius: 8px;
+	background: var(--estat-card);
+	cursor: pointer;
+	font-size: var(--estat-text);
+	line-height: 1.3;
+	transition: border-color 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
+}
+
+.estat-highlight:hover {
+	border-color: var(--estat-line-strong);
+	background: var(--estat-card-alt);
+}
+
+.estat-highlight input[type="checkbox"] {
+	margin: 0;
+	flex: 0 0 auto;
+}
+
+.estat-highlight-icon {
+	font-size: var(--estat-text-md);
+	line-height: 1;
+}
+
+.estat-highlight-text {
+	flex: 1 1 auto;
+}
+
+/* Ticked state, and a stronger cue for the ones that reach the card. */
+.estat-highlight.is-on {
+	border-color: var(--estat-accent);
+	background: var(--estat-accent-soft);
+	box-shadow: inset 0 0 0 1px rgba( 42, 109, 244, 0.18 );
+}
+
+.estat-highlight.is-on .estat-highlight-text {
+	font-weight: 600;
+	color: var(--estat-accent-ink);
+}
+
+.estat-highlight.is-carded {
+	border-color: var(--estat-good);
+	background: var(--estat-good-soft);
+	box-shadow: inset 0 0 0 1px rgba( 31, 157, 85, 0.22 );
+}
+
+.estat-highlight:focus-within {
+	outline: 2px solid var(--estat-accent);
+	outline-offset: 2px;
+}
+
+@media ( max-width: 782px ) {
+	.estat-highlight-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media ( max-width: 480px ) {
+	.estat-highlight-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ==========================================================================
+   Modern surface pass
+   --------------------------------------------------------------------------
+   The rules above built the screens. These refine how they look: softer
+   cards, calmer tables, clearer buttons and inputs. Everything reads from the
+   tokens at the top, so the dark theme is handled automatically.
+   ========================================================================== */
+
+/* ------------------------------------------------------------ Typography */
+
+.estat-screen .estat-page-head h1 {
+	font-size: var(--estat-text-2xl);
+	font-weight: 650;
+	letter-spacing: -0.02em;
+	color: var(--estat-ink);
+}
+
+.estat-screen .estat-subtitle {
+	color: var(--estat-muted);
+	font-size: var(--estat-text);
+}
+
+.estat-screen h2,
+.estat-screen h3 {
+	color: var(--estat-ink);
+	letter-spacing: -0.01em;
+}
+
+.estat-screen .description,
+.estat-screen p.description {
+	color: var(--estat-muted);
+	font-size: var(--estat-text);
+}
+
+/* ---------------------------------------------------------------- Cards */
+
+.estat-screen .estat-card {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	box-shadow: var(--estat-shadow-sm);
+	padding: var(--estat-gap-md);
+	margin-bottom: var(--estat-gap);
+	transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.estat-screen .estat-card:hover {
+	box-shadow: var(--estat-shadow);
+}
+
+.estat-screen .estat-card-title {
+	font-size: var(--estat-text-md);
+	font-weight: 650;
+	margin: 0 0 2px;
+	color: var(--estat-ink);
+}
+
+.estat-screen .estat-card-subtitle {
+	color: var(--estat-muted);
+	font-size: var(--estat-text);
+	margin: 0 0 var(--estat-gap);
+}
+
+/* --------------------------------------------------------- Number tiles */
+
+.estat-screen .estat-stats {
+	gap: var(--estat-gap);
+}
+
+.estat-screen .estat-stat {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	box-shadow: var(--estat-shadow-sm);
+	padding: var(--estat-gap);
+	transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.estat-screen a.estat-stat:hover,
+.estat-screen .estat-stat:hover {
+	transform: translateY( -1px );
+	box-shadow: var(--estat-shadow);
+	border-color: var(--estat-line-strong);
+}
+
+.estat-screen .estat-stat-value {
+	font-size: var(--estat-text-2xl);
+	font-weight: 680;
+	letter-spacing: -0.03em;
+	line-height: 1.1;
+	color: var(--estat-ink);
+}
+
+.estat-screen .estat-stat-label {
+	color: var(--estat-muted);
+	font-size: var(--estat-text-sm);
+	font-weight: 500;
+	letter-spacing: 0.01em;
+}
+
+.estat-screen .estat-stat.is-good .estat-stat-value {
+	color: var(--estat-good);
+}
+
+.estat-screen .estat-stat.is-warn .estat-stat-value {
+	color: var(--estat-warn);
+}
+
+/* -------------------------------------------------------------- Buttons */
+
+.estat-screen .button,
+.estat-screen .button-secondary {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line-strong);
+	border-radius: var(--estat-radius-sm);
+	color: var(--estat-ink);
+	font-weight: 550;
+	min-height: 34px;
+	padding: 4px 14px;
+	box-shadow: none;
+	transition: background 0.13s ease, border-color 0.13s ease, transform 0.08s ease;
+}
+
+.estat-screen .button:hover,
+.estat-screen .button-secondary:hover {
+	background: var(--estat-card-alt);
+	border-color: var(--estat-faint);
+	color: var(--estat-ink);
+}
+
+.estat-screen .button:active {
+	transform: translateY( 1px );
+}
+
+.estat-screen .button-primary {
+	background: var(--estat-accent);
+	border: 1px solid var(--estat-accent);
+	border-radius: var(--estat-radius-sm);
+	color: var(--estat-on-accent);
+	font-weight: 600;
+	text-shadow: none;
+	box-shadow: var(--estat-shadow-sm);
+}
+
+.estat-screen .button-primary:hover,
+.estat-screen .button-primary:focus-visible {
+	background: var(--estat-accent-ink);
+	border-color: var(--estat-accent-ink);
+	color: var(--estat-on-accent);
+}
+
+.estat-theme-dark.estat-screen .button-primary:hover {
+	background: var(--estat-accent-ink);
+	border-color: var(--estat-accent);
+	color: var(--estat-bg);
+}
+
+.estat-screen .button-hero {
+	min-height: 42px;
+	font-size: var(--estat-text);
+	padding: 6px 22px;
+}
+
+.estat-screen .button:focus-visible,
+.estat-screen .button-primary:focus-visible,
+.estat-screen .button-link:focus-visible {
+	outline: none;
+	box-shadow: var(--estat-ring);
+}
+
+.estat-screen .button-link {
+	color: var(--estat-accent);
+	font-weight: 550;
+	text-decoration: none;
+}
+
+.estat-screen .button-link:hover {
+	text-decoration: underline;
+}
+
+/* A quiet destructive button, used for delete and erase. */
+.estat-screen .estat-button-danger,
+.estat-screen .button.estat-button-danger {
+	background: var(--estat-danger-soft);
+	border-color: var(--estat-danger);
+	color: var(--estat-danger);
+}
+
+.estat-screen .estat-button-danger:hover {
+	background: var(--estat-danger);
+	border-color: var(--estat-danger);
+	color: var(--estat-on-accent);
+}
+
+/* --------------------------------------------------------------- Inputs */
+
+.estat-screen input[type="text"],
+.estat-screen input[type="search"],
+.estat-screen input[type="email"],
+.estat-screen input[type="tel"],
+.estat-screen input[type="url"],
+.estat-screen input[type="number"],
+.estat-screen input[type="date"],
+.estat-screen input[type="time"],
+.estat-screen input[type="password"],
+.estat-screen input[type="datetime-local"],
+.estat-screen select,
+.estat-screen textarea {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line-strong);
+	border-radius: var(--estat-radius-sm);
+	color: var(--estat-ink);
+	box-shadow: none;
+	min-height: 36px;
+	padding: 6px 11px;
+	transition: border-color 0.13s ease, box-shadow 0.13s ease;
+}
+
+.estat-screen textarea {
+	min-height: 84px;
+	line-height: 1.6;
+	padding: 10px 11px;
+}
+
+.estat-screen input:focus,
+.estat-screen select:focus,
+.estat-screen textarea:focus {
+	border-color: var(--estat-accent);
+	box-shadow: var(--estat-ring);
+	outline: none;
+}
+
+.estat-screen input::placeholder,
+.estat-screen textarea::placeholder {
+	color: var(--estat-faint);
+}
+
+.estat-screen input[type="checkbox"],
+.estat-screen input[type="radio"] {
+	border-color: var(--estat-line-strong);
+	background: var(--estat-card);
+}
+
+.estat-screen input[type="checkbox"]:checked,
+.estat-screen input[type="radio"]:checked {
+	background: var(--estat-accent);
+	border-color: var(--estat-accent);
+}
+
+.estat-screen .estat-field-label {
+	color: var(--estat-ink);
+	font-weight: 600;
+	font-size: var(--estat-text);
+}
+
+/* --------------------------------------------------------------- Tables */
+
+.estat-screen .estat-table,
+.estat-screen .widefat {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	border-collapse: separate;
+	border-spacing: 0;
+	box-shadow: var(--estat-shadow-sm);
+	overflow: hidden;
+	width: 100%;
+}
+
+.estat-screen .estat-table thead th,
+.estat-screen .widefat thead th {
+	background: var(--estat-card-alt);
+	border-bottom: 1px solid var(--estat-line);
+	color: var(--estat-muted);
+	font-size: var(--estat-text-xs);
+	font-weight: 650;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	padding: 11px 14px;
+}
+
+.estat-screen .estat-table td,
+.estat-screen .widefat td {
+	border-bottom: 1px solid var(--estat-line);
+	color: var(--estat-ink-soft);
+	padding: 13px 14px;
+	vertical-align: middle;
+}
+
+.estat-screen .estat-table tbody tr:last-child td,
+.estat-screen .widefat tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.estat-screen .estat-table tbody tr,
+.estat-screen .widefat tbody tr {
+	background: var(--estat-card);
+	transition: background 0.12s ease;
+}
+
+.estat-screen .estat-table tbody tr:hover,
+.estat-screen .widefat tbody tr:hover {
+	background: var(--estat-card-alt);
+}
+
+.estat-screen .row-title,
+.estat-screen .estat-table a {
+	color: var(--estat-accent);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.estat-screen .row-title:hover {
+	text-decoration: underline;
+}
+
+/* ---------------------------------------------------------------- Pills */
+
+.estat-screen .estat-pill {
+	background: var(--estat-sunken);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius-pill);
+	color: var(--estat-ink-soft);
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	font-size: var(--estat-text-sm);
+	font-weight: 550;
+	padding: 3px 10px;
+	white-space: nowrap;
+}
+
+.estat-screen .estat-pill-live,
+.estat-screen .estat-pill.is-good {
+	background: var(--estat-good-soft);
+	border-color: transparent;
+	color: var(--estat-good);
+}
+
+.estat-screen .estat-pill.is-warn {
+	background: var(--estat-warn-soft);
+	border-color: transparent;
+	color: var(--estat-warn);
+}
+
+.estat-screen .estat-pill.is-danger {
+	background: var(--estat-danger-soft);
+	border-color: transparent;
+	color: var(--estat-danger);
+}
+
+/* ----------------------------------------------------------------- Tabs */
+
+.estat-screen .estat-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	background: var(--estat-sunken);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	padding: 4px;
+	margin: 0 0 var(--estat-gap);
+}
+
+.estat-screen .estat-tab {
+	border-radius: var(--estat-radius-sm);
+	color: var(--estat-muted);
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	font-size: var(--estat-text);
+	font-weight: 600;
+	padding: 7px 14px;
+	text-decoration: none;
+	transition: background 0.13s ease, color 0.13s ease;
+}
+
+.estat-screen .estat-tab:hover {
+	background: var(--estat-card);
+	color: var(--estat-ink);
+}
+
+.estat-screen .estat-tab.is-active {
+	background: var(--estat-card);
+	color: var(--estat-ink);
+	box-shadow: var(--estat-shadow-sm);
+}
+
+.estat-screen .estat-tab-count {
+	background: var(--estat-sunken);
+	border-radius: var(--estat-radius-pill);
+	color: var(--estat-muted);
+	font-size: var(--estat-text-xs);
+	font-weight: 650;
+	min-width: 20px;
+	padding: 1px 7px;
+	text-align: center;
+}
+
+.estat-screen .estat-tab.is-active .estat-tab-count {
+	background: var(--estat-accent-soft);
+	color: var(--estat-accent-ink);
+}
+
+/* -------------------------------------------------------------- Filters */
+
+.estat-screen .estat-filters {
+	align-items: center;
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	box-shadow: var(--estat-shadow-sm);
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--estat-gap-sm);
+	margin-bottom: var(--estat-gap);
+	padding: 12px var(--estat-gap);
+}
+
+/* --------------------------------------------------------- Empty states */
+
+.estat-screen .estat-empty {
+	background: var(--estat-card);
+	border: 1px dashed var(--estat-line-strong);
+	border-radius: var(--estat-radius);
+	color: var(--estat-muted);
+	padding: var(--estat-gap-xl) var(--estat-gap-md);
+	text-align: center;
+}
+
+/* --------------------------------------------------------------- Notices */
+
+.estat-screen .estat-notice {
+	border: 1px solid var(--estat-line);
+	border-left: 3px solid var(--estat-accent);
+	border-radius: var(--estat-radius-sm);
+	background: var(--estat-card);
+	box-shadow: var(--estat-shadow-sm);
+	color: var(--estat-ink);
+	margin: 0 0 var(--estat-gap);
+	padding: 12px var(--estat-gap);
+}
+
+.estat-screen .estat-notice.is-good {
+	border-left-color: var(--estat-good);
+	background: var(--estat-good-soft);
+	color: var(--estat-good);
+}
+
+.estat-screen .estat-notice.is-error {
+	border-left-color: var(--estat-danger);
+	background: var(--estat-danger-soft);
+	color: var(--estat-danger);
+}
+
+/* ------------------------------------------------------------ Help panel */
+
+.estat-screen .estat-help-toggle {
+	border-radius: var(--estat-radius-pill);
+	border-color: var(--estat-line-strong);
+	background: var(--estat-card);
+	color: var(--estat-ink-soft);
+	font-weight: 550;
+}
+
+.estat-screen .estat-help-toggle:hover {
+	background: var(--estat-card-alt);
+	color: var(--estat-ink);
+}
+
+/* ------------------------------------------------------- Highlight boxes */
+
+.estat-screen .estat-highlights {
+	background: var(--estat-card);
+	border-color: var(--estat-line);
+	border-radius: var(--estat-radius);
+	box-shadow: var(--estat-shadow-sm);
+}
+
+.estat-screen .estat-highlights-preview {
+	background: var(--estat-sunken);
+	border-color: var(--estat-line-strong);
+	border-radius: var(--estat-radius-sm);
+}
+
+.estat-screen .estat-highlight {
+	background: var(--estat-card);
+	border-color: var(--estat-line);
+	border-radius: var(--estat-radius-sm);
+	color: var(--estat-ink-soft);
+}
+
+.estat-screen .estat-highlight:hover {
+	background: var(--estat-card-alt);
+	border-color: var(--estat-line-strong);
+}
+
+.estat-screen .estat-highlight.is-on {
+	background: var(--estat-accent-soft);
+	border-color: var(--estat-accent);
+	box-shadow: none;
+}
+
+.estat-screen .estat-highlight.is-on .estat-highlight-text {
+	color: var(--estat-accent-ink);
+}
+
+.estat-screen .estat-highlight.is-carded {
+	background: var(--estat-good-soft);
+	border-color: var(--estat-good);
+}
+
+.estat-screen .estat-preview-chip {
+	background: var(--estat-card);
+	border-color: var(--estat-line);
+	border-radius: var(--estat-radius-pill);
+	color: var(--estat-ink-soft);
+}
+
+.estat-screen .estat-preview-empty {
+	color: var(--estat-faint);
+}
+
+/* ---------------------------------------------------------- Pagination */
+
+.estat-screen .estat-pagination {
+	display: flex;
+	gap: 4px;
+	justify-content: center;
+	margin-top: var(--estat-gap);
+}
+
+.estat-screen .estat-pagination .page-numbers {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius-sm);
+	color: var(--estat-ink-soft);
+	min-width: 34px;
+	padding: 6px 11px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.estat-screen .estat-pagination .page-numbers:hover {
+	background: var(--estat-card-alt);
+	border-color: var(--estat-line-strong);
+}
+
+.estat-screen .estat-pagination .page-numbers.current {
+	background: var(--estat-accent);
+	border-color: var(--estat-accent);
+	color: var(--estat-on-accent);
+	font-weight: 650;
+}
+
+/* --------------------------------------------- Respect reduced motion */
+
+@media ( prefers-reduced-motion: reduce ) {
+	.estat-screen * {
+		transition: none !important;
+		animation: none !important;
+	}
+}
+
+/* ==========================================================================
+   Gallery
+   ========================================================================== */
+
+.estat-screen .estat-dropzone {
+	position: relative;
+	background: var(--estat-card);
+	border: 2px dashed var(--estat-line-strong);
+	border-radius: var(--estat-radius);
+	margin-bottom: var(--estat-gap);
+	padding: var(--estat-gap-lg) var(--estat-gap-md);
+	text-align: center;
+	transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.estat-screen .estat-dropzone.is-over {
+	background: var(--estat-accent-soft);
+	border-color: var(--estat-accent);
+}
+
+.estat-screen .estat-dropzone-input {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	overflow: hidden;
+}
+
+.estat-screen .estat-dropzone-icon {
+	display: block;
+	font-size: var(--estat-text-xl);
+	color: var(--estat-faint);
+	line-height: 1;
+	margin-bottom: 6px;
+}
+
+.estat-screen .estat-dropzone-title {
+	font-size: var(--estat-text-md);
+	font-weight: 600;
+	color: var(--estat-ink);
+	margin: 0 0 4px;
+}
+
+.estat-screen .estat-dropzone-hint {
+	color: var(--estat-muted);
+	font-size: var(--estat-text);
+	margin: 0 0 var(--estat-gap);
+}
+
+/* The label is styled as a button, so it needs the same box behaviour. */
+.estat-screen .estat-dropzone label.button {
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	line-height: 1.6;
+}
+
+.estat-screen .estat-dropzone-input:focus-visible + .estat-dropzone-inner label.button {
+	box-shadow: var(--estat-ring);
+}
+
+.estat-screen .estat-dropzone-progress {
+	margin-top: var(--estat-gap);
+}
+
+.estat-screen .estat-dropzone-bar {
+	background: var(--estat-sunken);
+	border-radius: var(--estat-radius-pill);
+	height: 6px;
+	overflow: hidden;
+}
+
+.estat-screen .estat-dropzone-bar span {
+	background: var(--estat-accent);
+	display: block;
+	height: 100%;
+	width: 0;
+	transition: width 0.25s ease;
+}
+
+.estat-screen .estat-dropzone-status {
+	color: var(--estat-muted);
+	font-size: var(--estat-text);
+	margin: 8px 0 0;
+}
+
+/* ------------------------------------------------------------- The grid */
+
+.estat-screen .estat-gallery-grid {
+	display: grid;
+	grid-template-columns: repeat( auto-fill, minmax( 190px, 1fr ) );
+	gap: var(--estat-gap);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.estat-screen .estat-tile {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	box-shadow: var(--estat-shadow-sm);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.estat-screen .estat-tile:hover {
+	transform: translateY( -2px );
+	box-shadow: var(--estat-shadow-lg);
+	border-color: var(--estat-line-strong);
+}
+
+.estat-screen .estat-tile-image {
+	background: var(--estat-sunken);
+	aspect-ratio: 4 / 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.estat-screen .estat-tile-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.estat-screen .estat-tile-placeholder {
+	font-size: var(--estat-text-2xl);
+	opacity: 0.35;
+}
+
+.estat-screen .estat-tile-body {
+	flex: 1 1 auto;
+	padding: 10px 12px 6px;
+}
+
+.estat-screen .estat-tile-title {
+	color: var(--estat-ink);
+	font-size: var(--estat-text);
+	font-weight: 600;
+	margin: 0 0 4px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.estat-screen .estat-tile-meta {
+	align-items: center;
+	color: var(--estat-muted);
+	display: flex;
+	flex-wrap: wrap;
+	font-size: var(--estat-text-sm);
+	gap: 6px;
+	margin: 0;
+}
+
+.estat-screen .estat-tile-actions {
+	border-top: 1px solid var(--estat-line);
+	display: flex;
+	gap: 6px;
+	padding: 8px 12px;
+}
+
+.estat-screen .estat-tile-actions .button {
+	flex: 1 1 auto;
+	justify-content: center;
+	text-align: center;
+	min-height: 30px;
+	padding: 2px 10px;
+	font-size: var(--estat-text-sm);
+}
+
+.estat-screen .estat-cell-actions {
+	text-align: right;
+	white-space: nowrap;
+}
+
+.estat-screen .estat-filter-count {
+	color: var(--estat-muted);
+	font-size: var(--estat-text);
+	margin-left: auto;
+}
+
+@media ( max-width: 600px ) {
+	.estat-screen .estat-gallery-grid {
+		grid-template-columns: repeat( auto-fill, minmax( 140px, 1fr ) );
+		gap: var(--estat-gap-sm);
+	}
+
+	.estat-screen .estat-filter-count {
+		margin-left: 0;
+		width: 100%;
+	}
+}
+
+/* ==========================================================================
+   What to do next
+   ========================================================================== */
+
+.estat-screen .estat-worklist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.estat-screen .estat-worklist-item {
+	align-items: center;
+	border-bottom: 1px solid var(--estat-line);
+	display: flex;
+	gap: var(--estat-gap-sm);
+	padding: 12px 4px 12px 0;
+}
+
+.estat-screen .estat-worklist-item:last-child {
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+
+.estat-screen .estat-worklist-item:first-child {
+	padding-top: 0;
+}
+
+/* A coloured dot of urgency, not a loud banner. */
+.estat-screen .estat-worklist-icon {
+	align-items: center;
+	background: var(--estat-sunken);
+	border-radius: var(--estat-radius-sm);
+	display: flex;
+	flex: 0 0 auto;
+	font-size: var(--estat-text-md);
+	height: 34px;
+	justify-content: center;
+	width: 34px;
+}
+
+.estat-screen .estat-worklist-item.is-danger .estat-worklist-icon {
+	background: var(--estat-danger-soft);
+}
+
+.estat-screen .estat-worklist-item.is-warn .estat-worklist-icon {
+	background: var(--estat-warn-soft);
+}
+
+.estat-screen .estat-worklist-item.is-accent .estat-worklist-icon {
+	background: var(--estat-accent-soft);
+}
+
+.estat-screen .estat-worklist-text {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	gap: 1px;
+	min-width: 0;
+}
+
+.estat-screen .estat-worklist-title {
+	color: var(--estat-ink);
+	font-size: var(--estat-text);
+	font-weight: 600;
+	line-height: 1.35;
+}
+
+.estat-screen .estat-worklist-item.is-danger .estat-worklist-title {
+	color: var(--estat-danger);
+}
+
+.estat-screen .estat-worklist-detail {
+	color: var(--estat-muted);
+	font-size: var(--estat-text-sm);
+	line-height: 1.4;
+}
+
+.estat-screen .estat-worklist-action {
+	flex: 0 0 auto;
+	min-height: 30px;
+	padding: 2px 12px;
+	font-size: var(--estat-text-sm);
+}
+
+/* Nothing to do is worth celebrating, not leaving blank. */
+.estat-screen .estat-worklist-clear {
+	padding: var(--estat-gap-md) 0 var(--estat-gap-sm);
+	text-align: center;
+}
+
+.estat-screen .estat-worklist-clear-icon {
+	align-items: center;
+	background: var(--estat-good-soft);
+	border-radius: 50%;
+	color: var(--estat-good);
+	display: inline-flex;
+	font-size: var(--estat-text-lg);
+	height: 46px;
+	justify-content: center;
+	margin-bottom: 10px;
+	width: 46px;
+}
+
+.estat-screen .estat-worklist-clear-title {
+	color: var(--estat-ink);
+	font-size: var(--estat-text-md);
+	font-weight: 600;
+	margin: 0 0 4px;
+}
+
+.estat-screen .estat-worklist-clear .description {
+	margin: 0 auto var(--estat-gap);
+	max-width: 46ch;
+}
+
+@media ( max-width: 600px ) {
+	.estat-screen .estat-worklist-item {
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
+
+	.estat-screen .estat-worklist-action {
+		margin-left: 42px;
+		margin-top: 6px;
+	}
+}
+
+/* ==========================================================================
+   Step-by-step form
+   ========================================================================== */
+
+.estat-screen .estat-steps {
+	counter-reset: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--estat-gap-sm);
+	list-style: none;
+	margin: 0 0 var(--estat-gap-md);
+	padding: 0;
+}
+
+.estat-screen .estat-step {
+	align-items: center;
+	background: var(--estat-sunken);
+	border: 1px solid transparent;
+	border-radius: var(--estat-radius-sm);
+	display: flex;
+	flex: 1 1 160px;
+	gap: var(--estat-gap-sm);
+	padding: 10px 12px;
+	transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.estat-screen .estat-step.is-current {
+	background: var(--estat-accent-soft);
+	border-color: var(--estat-accent);
+}
+
+.estat-screen .estat-step.is-done {
+	background: var(--estat-good-soft);
+	cursor: pointer;
+}
+
+.estat-screen .estat-step-number {
+	align-items: center;
+	background: var(--estat-card);
+	border-radius: 50%;
+	color: var(--estat-muted);
+	display: flex;
+	flex: 0 0 auto;
+	font-size: var(--estat-text-sm);
+	font-weight: 700;
+	height: 26px;
+	justify-content: center;
+	width: 26px;
+}
+
+.estat-screen .estat-step.is-current .estat-step-number {
+	background: var(--estat-accent);
+	color: var(--estat-on-accent);
+}
+
+.estat-screen .estat-step.is-done .estat-step-number {
+	background: var(--estat-good);
+	color: var(--estat-on-accent);
+	font-size: 0;
+}
+
+/* A finished step shows a tick instead of its number. */
+.estat-screen .estat-step.is-done .estat-step-number::after {
+	content: "✓";
+	font-size: var(--estat-text);
+}
+
+.estat-screen .estat-step-text {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+}
+
+.estat-screen .estat-step-label {
+	color: var(--estat-ink);
+	font-size: var(--estat-text);
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+.estat-screen .estat-step-hint {
+	color: var(--estat-muted);
+	font-size: var(--estat-text-xs);
+	line-height: 1.3;
+}
+
+.estat-screen .estat-wizard-panel[hidden] {
+	display: none;
+}
+
+.estat-screen .estat-wizard-nav {
+	display: flex;
+	gap: var(--estat-gap-sm);
+	justify-content: flex-end;
+	margin-top: var(--estat-gap-md);
+	padding-top: var(--estat-gap);
+	border-top: 1px solid var(--estat-line);
+}
+
+.estat-screen .estat-wizard-nav .button {
+	min-height: 40px;
+	padding: 5px 24px;
+}
+
+.estat-screen .estat-wizard-finish[hidden] {
+	display: none;
+}
+
+@media ( max-width: 600px ) {
+	.estat-screen .estat-step {
+		flex: 1 1 100%;
+	}
+
+	.estat-screen .estat-step-hint {
+		display: none;
+	}
+
+	.estat-screen .estat-wizard-nav .button {
+		flex: 1 1 auto;
+	}
+}
+
+/* ==========================================================================
+   Empty screens
+   ========================================================================== */
+
+.estat-screen .estat-empty-state {
+	margin: 0 auto;
+	max-width: 52ch;
+	padding: var(--estat-gap-xl) var(--estat-gap);
+	text-align: center;
+}
+
+.estat-screen .estat-empty-icon {
+	align-items: center;
+	background: var(--estat-sunken);
+	border-radius: 50%;
+	display: inline-flex;
+	font-size: var(--estat-text-xl);
+	height: 60px;
+	justify-content: center;
+	margin-bottom: var(--estat-gap);
+	width: 60px;
+}
+
+/* An empty screen that is simply new, not broken, gets a calm colour. */
+.estat-screen .estat-empty-state.is-reassuring .estat-empty-icon {
+	background: var(--estat-accent-soft);
+}
+
+.estat-screen .estat-empty-title {
+	color: var(--estat-ink);
+	font-size: var(--estat-text-lg);
+	font-weight: 650;
+	line-height: 1.3;
+	margin: 0 0 6px;
+}
+
+.estat-screen .estat-empty-text {
+	color: var(--estat-ink-soft);
+	font-size: var(--estat-text);
+	line-height: 1.6;
+	margin: 0 0 var(--estat-gap);
+}
+
+.estat-screen .estat-empty-steps {
+	color: var(--estat-ink-soft);
+	display: inline-block;
+	font-size: var(--estat-text);
+	line-height: 1.7;
+	margin: 0 0 var(--estat-gap-md);
+	padding-left: 20px;
+	text-align: left;
+}
+
+.estat-screen .estat-empty-steps li {
+	margin-bottom: 3px;
+}
+
+.estat-screen .estat-empty-state .button {
+	min-height: 38px;
+	padding: 4px 22px;
+}
+
+.estat-screen .estat-empty-hint {
+	color: var(--estat-muted);
+	font-size: var(--estat-text-sm);
+	margin: var(--estat-gap) 0 0;
+}
+
+@media ( max-width: 600px ) {
+	.estat-screen .estat-empty-state {
+		padding: var(--estat-gap-lg) var(--estat-gap-sm);
+	}
+
+	.estat-screen .estat-empty-state .button {
+		width: 100%;
+	}
+}
+
+/* ==========================================================================
+   Small screens
+   --------------------------------------------------------------------------
+   Agents work from a phone between site visits, so every screen has to be
+   usable one-handed. WordPress itself switches its admin to touch layout at
+   782px, so we follow the same breakpoint rather than inventing our own.
+   ========================================================================== */
+
+@media ( max-width: 782px ) {
+
+	/* Fingers need a bigger target than a mouse pointer. Apple and Google both
+	   recommend around 44px; WordPress ships 40px on touch, so match that. */
+	.estat-screen .button,
+	.estat-screen .button-primary,
+	.estat-screen .button-secondary,
+	.estat-screen input[type="submit"] {
+		min-height: 40px;
+		padding: 6px 16px;
+	}
+
+	.estat-screen input[type="text"],
+	.estat-screen input[type="search"],
+	.estat-screen input[type="email"],
+	.estat-screen input[type="url"],
+	.estat-screen input[type="tel"],
+	.estat-screen input[type="number"],
+	.estat-screen input[type="date"],
+	.estat-screen input[type="datetime-local"],
+	.estat-screen select,
+	.estat-screen textarea {
+		/*
+		 * Exactly 16px, not a scale step: below 16px iOS Safari zooms the
+		 * page when a field is focused. This is a browser threshold, not a
+		 * design choice, so it does not belong on the type scale.
+		 */
+		font-size: 16px;
+		min-height: 40px;
+		width: 100%;
+	}
+
+	/* The search and filter bar becomes a stack instead of a squeezed row. */
+	.estat-screen .estat-filters {
+		align-items: stretch;
+		flex-direction: column;
+		gap: var(--estat-gap-sm);
+	}
+
+	.estat-screen .estat-filters .button {
+		width: 100%;
+	}
+
+	.estat-screen .estat-filter-count {
+		text-align: center;
+	}
+
+	/* Cards lose their wide padding so the content keeps the room. */
+	.estat-screen .estat-card-panel {
+		padding: var(--estat-gap) var(--estat-gap-sm);
+	}
+
+	.estat-screen .estat-columns {
+		display: block;
+	}
+
+	.estat-screen .estat-columns > * + * {
+		margin-top: var(--estat-gap);
+	}
+
+	/* Two stat tiles per row reads better than four cramped ones. */
+	.estat-screen .estat-stats {
+		display: grid;
+		grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+		gap: var(--estat-gap-sm);
+	}
+
+	.estat-screen .estat-quick-actions {
+		display: grid;
+		gap: var(--estat-gap-sm);
+	}
+
+	.estat-screen .estat-quick-actions .button {
+		width: 100%;
+	}
+
+	/* Row-as-card: the mobile table layout needs the card colour, not white,
+	   or it disappears in dark mode. */
+	.estat-screen .estat-table tr {
+		background: var(--estat-card);
+		box-shadow: var(--estat-shadow-sm);
+	}
+
+	.estat-screen .estat-table td::before,
+	.estat-screen .estat-table th::before {
+		font-weight: 600;
+	}
+
+	.estat-screen .estat-table .estat-cell-actions .button {
+		width: 100%;
+	}
+
+	/* Anything wide enough to overflow may be swiped sideways instead of
+	   pushing the whole page off screen. */
+	.estat-screen .estat-scroll-x {
+		-webkit-overflow-scrolling: touch;
+		overflow-x: auto;
+	}
+
+	.estat-screen .estat-form-actions-admin .button {
+		width: 100%;
+	}
+
+	.estat-screen .estat-form-actions-admin {
+		display: grid;
+		gap: var(--estat-gap-sm);
+	}
+}
+
+@media ( max-width: 480px ) {
+	.estat-screen .estat-stats {
+		grid-template-columns: minmax( 0, 1fr );
+	}
+
+	.estat-screen .estat-greeting {
+		font-size: var(--estat-text-lg);
+	}
+
+	.estat-screen .estat-version {
+		display: block;
+		margin: 4px 0 0;
+	}
+}
+
+/* ==========================================================================
+   Something is happening
+   ========================================================================== */
+
+.estat-screen .estat-is-busy {
+	cursor: progress;
+	opacity: 0.75;
+	pointer-events: none;
+	position: relative;
+}
+
+/* A small turning ring, so a slow save does not look like a dead button. */
+.estat-screen .estat-is-busy::after {
+	animation: estat-spin 0.7s linear infinite;
+	border: 2px solid currentColor;
+	border-radius: 50%;
+	border-right-color: transparent;
+	content: "";
+	display: inline-block;
+	height: 12px;
+	margin-left: 8px;
+	vertical-align: -2px;
+	width: 12px;
+}
+
+@keyframes estat-spin {
+	to {
+		transform: rotate( 360deg );
+	}
+}
+
+.estat-screen .estat-form-busy {
+	/* Stop a second stray click landing anywhere in the form. */
+	pointer-events: none;
+}
+
+.estat-screen .estat-scroll-x {
+	max-width: 100%;
+}
+
+/* Respect a person who has asked their computer for less movement. */
+@media ( prefers-reduced-motion: reduce ) {
+	.estat-screen .estat-is-busy::after {
+		animation: none;
+		border-right-color: currentColor;
+		opacity: 0.5;
+	}
+}
+
+/* ==========================================================================
+   Ready-made forms
+   ========================================================================== */
+
+.estat-screen .estat-template-grid {
+	display: grid;
+	gap: var(--estat-gap);
+	grid-template-columns: repeat( auto-fill, minmax( 240px, 1fr ) );
+}
+
+.estat-screen .estat-template-card {
+	background: var(--estat-card-alt);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	padding: var(--estat-gap);
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.estat-screen .estat-template-card:hover {
+	border-color: var(--estat-accent);
+	box-shadow: var(--estat-shadow);
+}
+
+.estat-screen .estat-template-icon {
+	font-size: var(--estat-text-xl);
+	line-height: 1;
+}
+
+.estat-screen .estat-template-name {
+	color: var(--estat-ink);
+	font-size: var(--estat-text-md);
+	font-weight: 650;
+}
+
+.estat-screen .estat-template-desc {
+	color: var(--estat-ink-soft);
+	font-size: var(--estat-text-sm);
+	line-height: 1.5;
+}
+
+.estat-screen .estat-template-best {
+	color: var(--estat-muted);
+	font-size: var(--estat-text-sm);
+	font-style: italic;
+	margin-bottom: 4px;
+}
+
+.estat-screen .estat-template-card .button {
+	margin-top: auto;
+}
+
+/* ==========================================================================
+   The field palette
+   ========================================================================== */
+
+.estat-screen .estat-palette-common {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--estat-gap-sm);
+}
+
+.estat-screen .estat-palette-chip[hidden] {
+	display: none;
+}
+
+.estat-screen .estat-palette-more {
+	border-top: 1px solid var(--estat-line);
+	margin-top: var(--estat-gap);
+	padding-top: var(--estat-gap-sm);
+}
+
+.estat-screen .estat-palette-more > summary {
+	color: var(--estat-accent);
+	cursor: pointer;
+	font-size: var(--estat-text);
+	font-weight: 600;
+}
+
+.estat-screen .estat-palette-search {
+	margin: var(--estat-gap-sm) 0;
+	width: 100%;
+}
+
+.estat-screen .estat-palette-group {
+	margin-bottom: var(--estat-gap);
+}
+
+.estat-screen .estat-palette-group[hidden] {
+	display: none;
+}
+
+.estat-screen .estat-palette-group-title {
+	color: var(--estat-muted);
+	font-size: var(--estat-text-xs);
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	margin: 0 0 6px;
+	text-transform: uppercase;
+}
+
+.estat-screen .estat-palette-group-items {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.estat-screen .estat-palette-empty {
+	color: var(--estat-muted);
+	font-size: var(--estat-text);
+}
+
+/* ==========================================================================
+   Live preview
+   ========================================================================== */
+
+.estat-screen .estat-form-preview {
+	background: var(--estat-sunken);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 0 auto;
+	padding: var(--estat-gap);
+	transition: max-width 0.2s ease;
+	width: 100%;
+}
+
+.estat-screen .estat-form-preview[data-device="tablet"] {
+	max-width: 460px;
+}
+
+.estat-screen .estat-form-preview[data-device="mobile"] {
+	max-width: 300px;
+}
+
+.estat-screen .estat-preview-section {
+	color: var(--estat-ink);
+	font-size: var(--estat-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.estat-screen .estat-form-preview {
+		transition: none;
+	}
+}
+
+.estat-screen .estat-preview-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--cgap, 10px);
+	width: 100%;
+}
+
+.estat-screen .estat-preview-row[data-align="start"] {
+	align-items: flex-start;
+}
+
+.estat-screen .estat-preview-row[data-align="center"] {
+	align-items: center;
+}
+
+.estat-screen .estat-preview-row[data-align="end"] {
+	align-items: flex-end;
+}
+
+.estat-screen .estat-preview-col {
+	box-sizing: border-box;
+	display: flex;
+	flex: 1 1 calc(var(--cw, 100%) - var(--cgap, 10px));
+	flex-direction: column;
+	gap: var(--cgap, 10px);
+	max-width: 100%;
+	min-width: 0;
+}
+
+.estat-screen .estat-preview-field {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	min-width: 0;
+}
+
+/* The three box heights, mirrored from the front end. */
+
+.estat-screen .estat-preview-field[data-size="sm"] input,
+.estat-screen .estat-preview-field[data-size="sm"] select,
+.estat-screen .estat-preview-field[data-size="sm"] textarea {
+	min-height: 24px;
+	padding: 2px 6px;
+}
+
+.estat-screen .estat-preview-field[data-size="lg"] input,
+.estat-screen .estat-preview-field[data-size="lg"] select,
+.estat-screen .estat-preview-field[data-size="lg"] textarea {
+	min-height: 40px;
+	padding: 8px 10px;
+}
+
+.estat-screen .estat-preview-field.is-hidden-here {
+	opacity: 0.45;
+}
+
+.estat-screen .estat-preview-label {
+	color: var(--estat-ink);
+	font-size: var(--estat-text-sm);
+	font-weight: 600;
+}
+
+.estat-screen .estat-preview-required {
+	color: var(--estat-danger);
+}
+
+.estat-screen .estat-preview-field input,
+.estat-screen .estat-preview-field select,
+.estat-screen .estat-preview-field textarea {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line-strong);
+	border-radius: var(--estat-radius-sm);
+	font-size: var(--estat-text-sm);
+	min-height: 30px;
+	padding: 4px 8px;
+	pointer-events: none;
+	width: 100%;
+}
+
+.estat-screen .estat-preview-field input[type="checkbox"] {
+	min-height: 0;
+	width: auto;
+}
+
+.estat-screen .estat-preview-help {
+	color: var(--estat-muted);
+	font-size: var(--estat-text-xs);
+}
+
+/* A box that only appears sometimes is marked, so it is not a surprise. */
+.estat-screen .estat-preview-field.is-conditional {
+	border-left: 2px dashed var(--estat-accent);
+	padding-left: 6px;
+}
+
+.estat-screen .estat-preview-heading {
+	color: var(--estat-ink);
+	font-size: var(--estat-text);
+}
+
+.estat-screen .estat-preview-text {
+	color: var(--estat-ink-soft);
+	font-size: var(--estat-text-sm);
+	margin: 0;
+}
+
+.estat-screen .estat-preview-hidden {
+	color: var(--estat-faint);
+	font-size: var(--estat-text-xs);
+	font-style: italic;
+}
+
+.estat-screen .estat-preview-submit {
+	background: var(--estat-accent);
+	border-radius: var(--estat-radius-sm);
+	color: var(--estat-on-accent);
+	display: inline-block;
+	font-size: var(--estat-text-sm);
+	font-weight: 600;
+	padding: 7px 16px;
+}
+
+/* ==========================================================================
+   Simpler field settings
+   ========================================================================== */
+
+.estat-screen .estat-builder-fine > summary,
+.estat-screen .estat-builder-condition > summary {
+	color: var(--estat-muted);
+	cursor: pointer;
+	font-size: var(--estat-text-sm);
+	margin-top: 6px;
+}
+
+.estat-screen .estat-condition-line {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: var(--estat-text-sm);
+	gap: 6px;
+	margin-top: 6px;
+}
+
+.estat-screen .estat-condition-line select,
+.estat-screen .estat-condition-line input {
+	font-size: var(--estat-text-sm);
+	min-height: 30px;
+}
+
+@media ( max-width: 782px ) {
+	.estat-screen .estat-template-grid {
+		grid-template-columns: minmax( 0, 1fr );
+	}
+
+	.estat-screen .estat-preview-field {
+		width: 100% !important;
+	}
+}
+
+/* ============================================================ First-run setup
+   The welcome screen a new office lands on. Everything here uses design tokens
+   so it follows light and dark mode like the rest of the office screens. */
+
+.estat-screen .estat-setup {
+	max-width: 780px;
+}
+
+.estat-screen .estat-setup-pages,
+.estat-screen .estat-setup-choice {
+	display: grid;
+	gap: var(--estat-gap-sm);
+}
+
+.estat-screen .estat-setup-page,
+.estat-screen .estat-setup-option {
+	display: flex;
+	gap: var(--estat-gap-sm);
+	align-items: flex-start;
+	padding: var(--estat-gap);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	background: var(--estat-card-alt);
+	cursor: pointer;
+}
+
+.estat-screen .estat-setup-page:hover,
+.estat-screen .estat-setup-option:hover {
+	border-color: var(--estat-accent);
+	background: var(--estat-accent-soft);
+}
+
+.estat-screen .estat-setup-page input,
+.estat-screen .estat-setup-option input {
+	margin-top: 3px;
+	flex: 0 0 auto;
+}
+
+.estat-screen .estat-setup-page > span,
+.estat-screen .estat-setup-option > span {
+	display: grid;
+	gap: 2px;
+}
+
+.estat-screen .estat-setup-page-note {
+	color: var(--estat-muted);
+	font-size: var(--estat-text);
+	line-height: 1.5;
+}
+
+.estat-screen .estat-setup-list {
+	margin: 0;
+	display: grid;
+	gap: var(--estat-gap-xs);
+}
+
+.estat-screen .estat-setup-list li {
+	display: flex;
+	gap: var(--estat-gap-sm);
+	align-items: baseline;
+	padding: var(--estat-gap-sm) 0;
+	border-bottom: 1px solid var(--estat-line);
+}
+
+.estat-screen .estat-setup-list li:last-child {
+	border-bottom: 0;
+}
+
+.estat-screen .estat-setup-edit {
+	color: var(--estat-muted);
+	font-size: var(--estat-text);
+}
+
+.estat-screen .estat-next-steps {
+	margin: 0;
+	padding-left: 0;
+	list-style: none;
+	counter-reset: estat-step;
+	display: grid;
+	gap: var(--estat-gap-sm);
+}
+
+.estat-screen .estat-next-steps li {
+	counter-increment: estat-step;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 2px var(--estat-gap);
+	align-items: center;
+	padding: var(--estat-gap);
+	background: var(--estat-card-alt);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+}
+
+.estat-screen .estat-next-steps li strong::before {
+	content: counter( estat-step ) ". ";
+	color: var(--estat-accent);
+}
+
+.estat-screen .estat-next-steps li span {
+	grid-column: 1;
+	color: var(--estat-muted);
+	font-size: var(--estat-text);
+	line-height: 1.5;
+}
+
+.estat-screen .estat-next-steps li .button {
+	grid-column: 2;
+	grid-row: 1 / span 2;
+}
+
+@media screen and (max-width: 782px) {
+	.estat-screen .estat-next-steps li {
+		grid-template-columns: 1fr;
+	}
+
+	.estat-screen .estat-next-steps li .button {
+		grid-column: 1;
+		grid-row: auto;
+		justify-self: start;
+		min-height: 40px;
+		display: inline-flex;
+		align-items: center;
+	}
+}
+
+/* ======================================================= Fold-away extras
+   Fields that most listings never need. Kept one click away so the everyday
+   screen stays short, without hiding anything permanently. */
+
+.estat-screen .estat-extras {
+	margin: var(--estat-gap) 0;
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	background: var(--estat-card-alt);
+}
+
+.estat-screen .estat-extras > summary {
+	cursor: pointer;
+	padding: var(--estat-gap-sm) var(--estat-gap);
+	display: grid;
+	gap: 2px;
+	list-style: none;
+	border-radius: var(--estat-radius);
+}
+
+.estat-screen .estat-extras > summary::-webkit-details-marker {
+	display: none;
+}
+
+.estat-screen .estat-extras > summary:hover {
+	background: var(--estat-accent-soft);
+}
+
+.estat-screen .estat-extras > summary:focus-visible {
+	outline: 2px solid var(--estat-accent);
+	outline-offset: 2px;
+}
+
+.estat-screen .estat-extras-title {
+	font-weight: 600;
+	color: var(--estat-ink);
+}
+
+.estat-screen .estat-extras-title::before {
+	content: "+";
+	display: inline-block;
+	width: 1.2em;
+	color: var(--estat-accent);
+	font-weight: 700;
+}
+
+.estat-screen .estat-extras[open] > summary .estat-extras-title::before {
+	content: "−";
+}
+
+.estat-screen .estat-extras-note {
+	color: var(--estat-muted);
+	font-size: var(--estat-text);
+	line-height: 1.5;
+	padding-left: 1.2em;
+}
+
+.estat-screen .estat-extras-body {
+	padding: 0 var(--estat-gap) var(--estat-gap);
+	border-top: 1px solid var(--estat-line);
+	margin-top: var(--estat-gap-xs);
+	padding-top: var(--estat-gap);
+}
+
+@media screen and (max-width: 782px) {
+	.estat-screen .estat-extras > summary {
+		min-height: 40px;
+		align-content: center;
+	}
+}
+
+/* ------------------------------------------------------------------
+ * Image pickers: the preview itself is the button (v1.7.1)
+ * ------------------------------------------------------------------ */
+
+.estat-screen .estat-image-preview {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	max-width: 320px;
+	min-height: 120px;
+	padding: var(--estat-gap-sm);
+	margin: 0 0 var(--estat-gap-sm);
+	background: var(--estat-sunken);
+	border: 1px dashed var(--estat-line);
+	border-radius: var(--estat-radius);
+	color: var(--estat-muted);
+	cursor: pointer;
+	text-align: center;
+}
+
+.estat-screen .estat-image-preview:hover,
+.estat-screen .estat-image-preview:focus-visible {
+	border-color: var(--estat-accent);
+	color: var(--estat-accent-ink);
+	outline: none;
+	box-shadow: var(--estat-ring);
+}
+
+.estat-screen .estat-image-preview img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--estat-radius-sm);
+}
+
+.estat-screen .estat-image-empty {
+	font-size: var(--estat-text);
+}
+
+.estat-screen .estat-gallery-list li {
+	cursor: grab;
+}
+
+.estat-screen .estat-tile-image {
+	display: block;
+	cursor: pointer;
+	border-radius: var(--estat-radius-sm);
+}
+
+.estat-screen .estat-tile-image:focus-visible {
+	outline: none;
+	box-shadow: var(--estat-ring);
+}
+
+/* ==================================================================
+ * The form studio (v1.9.0)
+ *
+ * Three columns: controls 25%, canvas 40%, preview 35%.
+ * The preview sticks, so it stays in front of the office while they
+ * scroll the controls -- the same arrangement as Elementor.
+ * ================================================================== */
+
+.estat-stage-bar {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	margin-bottom: var(--estat-gap);
+	padding: 5px;
+	position: sticky;
+	top: 32px;
+	z-index: 20;
+}
+
+.estat-stage-tab {
+	align-items: center;
+	background: none;
+	border: 0;
+	border-radius: var(--estat-radius-sm);
+	color: var(--estat-muted);
+	cursor: pointer;
+	display: flex;
+	flex: 1 1 auto;
+	font-size: var(--estat-text);
+	gap: 7px;
+	justify-content: center;
+	min-height: 40px;
+	padding: 7px 12px;
+	white-space: nowrap;
+}
+
+.estat-stage-tab:hover {
+	background: var(--estat-sunken);
+	color: var(--estat-ink);
+}
+
+.estat-stage-tab.is-active {
+	background: var(--estat-accent);
+	color: var(--estat-card);
+	font-weight: 600;
+}
+
+.estat-stage-tab:focus-visible {
+	box-shadow: var(--estat-ring);
+	outline: none;
+}
+
+.estat-stage-number {
+	align-items: center;
+	background: var(--estat-sunken);
+	border-radius: 50%;
+	color: var(--estat-muted);
+	display: inline-flex;
+	flex: 0 0 auto;
+	font-size: var(--estat-text-xs);
+	font-weight: 600;
+	height: 20px;
+	justify-content: center;
+	width: 20px;
+}
+
+.estat-stage-tab.is-active .estat-stage-number {
+	background: var(--estat-card);
+	color: var(--estat-accent);
+}
+
+/* ------------------------------------------------------ The three columns */
+
+.estat-studio {
+	align-items: start;
+	display: grid;
+	gap: var(--estat-gap);
+	grid-template-columns: minmax(0, 22fr) minmax(0, 43fr) minmax(0, 35fr);
+}
+
+/*
+ * Three columns for as long as they are usable. The old breakpoint was
+ * 1400px, which dropped a 1408px screen (1248px of usable page once the
+ * WordPress menu is out) to two columns and left half the screen empty.
+ *
+ * At 1100px the canvas would fall under ~420px, which is where the row
+ * controls stop fitting, so that is the honest place to reflow.
+ */
+@media (max-width: 1100px) {
+	.estat-studio {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	}
+
+	.estat-studio-preview {
+		grid-column: 1 / -1;
+	}
+}
+
+@media (max-width: 960px) {
+	.estat-studio {
+		grid-template-columns: 1fr;
+	}
+
+	.estat-studio-preview {
+		grid-column: auto;
+	}
+}
+
+.estat-studio-panel,
+.estat-studio-canvas,
+.estat-studio-preview-inner {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	box-shadow: var(--estat-shadow-sm);
+	box-sizing: border-box;
+	padding: var(--estat-gap);
+}
+
+.estat-studio-panel {
+	min-width: 0;
+}
+
+.estat-studio-canvas {
+	min-width: 0;
+}
+
+/* The preview follows the office down the page. */
+
+.estat-studio-preview {
+	min-width: 0;
+	position: sticky;
+	top: 92px;
+}
+
+.estat-studio-preview-inner {
+	max-height: calc(100vh - 120px);
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/* The preview scrolls vertically; it must never scroll sideways. */
+.estat-screen .estat-form-preview,
+.estat-screen .estat-preview-row {
+	max-width: 100%;
+	min-width: 0;
+	overflow-x: hidden;
+}
+
+.estat-screen .estat-preview-field {
+	max-width: 100%;
+	min-width: 0;
+}
+
+.estat-screen .estat-preview-label {
+	overflow-wrap: anywhere;
+}
+
+@media (max-width: 960px) {
+	.estat-studio-preview {
+		position: static;
+	}
+
+	.estat-studio-preview-inner {
+		max-height: none;
+	}
+}
+
+.estat-studio-canvas-head {
+	border-bottom: 1px solid var(--estat-line);
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--estat-gap-xs);
+	justify-content: space-between;
+	margin-bottom: var(--estat-gap);
+	padding-bottom: var(--estat-gap-sm);
+}
+
+.estat-studio-canvas-title {
+	color: var(--estat-ink);
+	font-size: var(--estat-text);
+	font-weight: 600;
+}
+
+/* ------------------------------------------------------------- One stage */
+
+.estat-stage-title {
+	color: var(--estat-ink);
+	font-size: var(--estat-text-md);
+	margin: 0 0 4px;
+}
+
+.estat-stage-note {
+	color: var(--estat-muted);
+	font-size: var(--estat-text);
+	line-height: 1.45;
+	margin: 0 0 var(--estat-gap);
+}
+
+.estat-stage-body {
+	display: grid;
+	gap: var(--estat-gap-sm);
+}
+
+.estat-stage-hint {
+	background: var(--estat-accent-soft);
+	border-left: 3px solid var(--estat-accent);
+	border-radius: var(--estat-radius-sm);
+	color: var(--estat-accent-ink);
+	font-size: var(--estat-text-sm);
+	line-height: 1.45;
+	margin: 0;
+	padding: var(--estat-gap-sm);
+}
+
+/* --------------------------------------------------- Styling controls */
+
+.estat-style-row {
+	display: grid;
+	gap: 4px;
+}
+
+.estat-style-label {
+	color: var(--estat-ink-soft);
+	font-size: var(--estat-text-sm);
+	font-weight: 500;
+}
+
+.estat-style-control {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--estat-gap-xs);
+}
+
+.estat-style-control .estat-builder-range {
+	flex: 1 1 110px;
+	max-width: none;
+}
+
+.estat-style-control select {
+	flex: 1 1 100%;
+	max-width: 100%;
+}
+
+.estat-style-value {
+	color: var(--estat-muted);
+	font-size: var(--estat-text-xs);
+	font-variant-numeric: tabular-nums;
+	min-width: 40px;
+	text-align: right;
+}
+
+.estat-style-colour {
+	block-size: 30px;
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius-sm);
+	cursor: pointer;
+	inline-size: 44px;
+	padding: 2px;
+}
+
+.estat-style-colour[disabled] {
+	cursor: not-allowed;
+	opacity: 0.4;
+}
+
+.estat-style-inherit {
+	align-items: center;
+	color: var(--estat-muted);
+	display: flex;
+	font-size: var(--estat-text-sm);
+	gap: 5px;
+}
+
+/* The palette sits inside a narrow panel now, so it wraps. */
+
+.estat-studio-panel .estat-field-palette {
+	display: block;
+}
+
+.estat-studio-panel .estat-palette-common {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.estat-stage-bar {
+		position: static;
+	}
+}
+
+/* Styling stage: the preview must obey the chosen appearance. */
+
+.estat-screen .estat-form-preview[data-font="system"] {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.estat-screen .estat-form-preview[data-font="serif"] {
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.estat-screen .estat-form-preview[data-font="mono"] {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.estat-screen .estat-form-preview .estat-preview-label {
+	color: var(--estat-f-label-ink, var(--estat-ink));
+	font-size: var(--estat-f-label-size, 12px);
+	font-weight: var(--estat-f-label-weight, 600);
+}
+
+.estat-screen .estat-form-preview .estat-preview-field input,
+.estat-screen .estat-form-preview .estat-preview-field select,
+.estat-screen .estat-form-preview .estat-preview-field textarea {
+	background: var(--estat-f-field-bg, var(--estat-card));
+	border-color: var(--estat-f-line, var(--estat-line-strong));
+	border-radius: var(--estat-f-radius, var(--estat-radius-sm));
+	border-width: var(--estat-f-border, 1px);
+	color: var(--estat-f-ink, inherit);
+	font-size: var(--estat-f-font, 12px);
+	padding: var(--estat-f-pad-y, 4px) var(--estat-f-pad-x, 8px);
+}
+
+.estat-screen .estat-form-preview .estat-preview-help {
+	color: var(--estat-f-muted, var(--estat-muted));
+}
+
+.estat-screen .estat-form-preview .estat-preview-submit {
+	background: var(--estat-f-btn-bg, var(--estat-accent));
+	border-radius: var(--estat-f-btn-radius, var(--estat-radius-sm));
+	color: var(--estat-f-btn-ink, var(--estat-card));
+	display: inline-block;
+	font-size: var(--estat-f-btn-size, 12px);
+	padding: var(--estat-f-btn-pad-y, 8px) var(--estat-f-btn-pad-x, 16px);
+}
+
+.estat-screen .estat-form-preview[data-btn-width="full"] .estat-preview-submit {
+	display: block;
+	text-align: center;
+}
+
+.estat-screen .estat-form-preview[data-btn-align="center"] .estat-preview-submit {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.estat-screen .estat-form-preview[data-btn-align="right"] .estat-preview-submit {
+	margin-left: auto;
+}
+
+/* The canvas is not what you are editing on the last two stages. */
+
+.estat-studio-canvas.is-dimmed {
+	opacity: 0.55;
+}
+
+/*
+ * A four-column row leaves each column about 126px. The "Width" caption does
+ * not fit beside the dropdown and the remove button there, so it is dropped --
+ * the dropdown already says what the width is, and the button keeps its
+ * aria-label either way.
+ */
+.estat-builder-columns:has(.estat-builder-column:nth-child(3)) .estat-builder-column-width {
+	display: none;
+}
+
+@supports not selector(:has(*)) {
+	.estat-builder-column-width {
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+/* Nothing inside a column may push the column wider than it is. */
+.estat-builder-column,
+.estat-builder-field,
+.estat-builder-field-editor {
+	overflow-wrap: anywhere;
+}
+
+.estat-builder-field-head {
+	min-width: 0;
+}
+
+.estat-builder-field-title {
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* The canvas must never grow a horizontal scrollbar. */
+.estat-studio-canvas,
+.estat-builder,
+.estat-builder-canvas {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+/*
+ * Narrow-screen sizing for the canvas controls.
+ *
+ * On a 1280px laptop the canvas column is only ~425px wide. These caps were
+ * measured, not guessed: it-22 fails the build if any strip stops fitting.
+ */
+.estat-builder-row-head input[type="text"] {
+	flex: 1 1 100px;
+	min-width: 0;
+}
+
+.estat-builder-row-head {
+	flex-wrap: wrap;
+}
+
+.estat-builder-row-controls {
+	display: flex;
+	flex: 0 0 auto;
+	gap: 4px;
+}
+
+.estat-builder-tool select {
+	max-width: 92px;
+	min-width: 0;
+}
+
+.estat-builder-column-pick {
+	max-width: 64px;
+}
+
+/*
+ * With the studio no longer capped at 1240px there is real room on a wide
+ * screen, so the controls that were split onto two lines can come back
+ * together, and the caps that were needed for a cramped canvas can relax.
+ *
+ * These only ever ADD room; the narrow defaults above still apply below
+ * 1600px, and it-22 measures the narrow case.
+ */
+@media (min-width: 1600px) {
+	.estat-builder-row-tools {
+		align-items: center;
+		grid-auto-flow: column;
+		grid-template-columns: auto 1fr;
+	}
+
+	.estat-builder-row-tools .estat-builder-tool:first-child {
+		grid-column: auto;
+	}
+
+	.estat-builder-tools-line {
+		justify-content: flex-end;
+	}
+
+	.estat-builder-tool select {
+		max-width: 130px;
+	}
+
+	.estat-builder-range {
+		max-width: 130px;
+	}
+
+	.estat-builder-column-pick {
+		max-width: 80px;
+	}
+
+	.estat-builder-device-hint {
+		flex: 0 1 auto;
+		margin-left: auto;
+		order: 0;
+	}
+}
+
+/* ==================================================================
+ * Icons (v2.0.0)
+ *
+ * One set, one grid, one stroke weight, inheriting currentColor.
+ * These replaced emoji, which the operating system drew differently
+ * on every machine and which never matched the type around them.
+ * ================================================================== */
+
+.estat-icon {
+	display: inline-block;
+	flex: 0 0 auto;
+	vertical-align: -0.15em;
+}
+
+.estat-screen .estat-highlight-icon,
+.estat-screen .estat-worklist-icon,
+.estat-screen .estat-template-icon,
+.estat-screen .estat-empty-icon,
+.estat-screen .estat-dropzone-icon,
+.estat-screen .estat-tile-placeholder,
+.estat-screen .estat-worklist-clear-icon {
+	align-items: center;
+	color: var(--estat-muted);
+	display: inline-flex;
+	justify-content: center;
+	line-height: 0;
+}
+
+.estat-screen .estat-empty-icon {
+	color: var(--estat-faint);
+}
+
+.estat-screen .estat-highlight input:checked + .estat-highlight-icon,
+.estat-screen .estat-highlight.is-carded .estat-highlight-icon {
+	color: var(--estat-accent);
+}
+
+.estat-screen .estat-worklist-clear-icon {
+	color: var(--estat-good);
+}
+
+/* ==================================================================
+ * Interaction polish (v2.0.0)
+ *
+ * From the Vercel Web Interface Guidelines. Small, unglamorous, and
+ * the difference between an interface that feels made and one that
+ * feels generated.
+ * ================================================================== */
+
+/*
+ * Stop the double-tap-to-zoom delay on anything tappable. Without this,
+ * a phone waits ~300ms after every tap to see if a second one is coming.
+ */
+.estat-screen button,
+.estat-screen .button,
+.estat-screen a.button,
+.estat-screen [role="tab"],
+.estat-screen .estat-seg-item,
+.estat-screen .estat-stage-tab,
+.estat-screen .estat-layout-chip,
+.estat-screen .estat-icon-button,
+.estat-screen label,
+.estat-screen summary,
+.estat-screen input[type="checkbox"],
+.estat-screen input[type="radio"] {
+	touch-action: manipulation;
+}
+
+/* The grey flash iOS paints over a tapped element should match our design. */
+.estat-screen {
+	-webkit-tap-highlight-color: rgba( 42, 109, 244, 0.12 );
+}
+
+/*
+ * Any number a person compares against another number is tabular, so the
+ * digits line up in a column instead of shuffling.
+ */
+.estat-screen .estat-stat-value,
+.estat-screen .estat-price,
+.estat-screen .estat-count,
+.estat-screen td[data-label] .estat-num,
+.estat-screen .estat-style-value,
+.estat-screen .estat-builder-tool-value,
+.estat-screen .estat-pill-count {
+	font-variant-numeric: tabular-nums;
+}
+
+/*
+ * A dragged card should not also be selecting text underneath it.
+ */
+.estat-screen .estat-builder-field[draggable="true"],
+.estat-screen .estat-gallery-list li[draggable="true"] {
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+/* Headings linked to from elsewhere must not hide under the sticky bar. */
+.estat-screen h2[id],
+.estat-screen h3[id],
+.estat-screen section[id] {
+	scroll-margin-top: 96px;
+}
+
+/*
+ * Only animate what is cheap to animate. Anything that changes layout
+ * (width, height, top) causes a reflow on every frame.
+ */
+@media (prefers-reduced-motion: reduce) {
+	.estat-screen *,
+	.estat-screen *::before,
+	.estat-screen *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* ==================================================================
+ * Acting on several records at once (v2.2.0)
+ * ================================================================== */
+
+.estat-screen .estat-bulk-cell {
+	width: 2.5em;
+}
+
+.estat-screen .estat-bulk-cell input[type="checkbox"] {
+	margin: 0;
+}
+
+.estat-screen .estat-bulk-bar {
+	align-items: center;
+	background: var(--estat-accent-soft);
+	border: 1px solid var(--estat-accent);
+	border-radius: var(--estat-radius);
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--estat-gap-sm);
+	margin-top: var(--estat-gap-sm);
+	padding: var(--estat-gap-sm) var(--estat-gap);
+	position: sticky;
+	bottom: var(--estat-gap-sm);
+	z-index: 15;
+}
+
+.estat-screen .estat-bulk-bar[hidden] {
+	display: none;
+}
+
+.estat-screen .estat-bulk-count {
+	color: var(--estat-accent-ink);
+	font-size: var(--estat-text-sm);
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	margin-right: auto;
+}
+
+@media (max-width: 782px) {
+	.estat-screen .estat-bulk-cell {
+		width: auto;
+	}
+
+	.estat-screen .estat-bulk-bar {
+		bottom: 0;
+	}
+}
+
+/* ==================================================================
+ * Keyboard shortcuts (v2.2.0)
+ * ================================================================== */
+
+.estat-shortcuts {
+	background: var(--estat-card);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius);
+	bottom: var(--estat-gap);
+	box-shadow: var(--estat-shadow-lg);
+	max-width: 340px;
+	padding: var(--estat-gap);
+	position: fixed;
+	right: var(--estat-gap);
+	z-index: 100;
+}
+
+.estat-shortcuts h2 {
+	font-size: var(--estat-text-md);
+	margin: 0 0 var(--estat-gap-sm);
+}
+
+.estat-shortcuts dl {
+	display: grid;
+	gap: 6px var(--estat-gap-sm);
+	grid-template-columns: auto 1fr;
+	margin: 0 0 var(--estat-gap-sm);
+}
+
+.estat-shortcuts dt {
+	background: var(--estat-sunken);
+	border: 1px solid var(--estat-line);
+	border-radius: var(--estat-radius-sm);
+	color: var(--estat-ink);
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: var(--estat-text-xs);
+	padding: 2px 6px;
+	white-space: nowrap;
+}
+
+.estat-shortcuts dd {
+	color: var(--estat-ink-soft);
+	font-size: var(--estat-text-sm);
+	margin: 0;
+	align-self: center;
+}
+
+.estat-shortcut-hint {
+	color: var(--estat-muted);
+	font-size: var(--estat-text-xs);
+}
+
+@media (max-width: 782px) {
+	/* There is no keyboard to speak of on a phone. */
+	.estat-shortcuts,
+	.estat-shortcut-hint {
+		display: none;
+	}
+}
+
+
+/* ==================================================================
+ * Mayfair background elements (v2.4.0)
+ *
+ * From the office's own asset package. Thin gold line-work at 10-22%
+ * opacity, used ONLY as a background layer behind a container - never
+ * as content, and never more than one per area.
+ *
+ * The four used here are the small tileable ones. They are inlined as
+ * data URIs because the admin stylesheet cannot rely on a second file
+ * request landing before the first paint, and each is under 700 bytes.
+ * The larger illustrative pieces (contours, sector map, skyline) stay
+ * as files in assets/backgrounds/ for the public site.
+ *
+ * The gold is #725B2F. It sits behind everything and must never
+ * compete with content, so nothing here goes above 22% opacity and
+ * dark mode drops it further still.
+ *
+ * Source: github.com/devkaushall/dev_vault - Stock Package
+ * ================================================================== */
+
+.estat-screen {
+	--estat-bg-grid: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22 viewBox=%220 0 120 120%22 role=%22img%22 aria-label=%22Architectural grid%22%3E%3Ctitle%3EArchitectural grid%3C/title%3E%3Crect width=%22120%22 height=%22120%22 fill=%22none%22/%3E%3Cpath d=%22M24 0V120M48 0V120M72 0V120M96 0V120M0 24H120M0 48H120M0 72H120M0 96H120%22 stroke=%22%23725B2F%22 stroke-opacity=%22.10%22 stroke-width=%221%22/%3E%3Cpath d=%22M0 0V120M0 0H120%22 stroke=%22%23725B2F%22 stroke-opacity=%22.22%22 stroke-width=%221%22/%3E%3C/svg%3E");
+	--estat-bg-dots: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22 role=%22img%22 aria-label=%22Dot grid%22%3E%3Ctitle%3EDot grid%3C/title%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%221.1%22 fill=%22%23725B2F%22 fill-opacity=%22.22%22/%3E%3C/svg%3E");
+	--estat-bg-hatch: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 role=%22img%22 aria-label=%22Diagonal hatch%22%3E%3Ctitle%3EDiagonal hatch%3C/title%3E%3Cpath d=%22M-6 6L6 -6M0 24L24 0M18 30L30 18%22 stroke=%22%23725B2F%22 stroke-opacity=%22.10%22 stroke-width=%221%22/%3E%3C/svg%3E");
+	--estat-bg-plots: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22240%22 height=%22160%22 viewBox=%220 0 240 160%22 role=%22img%22 aria-label=%22Plot layout%22%3E%3Ctitle%3EPlot layout%3C/title%3E%3Cg fill=%22none%22 stroke=%22%23725B2F%22 stroke-opacity=%22.12%22 stroke-width=%221%22%3E%3Crect x=%22.5%22 y=%22.5%22 width=%22239%22 height=%2279%22/%3E%3Crect x=%22.5%22 y=%2280.5%22 width=%22239%22 height=%2279%22/%3E%3Cpath d=%22M60 0V80M110 0V80M170 0V80M40 80V160M130 80V160M190 80V160%22/%3E%3C/g%3E%3Cpath d=%22M0 80H240%22 stroke=%22%23725B2F%22 stroke-opacity=%22.22%22 stroke-width=%221.5%22/%3E%3C/svg%3E");
+}
+
+/*
+ * The page itself gets the architectural grid. It is the quietest of the
+ * four and it is what makes the surface feel like paper rather than a
+ * blank div.
+ */
+.estat-screen #wpbody-content {
+	background-color: var(--estat-bg);
+	background-image: var(--estat-bg-grid);
+	background-repeat: repeat;
+	background-position: top left;
+}
+
+/*
+ * One element per area, never two. These are the deliberate placements:
+ * the welcome screen and the Today greeting get a texture because they
+ * are the two places an empty office looks emptiest.
+ */
+.estat-screen .estat-greeting-card,
+.estat-screen .estat-setup-intro {
+	background-image: var(--estat-bg-dots);
+	background-repeat: repeat;
+	background-position: top left;
+}
+
+.estat-screen .estat-empty {
+	background-image: var(--estat-bg-hatch);
+	background-repeat: repeat;
+	background-position: top left;
+}
+
+/* Cards sit ON the texture, so they stay plain. Anything else and the
+ * grid shows through content and makes text harder to read. */
+.estat-screen .estat-card,
+.estat-screen .estat-card-panel,
+.estat-screen .estat-studio-panel,
+.estat-screen .estat-studio-canvas,
+.estat-screen .estat-studio-preview-inner,
+.estat-screen .estat-table,
+.estat-screen .widefat {
+	background-image: none;
+}
+
+/*
+ * Dark mode. Gold on ink reads much stronger than gold on ivory, so the
+ * same artwork has to be held back or it turns into a visible mesh.
+ */
+.estat-theme-dark.estat-screen #wpbody-content,
+.estat-theme-dark .estat-screen #wpbody-content {
+	opacity: 1;
+}
+
+.estat-theme-dark.estat-screen #wpbody-content {
+	background-image: none;
+}
+
+.estat-theme-dark .estat-greeting-card,
+.estat-theme-dark .estat-setup-intro,
+.estat-theme-dark .estat-empty {
+	background-image: none;
+}
+
+/*
+ * Printing a listing should not waste ink on background line-work, and
+ * a reader who has asked for reduced motion has often also asked for a
+ * calmer page.
+ */
+@media print {
+	.estat-screen #wpbody-content,
+	.estat-screen .estat-greeting-card,
+	.estat-screen .estat-setup-intro,
+	.estat-screen .estat-empty {
+		background-image: none;
+	}
+}

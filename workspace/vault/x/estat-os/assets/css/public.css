@@ -1,0 +1,1335 @@
+/**
+ * Estat.OS — the public website.
+ *
+ * The office screens got four thousand lines of care and this file had a
+ * hundred and eighty, most of it minified onto single lines with hardcoded
+ * colours. It showed. This is the rewrite.
+ *
+ * Three rules held throughout:
+ *
+ * 1. **Everything is a token.** A theme can restyle the whole plugin by
+ *    redefining a handful of custom properties, without fighting specificity
+ *    or resorting to !important.
+ *
+ * 2. **Nothing shouts.** This sits inside somebody else's theme. It uses one
+ *    accent, neutral greys, generous space and restrained depth, so it reads
+ *    as part of the site rather than as a plugin bolted on.
+ *
+ * 3. **Every state is designed.** Hover, focus, pressed, loading, empty and
+ *    error. An interface that only looks right in its resting state is the
+ *    thing that feels unfinished.
+ *
+ * Loaded only when a component actually renders.
+ */
+
+/* ==================================================================
+ * Tokens
+ *
+ * Scoped to the plugin's own wrapper classes rather than :root, so a
+ * theme's variables are never overwritten. A theme that wants to
+ * restyle this only has to redefine these names.
+ * ================================================================== */
+
+.estat-grid,
+.estat-card,
+.estat-single,
+.estat-search,
+.estat-team,
+.estat-compare,
+.estat-favorites,
+.estat-directory,
+.estat-archive,
+.estat-form-wrap {
+	/* Ink */
+	--estat-p-ink: #16202c;
+	--estat-p-ink-soft: #3f4a58;
+	--estat-p-muted: #6b7684;
+	--estat-p-faint: #98a2b0;
+
+	/* Surfaces */
+	--estat-p-bg: #fdfdfe;
+	--estat-p-sunken: #f6f8fa;
+	--estat-p-line: #e6eaf0;
+	--estat-p-line-strong: #cfd6e0;
+
+	/* One accent. Everything that can be clicked uses it, nothing else. */
+	--estat-p-accent: #1f6feb;
+	--estat-p-accent-ink: #1a5fd0;
+	--estat-p-accent-soft: #eaf1fe;
+	--estat-p-accent-on: #fbfcfe;
+
+	/* Text on the dark translucent badge, which stays dark in both themes. */
+	--estat-p-badge-ink: #fbfcfe;
+
+	/* States */
+	--estat-p-good: #12855a;
+	--estat-p-warn: #a2650a;
+	--estat-p-danger: #c0392f;
+
+	/* Shape */
+	--estat-p-radius-sm: 8px;
+	--estat-p-radius: 14px;
+	--estat-p-radius-lg: 20px;
+	--estat-p-radius-pill: 999px;
+
+	/* Depth: barely there. A card should feel lifted, not cut out. */
+	--estat-p-shadow-sm: 0 1px 2px rgba( 16, 24, 40, 0.04 );
+	--estat-p-shadow: 0 1px 3px rgba( 16, 24, 40, 0.06 ), 0 8px 24px rgba( 16, 24, 40, 0.06 );
+	--estat-p-shadow-lg: 0 2px 6px rgba( 16, 24, 40, 0.06 ), 0 16px 40px rgba( 16, 24, 40, 0.12 );
+	--estat-p-ring: 0 0 0 3px rgba( 31, 111, 235, 0.25 );
+
+	/* Space, on a scale rather than by feel. */
+	--estat-p-gap-xs: 4px;
+	--estat-p-gap-sm: 8px;
+	--estat-p-gap: 16px;
+	--estat-p-gap-md: 24px;
+	--estat-p-gap-lg: 40px;
+	--estat-p-gap-xl: 64px;
+
+	/* Type */
+	--estat-p-text-xs: 0.75rem;
+	--estat-p-text-sm: 0.8125rem;
+	--estat-p-text: 0.9375rem;
+	--estat-p-text-md: 1.0625rem;
+	--estat-p-text-lg: 1.25rem;
+	--estat-p-text-xl: 1.5rem;
+	--estat-p-text-2xl: 2rem;
+
+	--estat-p-ease: cubic-bezier( 0.4, 0, 0.2, 1 );
+
+	color: var( --estat-p-ink );
+}
+
+/*
+ * A theme in dark mode should not be handed white cards. These follow
+ * prefers-color-scheme only when the theme has not already set a scheme,
+ * which is the honest default.
+ */
+@media ( prefers-color-scheme: dark ) {
+	.estat-grid,
+	.estat-card,
+	.estat-single,
+	.estat-search,
+	.estat-team,
+	.estat-compare,
+	.estat-favorites,
+	.estat-directory,
+	.estat-archive {
+		--estat-p-ink: #e8edf4;
+		--estat-p-ink-soft: #b8c2ce;
+		--estat-p-muted: #8b96a5;
+		--estat-p-faint: #6b7684;
+		--estat-p-bg: #161b22;
+		--estat-p-sunken: #1c232c;
+		--estat-p-line: #2a323d;
+		--estat-p-line-strong: #3a4552;
+		--estat-p-accent: #4d8ff5;
+		--estat-p-accent-soft: #182a45;
+		--estat-p-accent-on: #0d1117;
+	}
+}
+
+/* ==================================================================
+ * The grid
+ * ================================================================== */
+
+.estat-grid {
+	display: grid;
+	gap: var( --estat-p-gap-md );
+	grid-template-columns: repeat( auto-fill, minmax( 280px, 1fr ) );
+}
+
+/* ==================================================================
+ * The property card
+ *
+ * This is the single most-seen thing in the plugin: it appears on the
+ * home page, in search results and beside every other property. It is
+ * worth more attention than anything else here.
+ * ================================================================== */
+
+.estat-card {
+	background: var( --estat-p-bg );
+	border: 1px solid var( --estat-p-line );
+	border-radius: var( --estat-p-radius );
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	position: relative;
+	transition: transform 0.25s var( --estat-p-ease ), box-shadow 0.25s var( --estat-p-ease ), border-color 0.25s var( --estat-p-ease );
+}
+
+.estat-card:hover {
+	border-color: var( --estat-p-line-strong );
+	box-shadow: var( --estat-p-shadow );
+	transform: translateY( -2px );
+}
+
+/*
+ * Keyboard users get the same signal as mouse users. :focus-within means
+ * tabbing to the title lifts the whole card, not just the link.
+ */
+.estat-card:focus-within {
+	border-color: var( --estat-p-accent );
+	box-shadow: var( --estat-p-ring );
+}
+
+.estat-card-media {
+	aspect-ratio: 4 / 3;
+	background: var( --estat-p-sunken );
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+
+.estat-card-media img {
+	display: block;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.4s var( --estat-p-ease );
+	width: 100%;
+}
+
+.estat-card:hover .estat-card-media img {
+	transform: scale( 1.04 );
+}
+
+/*
+ * No photograph is a real state, not an accident, so it gets a designed
+ * answer: quiet diagonal line-work rather than a grey rectangle.
+ */
+.estat-card-noimage {
+	background-color: var( --estat-p-sunken );
+	background-image: repeating-linear-gradient(
+		135deg,
+		transparent,
+		transparent 11px,
+		var( --estat-p-line ) 11px,
+		var( --estat-p-line ) 12px
+	);
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+/* ---- Badges ---- */
+
+.estat-badge {
+	backdrop-filter: saturate( 180% ) blur( 8px );
+	background: rgba( 22, 32, 44, 0.72 );
+	border-radius: var( --estat-p-radius-pill );
+	color: var( --estat-p-badge-ink );
+	font-size: var( --estat-p-text-xs );
+	font-weight: 600;
+	left: var( --estat-p-gap-sm );
+	letter-spacing: 0.02em;
+	line-height: 1;
+	padding: 6px 10px;
+	position: absolute;
+	top: var( --estat-p-gap-sm );
+}
+
+.estat-badge-featured {
+	background: var( --estat-p-accent );
+	left: auto;
+	right: var( --estat-p-gap-sm );
+}
+
+/* ---- Card body ---- */
+
+.estat-card-body {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	gap: var( --estat-p-gap-sm );
+	padding: var( --estat-p-gap );
+}
+
+.estat-card-title {
+	font-size: var( --estat-p-text-md );
+	line-height: 1.35;
+	margin: 0;
+}
+
+.estat-card-title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/*
+ * The whole card is clickable, but only the title is a real link. This
+ * stretches its hit area over the card without nesting anchors, which
+ * would be invalid and would break right-click and middle-click.
+ */
+.estat-card-title a::after {
+	content: '';
+	inset: 0;
+	position: absolute;
+	z-index: 1;
+}
+
+.estat-card-title a:hover {
+	color: var( --estat-p-accent-ink );
+}
+
+.estat-card-locality {
+	color: var( --estat-p-muted );
+	font-size: var( --estat-p-text-sm );
+	margin: 0;
+}
+
+.estat-card-price {
+	color: var( --estat-p-ink );
+	font-size: var( --estat-p-text-lg );
+	font-variant-numeric: tabular-nums;
+	font-weight: 700;
+	letter-spacing: -0.01em;
+	margin: 0;
+}
+
+.estat-card-facts {
+	color: var( --estat-p-muted );
+	display: flex;
+	flex-wrap: wrap;
+	font-size: var( --estat-p-text-sm );
+	gap: var( --estat-p-gap-xs ) var( --estat-p-gap );
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.estat-card-facts li {
+	align-items: center;
+	display: flex;
+	gap: 5px;
+}
+
+/* ---- Feature chips ---- */
+
+.estat-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.estat-chip {
+	align-items: center;
+	background: var( --estat-p-accent-soft );
+	border-radius: var( --estat-p-radius-pill );
+	color: var( --estat-p-accent-ink );
+	display: inline-flex;
+	font-size: var( --estat-p-text-xs );
+	font-weight: 500;
+	gap: 5px;
+	line-height: 1;
+	padding: 5px 10px;
+}
+
+.estat-chip-icon {
+	align-items: center;
+	display: inline-flex;
+	line-height: 0;
+}
+
+/* ---- Card actions ---- */
+
+.estat-card-actions {
+	display: flex;
+	gap: var( --estat-p-gap-sm );
+	margin-top: auto;
+	padding-top: var( --estat-p-gap-sm );
+	position: relative;
+	z-index: 2;
+}
+
+.estat-card-actions button {
+	align-items: center;
+	background: transparent;
+	border: 1px solid var( --estat-p-line-strong );
+	border-radius: var( --estat-p-radius-pill );
+	color: var( --estat-p-ink-soft );
+	cursor: pointer;
+	display: inline-flex;
+	font: inherit;
+	font-size: var( --estat-p-text-sm );
+	gap: 5px;
+	line-height: 1;
+	padding: 7px 12px;
+	transition: background-color 0.2s var( --estat-p-ease ), border-color 0.2s var( --estat-p-ease ), color 0.2s var( --estat-p-ease );
+}
+
+.estat-card-actions button:hover {
+	background: var( --estat-p-sunken );
+	border-color: var( --estat-p-ink-soft );
+	color: var( --estat-p-ink );
+}
+
+.estat-card-actions button[aria-pressed="true"] {
+	background: var( --estat-p-accent );
+	border-color: var( --estat-p-accent );
+	color: var( --estat-p-accent-on );
+}
+
+.estat-fav-icon {
+	align-items: center;
+	display: inline-flex;
+	line-height: 0;
+}
+
+/* ==================================================================
+ * Buttons
+ * ================================================================== */
+
+.estat-btn {
+	align-items: center;
+	background: transparent;
+	border: 1px solid var( --estat-p-line-strong );
+	border-radius: var( --estat-p-radius-sm );
+	color: var( --estat-p-ink );
+	cursor: pointer;
+	display: inline-flex;
+	font: inherit;
+	font-weight: 500;
+	gap: var( --estat-p-gap-sm );
+	justify-content: center;
+	line-height: 1.3;
+	padding: 11px 18px;
+	text-decoration: none;
+	transition: background-color 0.2s var( --estat-p-ease ), border-color 0.2s var( --estat-p-ease ), transform 0.1s var( --estat-p-ease );
+}
+
+.estat-btn:hover {
+	background: var( --estat-p-sunken );
+	border-color: var( --estat-p-ink-soft );
+}
+
+.estat-btn:active {
+	transform: translateY( 1px );
+}
+
+.estat-btn-primary {
+	background: var( --estat-p-accent );
+	border-color: var( --estat-p-accent );
+	color: var( --estat-p-accent-on );
+}
+
+.estat-btn-primary:hover {
+	background: var( --estat-p-accent-ink );
+	border-color: var( --estat-p-accent-ink );
+	color: var( --estat-p-accent-on );
+}
+
+/* One focus style for everything clickable, so nothing is ever lost. */
+.estat-card-actions button:focus-visible,
+.estat-btn:focus-visible,
+.estat-card-title a:focus-visible,
+.estat-search input:focus-visible,
+.estat-search select:focus-visible,
+.estat-pagination a:focus-visible {
+	box-shadow: var( --estat-p-ring );
+	outline: 2px solid var( --estat-p-accent );
+	outline-offset: 1px;
+}
+
+/* ==================================================================
+ * Search and filters
+ * ================================================================== */
+
+.estat-search {
+	background: var( --estat-p-sunken );
+	border: 1px solid var( --estat-p-line );
+	border-radius: var( --estat-p-radius );
+	margin-bottom: var( --estat-p-gap-lg );
+	padding: var( --estat-p-gap-md );
+}
+
+.estat-search-row {
+	display: grid;
+	gap: var( --estat-p-gap );
+	grid-template-columns: repeat( auto-fit, minmax( 190px, 1fr ) );
+}
+
+.estat-search-field label {
+	color: var( --estat-p-ink-soft );
+	display: block;
+	font-size: var( --estat-p-text-sm );
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+
+.estat-search input,
+.estat-search select {
+	background: var( --estat-p-bg );
+	border: 1px solid var( --estat-p-line-strong );
+	border-radius: var( --estat-p-radius-sm );
+	box-sizing: border-box;
+	color: var( --estat-p-ink );
+	font: inherit;
+	font-size: var( --estat-p-text );
+	padding: 10px 12px;
+	transition: border-color 0.15s var( --estat-p-ease ), box-shadow 0.15s var( --estat-p-ease );
+	width: 100%;
+}
+
+.estat-search input:hover,
+.estat-search select:hover {
+	border-color: var( --estat-p-ink-soft );
+}
+
+.estat-search-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var( --estat-p-gap-sm );
+	margin-top: var( --estat-p-gap );
+}
+
+/* ==================================================================
+ * The single property page
+ * ================================================================== */
+
+.estat-single {
+	margin: 0 auto;
+	max-width: 1100px;
+}
+
+.estat-single-header {
+	border-bottom: 1px solid var( --estat-p-line );
+	margin-bottom: var( --estat-p-gap-lg );
+	padding-bottom: var( --estat-p-gap-md );
+}
+
+.estat-single h1 {
+	font-size: var( --estat-p-text-2xl );
+	letter-spacing: -0.02em;
+	line-height: 1.15;
+	margin: 0 0 var( --estat-p-gap-sm );
+}
+
+.estat-single-locality {
+	align-items: center;
+	color: var( --estat-p-muted );
+	display: flex;
+	font-size: var( --estat-p-text-md );
+	gap: 6px;
+	margin: 0 0 var( --estat-p-gap );
+}
+
+.estat-single-price {
+	color: var( --estat-p-ink );
+	font-size: var( --estat-p-text-2xl );
+	font-variant-numeric: tabular-nums;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+
+.estat-single-cover {
+	border-radius: var( --estat-p-radius-lg );
+	margin-bottom: var( --estat-p-gap-lg );
+	overflow: hidden;
+}
+
+.estat-single-cover img {
+	display: block;
+	height: auto;
+	width: 100%;
+}
+
+/* ---- Fact lists ---- */
+
+.estat-single-facts,
+.estat-single-costs,
+.estat-single-media,
+.estat-single-documents,
+.estat-single-highlights {
+	margin-bottom: var( --estat-p-gap-lg );
+}
+
+.estat-single-facts h2,
+.estat-single-costs h2,
+.estat-single-media h2,
+.estat-single-documents h2,
+.estat-single-enquiry h2,
+.estat-single-agent h2 {
+	font-size: var( --estat-p-text-lg );
+	letter-spacing: -0.01em;
+	margin: 0 0 var( --estat-p-gap );
+}
+
+/*
+ * Facts as a grid of small cards rather than a bullet list. A buyer scans
+ * these; a list makes them read.
+ */
+.estat-single-facts ul,
+.estat-single-costs ul {
+	display: grid;
+	gap: var( --estat-p-gap-sm );
+	grid-template-columns: repeat( auto-fill, minmax( 190px, 1fr ) );
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.estat-single-facts li,
+.estat-single-costs li {
+	background: var( --estat-p-sunken );
+	border: 1px solid var( --estat-p-line );
+	border-radius: var( --estat-p-radius-sm );
+	font-size: var( --estat-p-text );
+	padding: 12px 14px;
+}
+
+.estat-single-facts li strong,
+.estat-single-costs li strong {
+	color: var( --estat-p-muted );
+	display: block;
+	font-size: var( --estat-p-text-xs );
+	font-weight: 600;
+	letter-spacing: 0.03em;
+	margin-bottom: 3px;
+	text-transform: uppercase;
+}
+
+.estat-single-highlights {
+	display: grid;
+	gap: var( --estat-p-gap-sm );
+	grid-template-columns: repeat( auto-fill, minmax( 220px, 1fr ) );
+	list-style: none;
+	padding: 0;
+}
+
+.estat-single-highlights li {
+	align-items: flex-start;
+	background: var( --estat-p-accent-soft );
+	border-radius: var( --estat-p-radius-sm );
+	color: var( --estat-p-accent-ink );
+	display: flex;
+	font-size: var( --estat-p-text-sm );
+	gap: var( --estat-p-gap-sm );
+	padding: 10px 12px;
+}
+
+.estat-single-description {
+	color: var( --estat-p-ink-soft );
+	font-size: var( --estat-p-text-md );
+	line-height: 1.7;
+	margin-bottom: var( --estat-p-gap-lg );
+	max-width: 68ch;
+}
+
+.estat-single-media-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var( --estat-p-gap-sm );
+	margin: 0;
+}
+
+.estat-single-documents ul {
+	display: grid;
+	gap: var( --estat-p-gap-sm );
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.estat-single-documents a {
+	align-items: center;
+	background: var( --estat-p-sunken );
+	border: 1px solid var( --estat-p-line );
+	border-radius: var( --estat-p-radius-sm );
+	color: var( --estat-p-ink );
+	display: flex;
+	gap: var( --estat-p-gap-sm );
+	padding: 12px 14px;
+	text-decoration: none;
+	transition: border-color 0.2s var( --estat-p-ease ), background-color 0.2s var( --estat-p-ease );
+}
+
+.estat-single-documents a:hover {
+	background: var( --estat-p-accent-soft );
+	border-color: var( --estat-p-accent );
+}
+
+/* ---- Agent and enquiry ---- */
+
+.estat-single-agent,
+.estat-single-enquiry {
+	background: var( --estat-p-sunken );
+	border: 1px solid var( --estat-p-line );
+	border-radius: var( --estat-p-radius );
+	margin-bottom: var( --estat-p-gap-lg );
+	padding: var( --estat-p-gap-md );
+}
+
+/* ==================================================================
+ * Team
+ * ================================================================== */
+
+.estat-team {
+	display: grid;
+	gap: var( --estat-p-gap-md );
+	grid-template-columns: repeat( auto-fill, minmax( 220px, 1fr ) );
+}
+
+.estat-team .estat-agent {
+	background: var( --estat-p-bg );
+	border: 1px solid var( --estat-p-line );
+	border-radius: var( --estat-p-radius );
+	padding: var( --estat-p-gap-md );
+	text-align: center;
+	transition: box-shadow 0.25s var( --estat-p-ease ), transform 0.25s var( --estat-p-ease );
+}
+
+.estat-team .estat-agent:hover {
+	box-shadow: var( --estat-p-shadow );
+	transform: translateY( -2px );
+}
+
+.estat-agent-photo {
+	border-radius: 50%;
+	height: 88px;
+	margin: 0 auto var( --estat-p-gap );
+	object-fit: cover;
+	width: 88px;
+}
+
+.estat-agent-role {
+	color: var( --estat-p-muted );
+	font-size: var( --estat-p-text-sm );
+	margin: 0 0 var( --estat-p-gap-sm );
+}
+
+.estat-agent-contact {
+	display: flex;
+	flex-direction: column;
+	font-size: var( --estat-p-text-sm );
+	gap: var( --estat-p-gap-xs );
+}
+
+.estat-agent-contact a {
+	color: var( --estat-p-accent-ink );
+	text-decoration: none;
+}
+
+.estat-agent-contact a:hover {
+	text-decoration: underline;
+}
+
+/* ==================================================================
+ * Compare
+ * ================================================================== */
+
+.estat-compare-table {
+	border-collapse: separate;
+	border-spacing: 0;
+	font-size: var( --estat-p-text );
+	width: 100%;
+}
+
+.estat-compare-table th,
+.estat-compare-table td {
+	border-bottom: 1px solid var( --estat-p-line );
+	padding: 12px 14px;
+	text-align: left;
+	vertical-align: top;
+}
+
+.estat-compare-table thead th {
+	background: var( --estat-p-sunken );
+	font-size: var( --estat-p-text-sm );
+	position: sticky;
+	top: 0;
+}
+
+.estat-compare-table tbody tr:hover td {
+	background: var( --estat-p-sunken );
+}
+
+/* ==================================================================
+ * Pagination
+ * ================================================================== */
+
+.estat-pagination {
+	display: flex;
+	gap: var( --estat-p-gap-xs );
+	justify-content: center;
+	margin-top: var( --estat-p-gap-lg );
+}
+
+.estat-pagination a,
+.estat-pagination span {
+	align-items: center;
+	border: 1px solid transparent;
+	border-radius: var( --estat-p-radius-sm );
+	color: var( --estat-p-ink-soft );
+	display: inline-flex;
+	font-size: var( --estat-p-text-sm );
+	justify-content: center;
+	min-height: 38px;
+	min-width: 38px;
+	padding: 0 10px;
+	text-decoration: none;
+	transition: background-color 0.2s var( --estat-p-ease ), border-color 0.2s var( --estat-p-ease );
+}
+
+.estat-pagination a:hover {
+	background: var( --estat-p-sunken );
+	border-color: var( --estat-p-line-strong );
+}
+
+.estat-pagination .current {
+	background: var( --estat-p-accent );
+	border-color: var( --estat-p-accent );
+	color: var( --estat-p-accent-on );
+	font-weight: 600;
+}
+
+/* ==================================================================
+ * Empty states
+ *
+ * An empty result is a moment, not a dead end. It says what happened
+ * and what to try, instead of leaving a blank space.
+ * ================================================================== */
+
+.estat-empty {
+	background: var( --estat-p-sunken );
+	border: 1px dashed var( --estat-p-line-strong );
+	border-radius: var( --estat-p-radius );
+	color: var( --estat-p-muted );
+	font-size: var( --estat-p-text-md );
+	padding: var( --estat-p-gap-xl ) var( --estat-p-gap-md );
+	text-align: center;
+}
+
+/* ==================================================================
+ * Map and gallery
+ * ================================================================== */
+
+.estat-map {
+	border: 1px solid var( --estat-p-line );
+	border-radius: var( --estat-p-radius );
+	min-height: 340px;
+	overflow: hidden;
+}
+
+.estat-gallery {
+	display: grid;
+	gap: var( --estat-p-gap-sm );
+	grid-template-columns: repeat( auto-fill, minmax( 150px, 1fr ) );
+}
+
+.estat-gallery img {
+	border-radius: var( --estat-p-radius-sm );
+	cursor: pointer;
+	display: block;
+	height: 100%;
+	object-fit: cover;
+	transition: opacity 0.2s var( --estat-p-ease ), transform 0.25s var( --estat-p-ease );
+	width: 100%;
+}
+
+.estat-gallery img:hover {
+	opacity: 0.92;
+	transform: scale( 1.02 );
+}
+
+/* ==================================================================
+ * Archive header
+ * ================================================================== */
+
+.estat-archive-header {
+	margin-bottom: var( --estat-p-gap-lg );
+}
+
+.estat-archive-header h1 {
+	font-size: var( --estat-p-text-2xl );
+	letter-spacing: -0.02em;
+	margin: 0 0 var( --estat-p-gap-sm );
+}
+
+.estat-archive-header p {
+	color: var( --estat-p-muted );
+	font-size: var( --estat-p-text-md );
+	margin: 0;
+	max-width: 60ch;
+}
+
+/* ==================================================================
+ * Phones
+ * ================================================================== */
+
+@media ( max-width: 600px ) {
+	.estat-grid {
+		gap: var( --estat-p-gap );
+		grid-template-columns: 1fr;
+	}
+
+	.estat-single h1,
+	.estat-archive-header h1 {
+		font-size: var( --estat-p-text-xl );
+	}
+
+	.estat-single-price {
+		font-size: var( --estat-p-text-xl );
+	}
+
+	.estat-search {
+		padding: var( --estat-p-gap );
+	}
+
+	.estat-single-facts ul,
+	.estat-single-costs ul {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	/* Finger-sized, and 16px so the phone does not zoom on focus. */
+	.estat-search input,
+	.estat-search select {
+		font-size: 16px;
+		min-height: 44px;
+	}
+
+	.estat-card-actions button,
+	.estat-btn {
+		min-height: 44px;
+	}
+
+	/* A comparison table cannot be read sideways on a phone. */
+	.estat-compare-table {
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+}
+
+/* ==================================================================
+ * Motion, printing and forced colours
+ * ================================================================== */
+
+@media ( prefers-reduced-motion: reduce ) {
+	.estat-card,
+	.estat-card-media img,
+	.estat-card-actions button,
+	.estat-btn,
+	.estat-team .estat-agent,
+	.estat-gallery img,
+	.estat-pagination a,
+	.estat-single-documents a,
+	.estat-search input,
+	.estat-search select {
+		transition: none;
+	}
+
+	.estat-card:hover,
+	.estat-team .estat-agent:hover {
+		transform: none;
+	}
+
+	.estat-card:hover .estat-card-media img,
+	.estat-gallery img:hover {
+		transform: none;
+	}
+}
+
+@media print {
+	.estat-card,
+	.estat-single-facts li,
+	.estat-single-costs li {
+		box-shadow: none;
+	}
+
+	.estat-card-actions,
+	.estat-search,
+	.estat-pagination,
+	.estat-single-enquiry {
+		display: none;
+	}
+}
+
+/*
+ * Windows high-contrast mode strips backgrounds and shadows, so anything
+ * that relies on them alone disappears. These give it a border to keep.
+ */
+@media ( forced-colors: active ) {
+	.estat-card,
+	.estat-chip,
+	.estat-badge,
+	.estat-card-actions button {
+		border: 1px solid currentColor;
+	}
+}
+
+/* ==================================================================
+ * The rest
+ *
+ * These classes were in the markup with nothing styling them, which is
+ * how a page ends up with a few elements that look unfinished next to
+ * everything else. Found by comparing what the templates render against
+ * what this file styles; a test now keeps the two in step.
+ * ================================================================== */
+
+/* The offer badge sits opposite Featured, so it reads as a pair. */
+.estat-badge-offer {
+	background: rgba( 22, 32, 44, 0.72 );
+}
+
+.estat-chip-text {
+	white-space: nowrap;
+}
+
+/* The favourite button is icon-first, so it needs a square-ish shape. */
+.estat-fav {
+	padding: 7px 10px;
+}
+
+.estat-fav[aria-pressed="true"] .estat-fav-icon {
+	color: var( --estat-p-accent-on );
+}
+
+/*
+ * The compare tray is fixed to the bottom of the window, so it must not
+ * cover content underneath and must stay out of the way on a phone.
+ */
+.estat-compare-panel {
+	background: var( --estat-p-bg );
+	border: 1px solid var( --estat-p-line );
+	border-radius: var( --estat-p-radius );
+	bottom: var( --estat-p-gap );
+	box-shadow: var( --estat-p-shadow-lg );
+	left: 50%;
+	max-width: calc( 100vw - 2 * var( --estat-p-gap ) );
+	padding: var( --estat-p-gap-sm ) var( --estat-p-gap );
+	position: fixed;
+	transform: translateX( -50% );
+	z-index: 40;
+}
+
+.estat-compare-panel:empty {
+	display: none;
+}
+
+/* A call to action is the one place a bit of weight is earned. */
+.estat-cta {
+	background: var( --estat-p-accent-soft );
+	border-radius: var( --estat-p-radius-lg );
+	padding: var( --estat-p-gap-lg ) var( --estat-p-gap-md );
+	text-align: center;
+}
+
+.estat-cta h2 {
+	font-size: var( --estat-p-text-xl );
+	letter-spacing: -0.01em;
+	margin: 0 0 var( --estat-p-gap-sm );
+}
+
+.estat-cta p {
+	color: var( --estat-p-ink-soft );
+	margin: 0 auto var( --estat-p-gap-md );
+	max-width: 52ch;
+}
+
+.estat-documents {
+	display: grid;
+	gap: var( --estat-p-gap-sm );
+}
+
+/* Insight and article cards reuse the property card, minus the media box. */
+.estat-insight-card {
+	display: flex;
+	flex-direction: column;
+	gap: var( --estat-p-gap-sm );
+}
+
+@media ( max-width: 600px ) {
+	.estat-compare-panel {
+		border-radius: var( --estat-p-radius ) var( --estat-p-radius ) 0 0;
+		bottom: 0;
+		max-width: 100vw;
+		width: 100%;
+	}
+
+	.estat-cta {
+		padding: var( --estat-p-gap-md ) var( --estat-p-gap );
+	}
+}
+
+/* ==================================================================
+ * Trust and freshness (v2.6.0)
+ *
+ * Both of these were already recorded by the office and shown to
+ * nobody. On Indian property portals the single commonest complaint
+ * is not being able to tell which listing is real, so an office that
+ * does the checking should be visibly credited for it.
+ *
+ * Deliberately quiet. A verification badge that shouts reads like
+ * advertising; one that sits calmly beside the price reads like a
+ * fact.
+ * ================================================================== */
+
+.estat-badge-verified {
+	align-items: center;
+	background: var( --estat-p-good );
+	display: inline-flex;
+	gap: 4px;
+	left: auto;
+	right: var( --estat-p-gap-sm );
+	top: auto;
+	bottom: var( --estat-p-gap-sm );
+}
+
+/*
+ * Featured sits top right, so verified moves to the bottom. Two badges
+ * stacked in one corner is how a card starts looking like a sale rack.
+ */
+.estat-card-fresh {
+	color: var( --estat-p-good );
+	font-size: var( --estat-p-text-xs );
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+/* ---- The signals row on a single property ---- */
+
+.estat-single-signals {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var( --estat-p-gap );
+	margin: var( --estat-p-gap-sm ) 0 0;
+}
+
+.estat-signal {
+	align-items: center;
+	color: var( --estat-p-muted );
+	display: inline-flex;
+	font-size: var( --estat-p-text-sm );
+	gap: 6px;
+}
+
+.estat-signal-verified {
+	color: var( --estat-p-good );
+	font-weight: 600;
+}
+
+.estat-signal svg {
+	flex: 0 0 auto;
+}
+
+/* ==================================================================
+ * The monthly repayment estimate
+ *
+ * Research on Indian portals is consistent that this is the most used
+ * tool on a listing page. A buyer who works out that a flat is within
+ * reach is far likelier to enquire than one left guessing.
+ *
+ * Styled as a calm panel rather than a bank widget: the answer is the
+ * only thing that shouts, and the caveat underneath is legible rather
+ * than hidden in small print.
+ * ================================================================== */
+
+.estat-emi {
+	background: var( --estat-p-sunken );
+	border: 1px solid var( --estat-p-line );
+	border-radius: var( --estat-p-radius );
+	margin-bottom: var( --estat-p-gap-lg );
+	padding: var( --estat-p-gap-md );
+}
+
+.estat-emi-title {
+	font-size: var( --estat-p-text-lg );
+	letter-spacing: -0.01em;
+	margin: 0 0 var( --estat-p-gap-md );
+}
+
+.estat-emi-controls {
+	display: grid;
+	gap: var( --estat-p-gap );
+	grid-template-columns: repeat( auto-fit, minmax( 190px, 1fr ) );
+	margin-bottom: var( --estat-p-gap-md );
+}
+
+.estat-emi-field {
+	margin: 0;
+}
+
+.estat-emi-field label {
+	color: var( --estat-p-ink-soft );
+	display: block;
+	font-size: var( --estat-p-text-sm );
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+
+/*
+ * The currency sign sits inside the field rather than beside it, so a
+ * number always reads as money at a glance.
+ */
+.estat-emi-input {
+	align-items: center;
+	background: var( --estat-p-bg );
+	border: 1px solid var( --estat-p-line-strong );
+	border-radius: var( --estat-p-radius-sm );
+	display: flex;
+	overflow: hidden;
+	transition: border-color 0.15s var( --estat-p-ease ), box-shadow 0.15s var( --estat-p-ease );
+}
+
+.estat-emi-input:focus-within {
+	border-color: var( --estat-p-accent );
+	box-shadow: var( --estat-p-ring );
+}
+
+.estat-emi-currency {
+	color: var( --estat-p-muted );
+	flex: 0 0 auto;
+	font-size: var( --estat-p-text );
+	padding: 0 0 0 12px;
+}
+
+.estat-emi-currency:last-child {
+	padding: 0 12px 0 0;
+}
+
+.estat-emi-input input {
+	background: transparent;
+	border: 0;
+	color: var( --estat-p-ink );
+	flex: 1;
+	font: inherit;
+	font-size: var( --estat-p-text );
+	font-variant-numeric: tabular-nums;
+	min-width: 0;
+	padding: 10px 12px;
+	width: 100%;
+}
+
+/* The field already shows focus, so the inner box must not double it. */
+.estat-emi-input input:focus,
+.estat-emi-input input:focus-visible {
+	box-shadow: none;
+	outline: none;
+}
+
+.estat-emi-note {
+	color: var( --estat-p-muted );
+	display: block;
+	font-size: var( --estat-p-text-xs );
+	line-height: 1.45;
+	margin-top: 5px;
+}
+
+/* ---- The answer ---- */
+
+.estat-emi-result {
+	background: var( --estat-p-bg );
+	border: 1px solid var( --estat-p-line );
+	border-radius: var( --estat-p-radius-sm );
+	padding: var( --estat-p-gap );
+	text-align: center;
+}
+
+.estat-emi-amount {
+	align-items: baseline;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	justify-content: center;
+	margin: 0;
+}
+
+.estat-emi-value {
+	color: var( --estat-p-ink );
+	font-size: var( --estat-p-text-2xl );
+	font-variant-numeric: tabular-nums;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.1;
+}
+
+.estat-emi-per {
+	color: var( --estat-p-muted );
+	font-size: var( --estat-p-text );
+}
+
+.estat-emi-breakdown {
+	color: var( --estat-p-muted );
+	font-size: var( --estat-p-text-sm );
+	margin: 6px 0 0;
+	min-height: 1.4em;
+}
+
+.estat-emi-total {
+	font-variant-numeric: tabular-nums;
+}
+
+/*
+ * The caveat is deliberately readable. A calculator that hides its
+ * disclaimer is doing something the office would not want to defend.
+ */
+.estat-emi-caveat {
+	color: var( --estat-p-muted );
+	font-size: var( --estat-p-text-xs );
+	line-height: 1.55;
+	margin: var( --estat-p-gap ) 0 0;
+}
+
+@media ( max-width: 600px ) {
+	.estat-emi {
+		padding: var( --estat-p-gap );
+	}
+
+	.estat-emi-controls {
+		grid-template-columns: 1fr;
+	}
+
+	/* 16px stops the phone zooming when a number field is tapped. */
+	.estat-emi-input input {
+		font-size: 16px;
+		min-height: 44px;
+	}
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+	.estat-emi-input {
+		transition: none;
+	}
+}
+
+@media print {
+	.estat-emi {
+		display: none;
+	}
+}
+
+/*
+ * These three carry no styling of their own — the wrapper above does the
+ * work — but the JavaScript finds the fields by these names, so they are
+ * declared here deliberately. A class in the markup with no rule anywhere
+ * is usually a mistake; naming them makes clear this one is not.
+ */
+.estat-emi-loan,
+.estat-emi-rate,
+.estat-emi-years {
+	text-align: left;
+}
+
+/*
+ * The privacy promise under the enquiry form. Quiet, but present — the
+ * point is that a nervous visitor finds it, not that it advertises.
+ */
+.estat-single-privacy {
+	align-items: flex-start;
+	color: var( --estat-p-muted );
+	display: flex;
+	font-size: var( --estat-p-text-sm );
+	gap: 8px;
+	line-height: 1.5;
+	margin: var( --estat-p-gap ) 0 0;
+}
+
+.estat-single-privacy svg {
+	flex: 0 0 auto;
+	margin-top: 2px;
+}

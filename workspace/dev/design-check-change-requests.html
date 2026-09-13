@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estat.OS 2.7.0 — design check: Change Requests</title>
+<style>
+/* The plugin's real token block, copied verbatim from assets/css/admin.css.
+   Nothing below sets a colour or a size outside it — the same rule the plugin
+   is held to by its own test suite. */
+.estat-screen {
+	/* Text */
+	--estat-ink: #16202c;
+	--estat-ink-soft: #3d4b5c;
+	--estat-muted: #6b7889;
+	--estat-faint: #93a0b1;
+
+	/* Surfaces */
+	--estat-bg: #f4f6f9;
+	--estat-card: #fdfdfe;
+	--estat-card-alt: #f8fafc;
+	--estat-sunken: #eef1f6;
+
+	/* Lines */
+	--estat-line: #e3e8ef;
+	--estat-line-strong: #cfd7e3;
+
+	/* Brand and states */
+	--estat-accent: #2a6df4;
+	--estat-accent-soft: #eaf1fe;
+	--estat-accent-ink: #1a4fbd;
+	/* Text that sits ON the accent. Off-white, not pure: pure white on a
+	 * saturated colour vibrates and looks harsher than it needs to. */
+	--estat-on-accent: #f8fafd;
+	--estat-good: #12855a;
+	--estat-good-soft: #e6f7ef;
+	--estat-warn: #a2650a;
+	--estat-warn-soft: #fdf3e2;
+	--estat-danger: #c0392f;
+	--estat-danger-soft: #fdeceb;
+
+	/* Type: a real six-step scale. Nothing outside it. */
+	--estat-text-xs: 11px;
+	--estat-text-sm: 12px;
+	--estat-text: 13px;
+	--estat-text-md: 15px;
+	--estat-text-lg: 17px;
+	--estat-text-xl: 22px;
+	--estat-text-2xl: 28px;
+
+	/* Line heights, paired to the scale. */
+	--estat-leading-tight: 1.25;
+	--estat-leading: 1.45;
+	--estat-leading-loose: 1.6;
+
+	/* Shape */
+	--estat-radius: 12px;
+	--estat-radius-sm: 8px;
+	--estat-radius-lg: 16px;
+	--estat-radius-pill: 999px;
+
+	/* Depth: soft, never heavy. */
+	--estat-shadow-sm: 0 1px 2px rgba( 16, 24, 40, 0.04 ), 0 1px 3px rgba( 16, 24, 40, 0.06 );
+	--estat-shadow: 0 1px 3px rgba( 16, 24, 40, 0.05 ), 0 4px 12px rgba( 16, 24, 40, 0.06 );
+	--estat-shadow-lg: 0 4px 10px rgba( 16, 24, 40, 0.06 ), 0 12px 32px rgba( 16, 24, 40, 0.10 );
+	--estat-ring: 0 0 0 3px rgba( 42, 109, 244, 0.18 );
+
+	/* Spacing scale */
+	--estat-gap-xs: 4px;
+	--estat-gap-sm: 8px;
+	--estat-gap: 16px;
+	--estat-gap-md: 20px;
+	--estat-gap-lg: 28px;
+	--estat-gap-xl: 40px;
+}
+.estat-screen.estat-theme-dark {
+	--estat-on-accent: #0b1016;
+	--estat-ink: #e9eef5;
+	--estat-ink-soft: #c2cddb;
+	--estat-muted: #93a1b3;
+	--estat-faint: #6d7c90;
+
+	--estat-bg: #0f151d;
+	--estat-card: #171f2a;
+	--estat-card-alt: #1c2632;
+	--estat-sunken: #131b24;
+
+	--estat-line: #29343f;
+	--estat-line-strong: #3a4756;
+
+	--estat-accent: #5b91ff;
+	--estat-accent-soft: #1b2b47;
+	--estat-accent-ink: #a8c5ff;
+	--estat-good: #3fbb85;
+	--estat-good-soft: #122b22;
+	--estat-warn: #e0a44a;
+	--estat-warn-soft: #2e2415;
+	--estat-danger: #f0736a;
+	--estat-danger-soft: #331c1b;
+
+	--estat-shadow-sm: 0 1px 2px rgba( 0, 0, 0, 0.35 );
+	--estat-shadow: 0 2px 6px rgba( 0, 0, 0, 0.40 );
+	--estat-shadow-lg: 0 12px 32px rgba( 0, 0, 0, 0.50 );
+	--estat-ring: 0 0 0 3px rgba( 91, 145, 255, 0.28 );
+}
+
+/* the pieces of the plugin's component CSS these screens actually use,
+   transcribed from admin.css so the preview cannot flatter the design */
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 32px 24px 72px;
+  background: #e9edf3;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.estat-screen {
+  max-width: 980px; margin: 0 auto;
+  padding: 24px; border-radius: 16px;
+  background: var(--estat-bg); color: var(--estat-ink);
+  font-size: var(--estat-text); line-height: var(--estat-leading);
+}
+h1 { font-size: var(--estat-text-2xl); line-height: var(--estat-leading-tight); margin: 0 0 4px; letter-spacing: -0.2px; }
+.sub { color: var(--estat-muted); font-size: var(--estat-text-md); margin: 0 0 20px; }
+.bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 0 0 4px; }
+.bar select, .bar input[type="text"] {
+  appearance: none; background: var(--estat-card); color: var(--estat-ink);
+  border: 1px solid var(--estat-line-strong); border-radius: var(--estat-radius-sm);
+  font-size: var(--estat-text-md); min-height: 34px; padding: 4px 10px;
+}
+.count { color: var(--estat-muted); font-size: var(--estat-text-sm); margin-left: auto; }
+.toolbar-rule { border: 0; border-top: 1px solid var(--estat-line); margin: 12px 0 20px; }
+
+.estat-card, section.card {
+  background: var(--estat-card); border: 1px solid var(--estat-line);
+  border-radius: var(--estat-radius); box-shadow: var(--estat-shadow-sm);
+  padding: var(--estat-gap); margin: 0 0 20px;
+}
+.estat-card > h2, section.card > h2 { font-size: var(--estat-text-lg); margin: 0; }
+.estat-card > p.note, section.card > p.note { color: var(--estat-muted); font-size: var(--estat-text-sm); margin: 4px 0 0; }
+.estat-screen .estat-request-list { display: grid; gap: var(--estat-gap); margin-top: 4px; }
+.estat-screen .estat-request {
+  background: var(--estat-card); border: 1px solid var(--estat-line);
+  border-radius: var(--estat-radius); box-shadow: var(--estat-shadow-sm); padding: var(--estat-gap);
+}
+.estat-screen .estat-request-head { align-items: flex-start; display: flex; gap: var(--estat-gap-sm); }
+.estat-screen .estat-request-icon {
+  align-items: center; background: var(--estat-accent-soft); border-radius: var(--estat-radius-sm);
+  color: var(--estat-accent-ink); display: inline-flex; flex: none; height: 32px; justify-content: center; width: 32px;
+}
+.estat-screen .estat-request-head-text { min-width: 0; }
+.estat-screen .estat-request-title { color: var(--estat-ink); font-size: var(--estat-text-md); font-weight: 600; line-height: var(--estat-leading-tight); margin: 0; overflow-wrap: anywhere; }
+.estat-screen .estat-request-meta { color: var(--estat-muted); font-size: var(--estat-text-sm); margin: 4px 0 0; }
+.estat-pill { background: var(--estat-sunken); border-radius: var(--estat-radius-pill); color: var(--estat-ink-soft); font-size: var(--estat-text-xs); padding: 3px 10px; margin-left: auto; flex: none; font-weight: 600; }
+.estat-screen .estat-pill.is-good { background: var(--estat-good-soft); color: var(--estat-good); }
+.estat-screen .estat-request-changes { list-style: none; margin: var(--estat-gap) 0 0; padding: 0; }
+.estat-screen .estat-request-changes li {
+  align-items: baseline; border-top: 1px solid var(--estat-line);
+  display: grid; gap: 4px var(--estat-gap-sm);
+  grid-template-columns: minmax(96px, 22%) 1fr auto 1fr; padding: 10px 0;
+}
+.estat-screen .estat-request-changes li:first-child { border-top: 0; padding-top: 0; }
+.estat-screen .estat-request-field { color: var(--estat-muted); font-size: var(--estat-text-sm); font-weight: 600; }
+.estat-screen .estat-request-from, .estat-screen .estat-request-to { font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.estat-screen .estat-request-from { color: var(--estat-muted); text-decoration: line-through; text-decoration-color: var(--estat-faint); }
+.estat-screen .estat-request-to { color: var(--estat-ink); font-weight: 600; }
+.estat-screen .estat-request-arrow { background: var(--estat-line-strong); block-size: 1px; inline-size: 16px; position: relative; }
+.estat-screen .estat-request-arrow::after { border: 4px solid transparent; border-left-color: var(--estat-line-strong); content: ""; position: absolute; right: -4px; top: -4px; }
+.estat-screen .estat-request-note {
+  background: var(--estat-card-alt); border-left: 3px solid var(--estat-line-strong);
+  border-radius: 0 var(--estat-radius-sm) var(--estat-radius-sm) 0;
+  color: var(--estat-ink-soft); font-size: var(--estat-text); margin: var(--estat-gap-sm) 0 0; padding: 10px 12px;
+}
+.estat-screen .estat-request-reason { color: var(--estat-muted); font-size: var(--estat-text-sm); margin: var(--estat-gap-sm) 0 0; }
+.estat-screen .estat-request-actions { align-items: center; display: flex; flex-wrap: wrap; gap: var(--estat-gap-sm); margin-top: var(--estat-gap); padding-top: var(--estat-gap); }
+.estat-screen .estat-request-actions form { display: flex; gap: var(--estat-gap-sm); margin: 0; }
+.estat-screen .estat-request-decline { flex: 1 1 220px; justify-content: flex-end; }
+.estat-screen .estat-request-decline input[type="text"] { flex: 1 1 auto; max-width: 280px; min-height: 34px; }
+.button {
+  align-items: center; background: var(--estat-card); border: 1px solid var(--estat-line-strong);
+  border-radius: var(--estat-radius-sm); color: var(--estat-ink); display: inline-flex;
+  font-family: inherit; font-size: var(--estat-text); font-weight: 550;
+  min-height: 34px; padding: 4px 14px; cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+.button:hover { background: var(--estat-card-alt); border-color: var(--estat-faint); }
+.button:active { transform: translateY(1px); }
+.button:focus-visible { outline: none; box-shadow: var(--estat-ring); }
+.button-primary { background: var(--estat-accent); border-color: var(--estat-accent); color: var(--estat-on-accent); }
+.button-primary:hover { background: var(--estat-accent-ink); border-color: var(--estat-accent-ink); color: var(--estat-on-accent); }
+a.plain { color: var(--estat-accent-ink); font-size: var(--estat-text-sm); text-decoration: none; }
+a.plain:hover { text-decoration: underline; }
+.estat-request-open { display: inline-block; margin-top: var(--estat-gap-sm); }
+
+.estat-screen .estat-record-facts { display: grid; gap: 4px var(--estat-gap); grid-template-columns: max-content 1fr; margin: 0; }
+.estat-screen .estat-record-facts dt { color: var(--estat-muted); font-size: var(--estat-text-sm); font-weight: 600; }
+.estat-screen .estat-record-facts dd { color: var(--estat-ink); font-variant-numeric: tabular-nums; margin: 0; overflow-wrap: anywhere; }
+.estat-field-row { margin: 0 0 18px; max-width: 520px; }
+.estat-field-label { display: block; font-size: var(--estat-text-md); font-weight: 600; margin-bottom: 4px; }
+.req { color: var(--estat-warn); font-size: var(--estat-text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-left: 6px; }
+.opt { color: var(--estat-muted); font-size: var(--estat-text-xs); font-weight: 400; margin-left: 6px; }
+.estat-screen input[type="number"], .estat-screen input[type="text"], .estat-screen select, .estat-screen textarea {
+  background: var(--estat-card); border: 1px solid var(--estat-line-strong); border-radius: var(--estat-radius-sm);
+  color: var(--estat-ink); font-family: inherit; font-size: var(--estat-text-md);
+  padding: 7px 10px; width: 100%;
+}
+.estat-screen input:focus, .estat-screen select:focus, .estat-screen textarea:focus {
+  border-color: var(--estat-accent); box-shadow: var(--estat-ring); outline: none;
+}
+.help { color: var(--estat-muted); font-size: var(--estat-text-sm); margin: 5px 0 0; }
+.foot { align-items: center; display: flex; gap: var(--estat-gap); margin: var(--estat-gap) 0 0; }
+
+.estat-screen .estat-empty-state { text-align: center; padding: 40px 24px 44px; }
+.estat-empty-icon { color: var(--estat-good); display: inline-flex; }
+.estat-empty-title { font-size: var(--estat-text-lg); font-weight: 600; margin: 10px 0 4px; }
+.estat-empty-text { color: var(--estat-muted); font-size: var(--estat-text-md); max-width: 52ch; margin: 0 auto; }
+.estat-screen .estat-worklist { list-style: none; margin: 0; padding: 0; }
+.estat-screen .estat-worklist-item { align-items: center; border-bottom: 1px solid var(--estat-line); display: flex; gap: var(--estat-gap-sm); padding: 12px 4px 12px 0; }
+.estat-screen .estat-worklist-item:last-child { border-bottom: 0; }
+.estat-worklist-icon {
+  align-items: center; border-radius: var(--estat-radius-sm); color: var(--estat-ink-soft);
+  display: inline-flex; flex: none; height: 32px; justify-content: center; width: 32px; background: var(--estat-sunken);
+}
+.estat-worklist-item.is-warn .estat-worklist-icon { background: var(--estat-warn-soft); color: var(--estat-warn); }
+.estat-worklist-text { display: flex; flex: 1 1 auto; flex-direction: column; min-width: 0; gap: 2px; }
+.estat-worklist-title { font-weight: 600; }
+.estat-worklist-detail { color: var(--estat-muted); font-size: var(--estat-text-sm); }
+.button-small { font-size: var(--estat-text-sm); min-height: 30px; padding: 3px 10px; flex: none; }
+
+.note-on-page { max-width: 980px; margin: 0 auto 14px; color: #48566a; font-size: 12.5px; }
+.themebar { max-width: 980px; margin: 0 auto 10px; display: flex; gap: 8px; align-items: center; }
+.chip { border: 1px solid #cfd7e3; background: #fff; border-radius: 999px; font: 600 12px -apple-system, "Segoe UI", Roboto, sans-serif; padding: 6px 12px; cursor: pointer; color: #16202c; }
+.chip[aria-pressed="true"] { background: #16202c; border-color: #16202c; color: #f8fafd; }
+h3.tag { max-width: 980px; margin: 34px auto 8px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #6b7889; font-weight: 700; }
+@media (max-width: 782px) {
+  .estat-screen .estat-request-changes li { grid-template-columns: 1fr; }
+  .estat-screen .estat-request-arrow { display: none; }
+  .estat-screen .estat-request-actions form { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<p class="note-on-page">Not a redraw: this is the markup the plugin’s own PHP renders (verified by its test suite), with the plugin’s real tokens, real icon paths and real button rules copied from <code>assets/css/admin.css</code>. Flip to Dark — one token block, no second definition anywhere.</p>
+<div class="themebar">
+  <button class="chip" id="l" aria-pressed="true" onclick="setTheme(false)">Light</button>
+  <button class="chip" id="d" aria-pressed="false" onclick="setTheme(true)">Dark</button>
+</div>
+<script>
+function setTheme(on){
+  document.getElementById('l').setAttribute('aria-pressed', on?'false':'true');
+  document.getElementById('d').setAttribute('aria-pressed', on?'true':'false');
+  document.querySelectorAll('.estat-screen').forEach(function(el){ el.classList.toggle('estat-theme-dark', on); });
+}
+</script>
+
+<div class="estat-screen">
+  <h1>Change Requests</h1>
+  <p class="sub">Things your team saw on the ground that the website has wrong.</p>
+</div>
+
+<h3 class="tag">1 · The office’s queue — one card per decision, both numbers always visible</h3>
+<div class="estat-screen">
+  <div class="bar">
+    <span style="color:var(--estat-muted)">Show</span>
+    <select><option>Waiting for a decision</option><option>Approved and applied</option><option>Declined</option></select>
+    <button class="button">Show</button>
+    <span class="count">2 results</span>
+  </div>
+  <hr class="toolbar-rule">
+  <div class="estat-request-list">
+    <article class="estat-request">
+      <header class="estat-request-head">
+        <span class="estat-request-icon"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></svg></span>
+        <div class="estat-request-head-text">
+          <p class="estat-request-title">Change to “Villa on Dwarka Expressway”</p>
+          <p class="estat-request-meta">Rohit (agent) · 2026-09-12</p>
+        </div>
+      </header>
+      <ul class="estat-request-changes">
+        <li><span class="estat-request-field">Price</span><span class="estat-request-from">₹85 Lakh</span><span class="estat-request-arrow"></span><span class="estat-request-to">₹82 Lakh</span></li>
+        <li><span class="estat-request-field">Is it still available?</span><span class="estat-request-from">Available</span><span class="estat-request-arrow"></span><span class="estat-request-to">Sold</span></li>
+      </ul>
+      <p class="estat-request-note"><strong>They wrote:</strong> Owner told me on site this morning — agreement signed, they want the listing down by Friday.</p>
+      <footer class="estat-request-actions">
+        <span style="display:flex;gap:var(--estat-gap-sm)"><button class="button button-primary">Yes, change it</button></span>
+        <span class="estat-screen estat-request-decline" style="display:flex;flex:1 1 220px;gap:var(--estat-gap-sm);justify-content:flex-end">
+          <input type="text" placeholder="Why not, in a few words…">
+          <button class="button">Not now</button>
+        </span>
+      </footer>
+      <a class="plain estat-request-open" href="#">Open the property</a>
+    </article>
+
+    <article class="estat-request">
+      <header class="estat-request-head">
+        <span class="estat-request-icon"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></svg></span>
+        <div class="estat-request-head-text">
+          <p class="estat-request-title">Change to “2 BHK near Rajouri Garden Metro”</p>
+          <p class="estat-request-meta">Meena (agent) · 2026-09-11</p>
+        </div>
+        <span class="estat-pill is-good">Approved and applied</span>
+      </header>
+      <ul class="estat-request-changes">
+        <li><span class="estat-request-field">Monthly rent</span><span class="estat-request-from">₹42 Lakh</span><span class="estat-request-arrow"></span><span class="estat-request-to">₹45 Lakh</span></li>
+      </ul>
+      <p class="estat-request-reason"><strong>You answered:</strong> Builder confirmed the new rate yesterday, approved.</p>
+      <a class="plain estat-request-open" href="#">Open the property</a>
+    </article>
+  </div>
+</div>
+
+<h3 class="tag">2 · The agent’s half — same property, no dead end, four fields not forty</h3>
+<div class="estat-screen">
+  <section class="card">
+    <h2>Villa on Dwarka Expressway belongs to somebody else</h2>
+    <p class="note">You can read it, and you can ask for a correction. Nothing changes until the office says yes.</p>
+    <div style="margin-top:14px">
+      <dl class="estat-record-facts">
+        <dt>Price</dt><dd>₹85 Lakh</dd>
+        <dt>Still available?</dt><dd>Available</dd>
+        <dt>Size</dt><dd>2,400 sq ft</dd>
+        <dt>Bedrooms</dt><dd>4</dd>
+        <dt>On the website</dt><dd>Yes</dd>
+        <dt>Description</dt><dd>Corner unit with a garden and two covered parks, nine years old, ready to move.</dd>
+      </dl>
+    </div>
+  </section>
+  <section class="card">
+    <h2>Suggest a change</h2>
+    <p class="note">Fill in only what is wrong. Leave a field alone and it stays as it is.</p>
+    <div style="margin-top:16px">
+      <div class="estat-field-row">
+        <label class="estat-field-label">Price <span class="opt">only if it is wrong</span></label>
+        <input type="number" placeholder="82000000">
+        <p class="help">Today it says: ₹85 Lakh</p>
+      </div>
+      <div class="estat-field-row">
+        <label class="estat-field-label">Is it still available? <span class="opt">only if it is wrong</span></label>
+        <select><option>Leave as it is</option><option>On Hold / Under Offer</option><option>Sold</option><option>Rented</option></select>
+        <p class="help">Today it says: Available</p>
+      </div>
+      <div class="estat-field-row">
+        <label class="estat-field-label">A note for the office <span class="req">required</span></label>
+        <textarea rows="3" placeholder="The owner told me this morning…"></textarea>
+        <p class="help">One line about how you know, so they can decide without calling you.</p>
+      </div>
+      <p class="foot"><button class="button button-primary">Send to the office</button><a class="plain" href="#">Back to listings</a></p>
+    </div>
+  </section>
+</div>
+
+<h3 class="tag">3 · Where they find it without being told — the office’s Today screen</h3>
+<div class="estat-screen">
+  <section class="card">
+    <h2>What to do next</h2>
+    <p class="note">The most urgent things first. Tick them off from the top.</p>
+    <ul class="estat-worklist" style="margin-top:14px">
+      <li class="estat-worklist-item is-warn">
+        <span class="estat-worklist-icon"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></svg></span>
+        <span class="estat-worklist-text">
+          <span class="estat-worklist-title">A change is waiting on “Villa on Dwarka Expressway”</span>
+          <span class="estat-worklist-detail">Proposed from the property, by the person standing in it.</span>
+        </span>
+        <a class="button button-small" href="#">Decide</a>
+      </li>
+      <li class="estat-worklist-item">
+        <span class="estat-worklist-icon"><svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M240,208H224V96a16,16,0,0,0-16-16H144V32a16,16,0,0,0-24.88-13.32L39.12,72A16,16,0,0,0,32,85.34V208H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM208,96V208H144V96ZM48,85.34,128,32V208H48ZM112,112v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm-32,0v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm0,56v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Zm32,0v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Z"/></svg></span>
+        <span class="estat-worklist-text">
+          <span class="estat-worklist-title">Finish “3 BHK apartment near the metro”</span>
+          <span class="estat-worklist-detail">Only 55% complete. More detail brings more enquiries.</span>
+        </span>
+        <a class="button button-small" href="#">Complete it</a>
+      </li>
+    </ul>
+  </section>
+</div>
+
+<h3 class="tag">4 · The calm day — an empty queue is reassurance, not a blank box</h3>
+<div class="estat-screen">
+  <section class="card">
+    <div class="estat-empty-state">
+      <span class="estat-empty-icon"><svg width="40" height="40" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg></span>
+      <p class="estat-empty-title">Nothing is waiting for you</p>
+      <p class="estat-empty-text">The website is showing exactly what your office has confirmed. When somebody on the ground proposes a change, it arrives here for you to say yes or no.</p>
+    </div>
+  </section>
+</div>
+
+<script>setTheme(false);</script>
+</body>
+</html>

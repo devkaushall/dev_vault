@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dev — Plugin Design Training Report</title>
+<style>
+  :root{
+    --ink:#10151c; --ink2:#48566a; --line:#e3e8ef; --bg:#f6f8fb;
+    --blue:#1e50c8; --green:#12734a; --amber:#a35a00; --red:#b3261e;
+    --card:#ffffff; --r:14px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    line-height:1.5;font-size:15px;padding:28px 18px 60px}
+  .wrap{max-width:1080px;margin:0 auto}
+  h1{font-size:26px;margin:0 0 4px;letter-spacing:-.3px}
+  .sub{color:var(--ink2);margin:0 0 26px}
+  h2{font-size:17px;margin:0 0 14px;display:flex;align-items:center;gap:8px}
+  .badge{width:22px;height:22px;border-radius:7px;background:var(--blue);color:#fff;
+    font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+  section{margin-bottom:34px}
+  .grid{display:grid;gap:12px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+  .card h3{margin:0 0 6px;font-size:14px}
+  .card p{margin:0;font-size:13px;color:var(--ink2)}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.4px;
+    text-transform:uppercase;color:var(--blue);background:#eaf0ff;padding:3px 8px;border-radius:999px;margin-bottom:8px}
+  .lock{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:0;overflow:hidden}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#eef2f8;font-size:11.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink2)}
+  tr:last-child td{border-bottom:0}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;
+    background:#eef1f6;padding:2px 6px;border-radius:6px}
+  /* wireframe */
+  .wf{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+  .bar{display:flex;gap:10px;align-items:center;height:40px;background:#e9edf4;border-radius:9px;padding:0 10px;font-size:12.5px;color:var(--ink2)}
+  .side{background:#e9edf4;border-radius:9px;padding:10px;font-size:12.5px;color:var(--ink2);height:100%}
+  .side div{padding:7px 9px;border-radius:7px}
+  .side div.on{background:var(--blue);color:#fff;font-weight:600}
+  .kpi{display:flex;gap:8px}
+  .kpi div{flex:1;background:#eef2f8;border:1px solid var(--line);border-radius:9px;padding:10px}
+  .kpi b{display:block;font-size:19px}
+  .kpi span{font-size:11.5px;color:var(--ink2)}
+  .row{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid var(--line);border-radius:9px;margin-bottom:7px;background:#fff}
+  .thumb{width:52px;height:38px;border-radius:6px;background:linear-gradient(135deg,#c9d6ea,#e8eef7);flex:none}
+  .ln{height:8px;border-radius:4px;background:#dfe5ee}
+  .btn{margin-left:auto;font-size:11.5px;background:#eaf0ff;color:var(--blue);border-radius:7px;padding:6px 9px;font-weight:600;flex:none}
+  .btn.solid{background:var(--blue);color:#fff}
+  .ask{background:#fff;border:1px dashed #b9c6dc;border-radius:var(--r);padding:16px 18px}
+  .ask li{margin-bottom:7px}
+  .ok{color:var(--green);font-weight:700}
+  ul{margin:0;padding-left:20px}
+  @media(max-width:820px){.g3,.g2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Dev, training ho gayi ✅</h1>
+  <p class="sub">Maine open-source design + WordPress + real-estate plugin resources padhe. Ye raha saar — ek page mein.</p>
+
+  <section>
+    <h2><span class="badge">1</span> Maine kya-kya consume kiya</h2>
+    <div class="grid g3">
+      <div class="card"><span class="tag">WordPress rules</span>
+        <h3>Official plugin guidelines</h3><p>Admin page kaise bane, settings API, notice kab aur kaise dikhaye — WordPress apne rules hain. Inka palan = plugin store mein pass.</p></div>
+      <div class="card"><span class="tag">Design system</span>
+        <h3>GitHub Primer, Material, Carbon, Fluent</h3><p>Spacing, font size, colour, shadow — sabka fixed scale. "Anushasan" yahi se aata hai.</p></div>
+      <div class="card"><span class="tag">Component library</span>
+        <h3>shadcn/ui + Radix</h3><p>Aaj kal ke best button, table, form, dialog, tabs — copy-paste pattern. Free aur open source.</p></div>
+      <div class="card"><span class="tag">Accessibility</span>
+        <h3>WCAG 2.2</h3><p>Contrast, minimum button size, error message ka tareeka, keyboard se chalana. Sabke liye usable.</p></div>
+      <div class="card"><span class="tag">Property sites</span>
+        <h3>WP-Property, WPL, Showcase IDX, SimplyRETS</h3><p>Listing, search filter, map, agent — in plugins ne 10 saal mein kya seekha, wahi uthaya.</p></div>
+      <div class="card"><span class="tag">UX research</span>
+        <h3>Search &amp; empty-state studies</h3><p>Filter chips, half-map view, "0 result" page, onboarding checklist — conversion kaise badhta hai.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="badge">2</span> Ye 6 niyam main lock karne wala hoon</h2>
+    <div class="lock">
+      <table>
+        <tr><th style="width:22%">Niyam</th><th style="width:38%">Simple matlab</th><th>Pakka number</th></tr>
+        <tr><td><b>Spacing</b></td><td>Har gap 4 ya 8 ka multiple hoga — kabhi 13, 17 nahi.</td><td><code>4 / 8 / 12 / 16 / 24 / 32 / 48</code></td></tr>
+        <tr><td><b>Font size</b></td><td>Sirf 5 size, bas. Zyada options = ubak-kubak.</td><td><code>12 / 14 / 16 / 20 / 28</code> px</td></tr>
+        <tr><td><b>Rang</b></td><td>1 main colour + grays + 3 "bhavna" rang (theek/galat/cheetani).</td><td>Text pe <code>4.5:1</code> contrast minimum</td></tr>
+        <tr><td><b>Tap size</b></td><td>Har button itna bada ki ungli se dab jaye.</td><td><code>min 40px</code> height (WCAG: 24)</td></tr>
+        <tr><td><b>Radius + shadow</b></td><td>Golai aur parchhai bhi fixed set se.</td><td><code>6 / 10 / 14</code> px</td></tr>
+        <tr><td><b>Bhasha</b></td><td>Button par kaam likho, naam nahi. "Save" → "Listing prakaashit karein".</td><td>1 line, 6 shabd se kam</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="badge">3</span> Aapke plugin ka screen — pehle jhalak</h2>
+    <p class="sub" style="margin-bottom:14px">Aise dikhega (abhi sirf structure hai, rang-bhangna baad mein):</p>
+    <div class="wf">
+      <div class="bar" style="margin-bottom:10px"><b>🏠 Property Plugin</b> &nbsp;·&nbsp; Search listings… &nbsp;·&nbsp; <span style="margin-left:auto">[ + Nayi Listing ]</span></div>
+      <div style="display:grid;grid-template-columns:170px 1fr;gap:10px">
+        <div class="side">
+          <div class="on">📊 Dashboard</div>
+          <div>🏘 Listings</div>
+          <div>🗺 Map &amp; Search</div>
+          <div>👤 Agents</div>
+          <div>📩 Enquiries</div>
+          <div>⚙ Settings</div>
+        </div>
+        <div>
+          <div class="kpi" style="margin-bottom:10px">
+            <div><b>128</b><span>Kul listings</span></div>
+            <div><b>9</b><span>Aaj nayi enquiry</span></div>
+            <div><b>4</b><span>Review mein</span></div>
+            <div><b style="color:var(--amber)">2</b><span>Photo adhoore</span></div>
+          </div>
+          <div class="row"><div class="thumb"></div>
+            <div style="flex:1"><b style="font-size:13px">3BHK, Rajouri Garden</b><div style="margin-top:5px"><span class="ln" style="width:55%;display:block"></span></div></div>
+            <span class="btn" style="background:#e7f4ec;color:var(--green)">Live</span><span class="btn">Edit</span></div>
+          <div class="row"><div class="thumb"></div>
+            <div style="flex:1"><b style="font-size:13px">Villa, Dwarka Expressway</b><div style="margin-top:5px"><span class="ln" style="width:42%;display:block"></span></div></div>
+            <span class="btn" style="background:#fdf1e0;color:var(--amber)">Draft</span><span class="btn">Edit</span></div>
+          <div class="row" style="border-style:dashed;text-align:center;color:var(--ink2);display:block;padding:16px">
+            ⚠️ Koi listing nahi mili → <b style="color:var(--blue)">"Pehli listing banayein"</b> ka button yahin dikhega (khaali page kabhi khaali nahi chhodte)
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="badge">4</span> Ab aapki baari — ye 5 cheezein bata dein</h2>
+    <div class="ask">
+      <ul>
+        <li><b>Kaun use karega?</b> Sirf aap, ya agents bhi khud listing daalenge?</li>
+        <li><b>Listing data kahan se aayega?</b> Haath se type, ya kisi software/Excel/API se?</li>
+        <li><b>Visitor ko site par kya chahiye?</b> Property dhoondhna, ya aapko lead milna — main kaun?</li>
+        <li><b>Koi pasandi ke rang ya brand?</b> Nahi hai to main 2 option bana dunga.</li>
+        <li><b>Hindi + English dono</b> chahiye site par?</li>
+      </ul>
+      <p style="margin:12px 0 0"><span class="ok">Aage ka plan:</span> aap ye batao → main aapko 3 visual mockup dunga (rang + layout ke saath) → aap ek chuno → design system file lock.</p>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

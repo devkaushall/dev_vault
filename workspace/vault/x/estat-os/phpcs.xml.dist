@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<ruleset name="Estat.OS">
+	<description>Coding standards for the Estat.OS plugin.</description>
+
+	<file>.</file>
+
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/languages/*</exclude-pattern>
+
+	<arg name="extensions" value="php"/>
+	<arg name="colors"/>
+	<arg value="ps"/>
+
+	<config name="minimum_wp_version" value="6.0"/>
+	<config name="testVersion" value="7.4-"/>
+
+	<rule ref="WordPress">
+		<!-- The plugin uses short array syntax nowhere, but does use strict types. -->
+		<exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
+	</rule>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="estat-os"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="estat"/>
+				<element value="ESTAT"/>
+				<element value="EstatOS"/>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- Tests deliberately define WordPress stand-ins. -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<exclude-pattern>tests/*</exclude-pattern>
+	</rule>
+	<rule ref="WordPress.WP.GlobalVariablesOverride">
+		<exclude-pattern>tests/*</exclude-pattern>
+	</rule>
+</ruleset>

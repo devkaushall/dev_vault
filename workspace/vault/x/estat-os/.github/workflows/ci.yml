@@ -1,0 +1,117 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  lint-php:
+    name: PHP ${{ matrix.php }} syntax
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [ '7.4', '8.0', '8.1', '8.2', '8.3', '8.4' ]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+
+      - name: Lint every PHP file
+        run: |
+          find . -name '*.php' -not -path './vendor/*' -print0 \
+            | xargs -0 -n1 -P4 php -l
+
+  tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      - name: Run the unit suite
+        run: php tests/run-tests.php
+
+      - name: Fetch WordPress for the integration suite
+        run: curl -sL https://wordpress.org/latest.tar.gz | tar -xz -C /tmp
+
+      - name: Run the integration suite against real WordPress
+        run: php tests/integration/run-integration.php
+
+      - name: Fail on any warning, notice or deprecation
+        run: |
+          output="$(php -d error_reporting=E_ALL -d display_errors=1 \
+            tests/integration/run-integration.php 2>&1)"
+          echo "$output" | tail -5
+          if echo "$output" | grep -Eiq 'warning|notice|deprecated'; then
+            echo "::error::The suite emitted a PHP diagnostic."
+            echo "$output" | grep -Ei 'warning|notice|deprecated' | sort -u
+            exit 1
+          fi
+
+  lint-js:
+    name: JavaScript syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check every script
+        run: |
+          for file in assets/js/*.js; do
+            echo "checking $file"
+            node --check "$file"
+          done
+
+  standards:
+    name: WordPress coding standards
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+          tools: cs2pr, phpcs
+
+      - name: Install the WordPress standard
+        run: |
+          composer global require --no-interaction \
+            wp-coding-standards/wpcs:^3.0 \
+            dealerdirect/phpcodesniffer-composer-installer:^1.0
+          echo "$HOME/.composer/vendor/bin" >> "$GITHUB_PATH"
+
+      - name: Run phpcs
+        run: phpcs -q --report=checkstyle . | cs2pr
+
+  i18n:
+    name: Translation files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install gettext
+        run: sudo apt-get update && sudo apt-get install -y gettext
+
+      - name: Every .po file must compile
+        run: |
+          for file in languages/*.po; do
+            echo "checking $file"
+            msgfmt --check-format -o /dev/null "$file"
+          done
